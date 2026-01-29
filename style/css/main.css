@@ -244,98 +244,141 @@
 }
 /* doctor  */
 
-/* callout  */
+  
+
+/* CTA STYLES */
 .cta {
   width: 100%;
   position: relative;
-
-  /* IMAGE + GRADIENT TOGETHER */
   background:
     linear-gradient(
       to right,
-      rgba(255,255,255,0.15) 0%,
-      rgba(30,90,160,0.55) 55%,
-      rgba(30,90,160,0.85) 100%
+      rgba(255,255,255,0.1) 0%,
+      rgba(30,90,160,0.6) 55%,
+      rgba(30,90,160,0.9) 100%
     ),
     url("/images/callout-bg.png");
-
   background-size: cover;
   background-position: center;
 }
 
-/* content */
 .cta-inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 64px 80px;
+  /* Reduced padding to make it smaller (Was 64px) */
+  padding: 40px 20px; 
   display: flex;
   justify-content: flex-end;
 }
 
 .cta-content {
-  max-width: 520px;
+  max-width: 500px;
   color: #fff;
 }
 
 .cta-content h2 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 12px;
+  font-size: 28px; /* Slightly smaller font */
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .cta-content p {
-  font-size: 16px;
+  font-size: 15px;
   opacity: 0.9;
   margin-bottom: 24px;
+  line-height: 1.5;
 }
 
+/* CTA BUTTON HOVER */
 .cta-btn {
-  padding: 12px 28px;
+  display: inline-block;
+  padding: 10px 24px;
   border: 2px solid #fff;
   border-radius: 6px;
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-@media (max-width: 768px) {
-  .cta-inner {
-    padding: 48px 20px;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .cta::after {
-    background: rgba(25, 90, 160, 0.85);
-  }
-
-  .cta-content h2 {
-    font-size: 26px;
-  }
+.cta-btn:hover {
+  background-color: #fff;
+  color: #1e5aa0; /* Blue text on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-/* footer */
+
+/* FOOTER STYLES */
 .footer-link {
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 .footer-link:hover {
-  color: #60a5fa;
+  color: #60a5fa; /* Light blue on hover */
+  transform: translateX(4px); /* Moves slightly right */
 }
 
 .social-btn {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 9999px;
-  background: white;
-  color: #0b152a;
+  background: rgba(255,255,255,0.1); /* Glass look default */
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
-  transition: all 0.25s ease;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s ease;
 }
 
 .social-btn:hover {
   background: #3b82f6;
+  border-color: #3b82f6;
   color: white;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+}
+
+/* MOBILE FIXES */
+@media (max-width: 768px) {
+  .cta-inner {
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .cta {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(30,90,160,0.8),
+        rgba(30,90,160,1)
+      ),
+      url("/images/callout-bg.png");
+      background-size: cover;
+  }
+}
+
+/* footer */
+
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-btn:hover {
+  background: #3b82f6;
+  border-color: #60a5fa;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
