@@ -144,7 +144,7 @@
 
 .welcome-right {
   max-width: 560px;
-  margin-top: 52px; /* 🔥 VISUAL ALIGNMENT FIX */
+  /* margin-top: 52px; */
 }
 
 .customers {
@@ -308,65 +308,32 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* FOOTER STYLES */
+
+
+/* Footer Links */
 .footer-link {
-  transition: all 0.2s ease;
   display: inline-block;
-}
-.footer-link:hover {
-  color: #60a5fa; /* Light blue on hover */
-  transform: translateX(4px); /* Moves slightly right */
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #60a5fa; /* blue-400 — matches the ✦ icon */
+  transform: translateX(4px);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Social Buttons — Single Definition */
 .social-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: 9999px;
-  background: rgba(255,255,255,0.1); /* Glass look default */
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  transition: all 0.3s ease;
-}
-
-.social-btn:hover {
-  background: #3b82f6;
-  border-color: #3b82f6;
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
-}
-
-/* MOBILE FIXES */
-@media (max-width: 768px) {
-  .cta-inner {
-    justify-content: center;
-    text-align: center;
-    padding: 40px 20px;
-  }
-  .cta {
-    background:
-      linear-gradient(
-        to bottom,
-        rgba(30,90,160,0.8),
-        rgba(30,90,160,1)
-      ),
-      url("/images/callout-bg.png");
-      background-size: cover;
-  }
-}
-
-/* footer */
-
-
-.social-btn {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: white;
@@ -376,9 +343,30 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.social-btn:hover {
-  background: #3b82f6;
-  border-color: #60a5fa;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+.social-btn:hover,
+.social-btn:focus-visible {
+  background: #3b82f6; /* blue-500 */
+  border-color: #60a5fa; /* blue-400 */
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+}
+
+.social-btn:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
+@media (max-width: 640px) {
+  .footer-link:hover {
+    transform: none; /* Disable slide on touch devices */
+  }
+  
+  .social-btn:active {
+    transform: scale(0.95);
+  }
 }

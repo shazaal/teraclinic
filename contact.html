@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Tera Wellbeing</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="style/css/transition.css" />
+
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Sora', 'sans-serif'],
+          },
+          colors: {
+            'tera-blue-light': '#3B82F6',   /* Card 1 */
+            'tera-blue-med': '#1D4ED8',     /* Card 2 */
+            'tera-dark': '#0F172A',         /* Card 3 */
+          }
+        },
+      },
+    }
+  </script>
+      <style>
+html {
+  scroll-behavior: auto; /* disable native smooth */
+}
+
+body {
+  overflow-x: hidden;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+      /* Width */
+      ::-webkit-scrollbar {
+        width: 8px; /* Slightly slimmer for elegance */
+      }
+
+      /* Track (Background) */
+      ::-webkit-scrollbar-track {
+        background: transparent; /* Makes it look like it's floating */
+      }
+
+      /* Handle (The gradient part) */
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(
+          180deg,
+          #60a5fa 0%,
+          #2563eb 100%
+        ); /* Blue Gradient */
+        border-radius: 100vh; /* Perfectly rounded ends */
+        border: 2px solid #fff; /* White border creates a 'floating' effect */
+      }
+
+      /* Handle on Hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(
+          180deg,
+          #2563eb 0%,
+          #1e40af 100%
+        ); /* Darker gradient */
+      }
+    </style>
+</head>
+
+<body class="font-sans ">
+    <div class="page-transition-wrapper">
+<div class="relative w-full h-screen overflow-hidden">
+
+<header class="absolute top-0 left-0 w-full z-50">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-6 flex justify-between items-center">
+    
+    <a href="index.html" class="z-50 relative flex items-center">
+      <img src="images/tera logo.png" class="h-14 md:h-15 object-contain " alt="Tera Wellbeing">
+    </a>
+
+    <nav class="hidden md:flex gap-10 text-sm font-medium items-center">
+      
+      <a href="index.html" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
+        Home
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
+
+      <a href="about.html" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
+        About Us
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
+
+      <a href="#" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
+        Our Team
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
+
+      <a href="services.html"class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300" >
+        Services
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
+
+      <a href="contact.html" class="relative py-2 text-blue-400 font-bold tracking-wide">
+        Contact
+        
+      </a>
+      
+  
+    </nav>
+
+    <button id="mobile-btn" class="md:hidden z-50 relative w-10 h-10 flex items-center justify-center text-white focus:outline-none transition-transform duration-300 active:scale-90">
+      <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+  </div>
+
+  <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-500">
+    
+    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-xl"></div>
+    
+    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
+
+    <div class="relative z-50 h-full flex flex-col items-center justify-center gap-6" id="mobile-links-container">
+      
+      <a href="index.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Home</a>
+      <a href="about.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">About Us</a>
+      <a href="#" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Our Team</a>
+      
+      <a href="services.html" class="mobile-link text-3xl font-bold text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Services</a>
+      
+      <a href="contact.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Contact</a>
+      
+    
+
+    </div>
+  </div>
+</header>
+
+  <section class="relative w-full h-full">
+    
+    <img src="images/contact-bg.png" alt="Contact Background" class="absolute inset-0 w-full h-full object-cover" />
+
+    <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-black/30 to-black/50"></div>
+
+    <div class="relative z-20 h-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col justify-center">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 h-full pb-32 lg:pb-0">
+        
+        <div class="hidden lg:block lg:col-span-6"></div>
+
+        <div class="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-12 h-full">
+          
+          <div class="text-white mb-auto mt-auto lg:mt-[20vh]">
+            <h1 class="text-[42px] md:text-[54px] leading-tight font-light mb-6">
+              When you need<br>
+              answer, you know<br>
+              where to go
+            </h1>
+            <p class="text-white/80 text-lg font-light">
+              The No.1 hospital brand in the nation for you
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="absolute bottom-0 right-0 left-0 lg:left-auto w-full lg:w-auto z-30">
+        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 lg:px-0">
+           <div class="grid grid-cols-3 w-full lg:w-[600px] ml-auto">
+              
+              <a href="#" class="bg-[#3B82F6] text-white p-6 md:p-8 relative group hover:bg-blue-400 transition-colors">
+                <span class="absolute top-5 right-5 text-xl">↗</span>
+                <p class="text-sm opacity-90 mb-1">Phone</p>
+                <h4 class="text-xl font-medium">Consultation</h4>
+              </a>
+
+              <a href="#" class="bg-[#1D4ED8] text-white p-6 md:p-8 relative group hover:bg-blue-700 transition-colors">
+                 <span class="absolute top-5 right-5 text-xl">↗</span>
+                <p class="text-sm opacity-90 mb-1">Phone</p>
+                <h4 class="text-xl font-medium">Consultation</h4>
+              </a>
+
+              <a href="#" class="bg-[#0F172A] text-white p-6 md:p-8 relative group hover:bg-slate-800 transition-colors">
+                 <span class="absolute top-5 right-5 text-xl">↗</span>
+                <p class="text-sm opacity-90 mb-1">Phone</p>
+                <h4 class="text-xl font-medium">Consultation</h4>
+              </a>
+
+           </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script src="style/js/nav.js"></script>
+<script src="style/js/transition.js"></script>
+<script src="style/js/scroll.js"></script>
+</body>
+</html>
