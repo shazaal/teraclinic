@@ -21,15 +21,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
-
     <!-- Lucide Icons (SVG based) -->
     <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- aos  -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 
     <!-- Tailwind config -->
     <script>
@@ -50,17 +54,16 @@
       };
     </script>
     <style>
-html {
-  scroll-behavior: auto; /* disable native smooth */
-}
+      html {
+        scroll-behavior: auto; /* disable native smooth */
+      }
 
-body {
-  overflow-x: hidden;
-}
-html {
-  scroll-behavior: smooth;
-}
-
+      body {
+        overflow-x: hidden;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
 
       /* Width */
       ::-webkit-scrollbar {
@@ -138,1766 +141,1444 @@ html {
     <link rel="stylesheet" href="style/css/transition.css" />
   </head>
 
-  <body class=" text-black">
+  <body class="text-black">
     <div class="page-transition-wrapper">
-    <!-- HEADER -->
-    <header class="w-full bg-white relative z-50 font-sans">
-      <div
-        class="max-w-[1440px] mx-auto px-6 md:px-20 py-6 flex items-center justify-between"
-      >
-        <a href="index.html" class="flex items-center gap-2 z-50 relative">
-          <img
-            src="images/tera logo.png"
-            class="h-14 md:h-15 object-contain"
-            alt="Tera Wellbeing"
-          />
-        </a>
+      <!-- HEADER -->
+ <header class="w-full bg-white relative z-50 font-sans">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-6 flex items-start justify-between">
+    
+    <a href="index.html" class="flex items-center gap-2 z-50 relative" data-aos="fade-down" data-aos-delay="0">
+      <img
+        src="images/tera logo.png"
+        class="h-14 md:h-15 object-contain"
+        alt="Tera Wellbeing"
+      />
+    </a>
 
-        <nav
-          class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600"
-        >
-          <a href="#" class="text-blue-600 font-bold tracking-wide"> Home </a>
+    <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600" data-aos="fade-down" data-aos-delay="100">
+      <a href="#" class="text-blue-600 font-bold tracking-wide"> Home </a>
 
-          <a
-            href="about.html"
-            class="relative group py-2 hover:text-blue-600 transition-colors"
-          >
-            About
-            <span
-              class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"
-            ></span>
-          </a>
+      <a href="about.html" class="relative group py-2 hover:text-blue-600 transition-colors">
+        About
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
 
-          <a
-            href="#ourteam"
-            class="relative group py-2 hover:text-blue-600 transition-colors"
-          >
-            Our team
-            <span
-              class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"
-            ></span>
-          </a>
+      <a href="#ourteam" class="relative group py-2 hover:text-blue-600 transition-colors">
+        Our team
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
 
-          <a
-            href="services.html"
-            class="relative group py-2 hover:text-blue-600 transition-colors"
-          >
-            Services
-            <span
-              class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"
-            ></span>
-          </a>
+      <a href="services.html" class="relative group py-2 hover:text-blue-600 transition-colors">
+        Services
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
 
-          <a
-            href="contact.html"
-            class="relative group py-2 hover:text-blue-600 transition-colors"
-          >
-            Contact
-            <span
-              class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"
-            ></span>
-          </a>
-        </nav>
+      <a href="contact.html" class="relative group py-2 hover:text-blue-600 transition-colors">
+        Contact
+        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+      </a>
+    </nav>
 
-        <button
-          id="mobile-btn"
-          class="md:hidden z-50 relative w-10 h-10 flex items-center justify-center text-slate-800 focus:outline-none transition-transform duration-300 active:scale-90"
-        >
-          <svg
-            id="menu-icon"
-            class="w-8 h-8 transition-transform duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            ></path>
-          </svg>
-        </button>
-      </div>
+    <button
+      id="mobile-btn"
+      class="md:hidden z-50 relative w-10 h-10 flex items-center justify-center text-slate-800 focus:outline-none transition-transform duration-300 active:scale-90"
+      data-aos="fade-down" data-aos-delay="100"
+    >
+      <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
 
-      <div
-        id="mobile-menu"
-        class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-500"
-      >
-        <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
+  <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-500">
+    <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
 
-        <div
-          class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"
-        ></div>
-        <div
-          class="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"
-        ></div>
-
-        <div
-          class="relative z-50 h-full flex flex-col items-center justify-center gap-6"
-          id="mobile-links-container"
-        >
-          <a
-            href="#"
-            class="mobile-link text-3xl font-bold text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500"
-            >Home</a
-          >
-          <a
-            href="about.html"
-            class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500"
-            >About</a
-          >
-          <a
-            href="#ourteam"
-            class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500"
-            >Our Team</a
-          >
-          <a
-            href="services.html"
-            class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500"
-            >Services</a
-          >
-          <a
-            href="contact.html"
-            class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500"
-            >Contact</a
-          >
-        </div>
-      </div>
-    </header>
-
-    <!-- ADHD SUB NAV -->
-    <div class="relative bg-gradient-to-r from-white to-[#f6f9ff]">
-      <div
-        class="max-w-[1440px] mx-auto px-6 lg:px-20 py-4 flex gap-10 text-sm text-gray-700 overflow-x-auto whitespace-nowrap justify-start lg:justify-center adhd-scroll"
-      >
-        <span>ADHD Management</span>
-        <span>Behavioral Challenges</span>
-        <span>Learning Disabilities</span>
-        <span>Emotional Well-Being</span>
-        <span>Speech & Language Development</span>
-      </div>
-
-      <!-- LEFT GRADIENT -->
-      <div
-        class="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#f6f9ff] to-transparent"
-      ></div>
-
-      <!-- RIGHT GRADIENT -->
-      <div
-        class="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#f6f9ff] to-transparent"
-      ></div>
+    <div class="relative z-50 h-full flex flex-col items-center justify-center gap-6" id="mobile-links-container">
+      <a href="#" class="mobile-link text-3xl font-bold text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Home</a>
+      <a href="about.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">About</a>
+      <a href="#ourteam" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Our Team</a>
+      <a href="services.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Services</a>
+      <a href="contact.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Contact</a>
     </div>
+  </div>
+</header>
 
-    <!-- HERO -->
-    <section id="hero" class="relative overflow-hidden">
-      <div
-        class="max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
-      >
-        <!-- TEXT -->
-        <div
-          id="hero-text"
-          class="transition-all duration-700 opacity-100 translate-y-0"
+<div class="relative bg-gradient-to-r from-white to-[#f6f9ff]  overflow-hidden" data-aos="fade-in" data-aos-delay="200">
+  <div class="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
+  <div class="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#f6f9ff] to-transparent z-10"></div>
+
+  <div class="flex md:hidden w-max animate-marquee items-center py-4">
+    <div class="flex gap-8 px-4">
+      <span class="nav-item">ADHD Management</span>
+      <span class="nav-item">Behavioral Challenges</span>
+      <span class="nav-item">Learning Disabilities</span>
+      <span class="nav-item">Emotional Well-Being</span>
+      <span class="nav-item">Speech & Language</span>
+    </div>
+    <div class="flex gap-8 px-4">
+      <span class="nav-item">ADHD Management</span>
+      <span class="nav-item">Behavioral Challenges</span>
+      <span class="nav-item">Learning Disabilities</span>
+      <span class="nav-item">Emotional Well-Being</span>
+      <span class="nav-item">Speech & Language</span>
+    </div>
+  </div>
+
+  <div class="hidden md:flex justify-center items-center gap-12 py-5 max-w-[1440px] mx-auto">
+    <a href="#" class="nav-item hover:text-blue-600 transition-colors">ADHD Management</a>
+    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Behavioral Challenges</a>
+    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Learning Disabilities</a>
+    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Emotional Well-Being</a>
+    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Speech & Language</a>
+  </div>
+</div>
+
+<style>
+  .nav-item {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #64748b;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+</style>
+
+<section id="hero" class="relative overflow-hidden bg-white">
+  <div class="max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    
+    <div id="hero-text" class="relative z-10 flex flex-col justify-center" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200">
+      
+      <div class="overflow-hidden mb-6">
+        <h1
+          id="hero-title"
+          class="text-6xl font-medium leading-tight transform translate-y-0 opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
         >
-          <h1 id="hero-title" class="text-6xl font-medium leading-tight mb-6">
-            Nurturing<br />
-            Young <span class="text-blue-600">Minds</span>
-          </h1>
+          Nurturing<br />
+          Young <span class="text-blue-600">Minds</span>
+        </h1>
+      </div>
 
-          <p id="hero-desc" class="text-gray-600 max-w-md mb-8">
-            Evidence-based clinical psychology for children and adolescents.
-          </p>
-
-          <a
-            href="#"
-            class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3"
-          >
-            Explore ↗
-          </a>
-        </div>
-
-        <!-- IMAGES -->
-        <div
-          class="flex gap-6 flex-col lg:flex-row items-center lg:items-start"
+      <div class="overflow-hidden mb-8">
+        <p
+          id="hero-desc"
+          class="text-gray-600 max-w-md transform translate-y-0 opacity-100 transition-all duration-1000 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
         >
-          <div
-            id="img1"
-            class="w-full max-w-[320px] h-[420px] overflow-hidden transition-all duration-700 opacity-100 translate-y-0"
-          >
-            <img src="images/hero1.jpg" class="w-full h-full object-cover" />
-          </div>
-
-          <div
-            id="img2"
-            class="w-full max-w-[320px] h-[420px] overflow-hidden transition-all duration-700 opacity-100 translate-y-0"
-          >
-            <img src="images/hero2.jpg" class="w-full h-full object-cover" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- after hero  -->
-    <section class="specialists">
-      <p class="specialists-text">
-        Specialists in Pediatric Care
-
-        <span class="pill-bg">
-          <img src="images/after hero_1.png" alt="" /> </span
-        >, Child Wellness, Vaccinations,
-
-        <span class="inline-image">
-          <img src="images/after hero_2.png" alt="" />
-        </span>
-
-        Growth &amp; Development,
-
-        <span class="inline-image">
-          <img src="images/after hero_3.png" alt="" />
-        </span>
-
-        Preventive Healthcare at Tera Clinic
-      </p>
-    </section>
-
-    <!-- welcome  -->
-    <section class="welcome-section">
-      <div class="welcome-container">
-        <!-- LEFT -->
-        <div class="welcome-left">
-          <div class="welcome-tag">
-            <span class="tag-line"></span>
-            <span class="tag-text">WELCOME TO TAHSEEL</span>
-          </div>
-
-          <h2 class="welcome-title">
-            Your Path to<br />
-            Better<br />
-            Health Start Here
-          </h2>
-        </div>
-
-        <!-- RIGHT -->
-        <div class="welcome-right">
-          <div class="customers">
-            <div class="avatars">
-              <img src="images/peple_circle1.png" alt="" />
-              <img src="images/peple_circle2.png" alt="" />
-              <img src="images/peple_circle3.png" alt="" />
-              <span class="avatar-plus">+</span>
-            </div>
-
-            <p class="customers-text">
-              <strong>We have 200+</strong> customers<br />
-              in the Middle East
-            </p>
-          </div>
-
-          <div class="welcome-content">
-            <p>
-              Evidence-based clinical psychology for children and adolescents.
-              We combine medical rigor with human compassion to support your
-              child's developmental journey.
-            </p>
-
-            <p>
-              Our mission is simple: To be the most reliable partner for
-              interior solutions, ensuring every carpet laid and every mattress.
-            </p>
-          </div>
-
-          <a href="#" class="read-more-btn">Read more</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- servises  -->
-    <section class="max-w-[1440px] mx-auto px-5 lg:px-20 py-[120px]">
-      <div
-        class="flex items-center justify-between mb-[64px] max-md:flex-col max-md:gap-6 max-md:items-start"
-      >
-        <h2 class="text-[48px] font-medium text-black max-md:text-[36px]">
-          Our Services
-        </h2>
-
-        <div class="flex gap-3">
-          <button
-            id="prevBtn"
-            class="w-12 h-12 rounded-full border border-blue-500 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300"
-          >
-            ←
-          </button>
-          <button
-            id="nextBtn"
-            class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300"
-          >
-            →
-          </button>
-        </div>
+          Evidence-based clinical psychology for children and adolescents.
+        </p>
       </div>
 
       <div class="overflow-hidden">
-        <div
-          id="servicesTrack"
-          class="flex transition-transform duration-700 ease-in-out"
+        <a
+          id="hero-btn"
+          href="#"
+          class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 transform translate-y-0 opacity-100 transition-all duration-1000 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1"
         >
-          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
-            <div
-              class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110"
-              >
-                <img
-                  src="https://unpkg.com/lucide-static/icons/stethoscope.svg"
-                  class="w-8 h-8 text-black"
-                />
-              </div>
-
-              <h3 class="text-[22px] font-medium mb-4">Vaccination services</h3>
-
-              <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
-                Speak directly with our wellness experts for immediate support
-                and guidance
-              </p>
-
-              <a
-                href="#"
-                class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all"
-              >
-                view more →
-              </a>
-            </div>
-          </div>
-
-          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
-            <div
-              class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110"
-              >
-                <img
-                  src="https://unpkg.com/lucide-static/icons/heart-pulse.svg"
-                  class="w-8 h-8"
-                />
-              </div>
-
-              <h3 class="text-[22px] font-medium mb-4">Child wellness</h3>
-
-              <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
-                Speak directly with our wellness experts for immediate support
-                and guidance
-              </p>
-
-              <a
-                href="#"
-                class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all"
-              >
-                view more →
-              </a>
-            </div>
-          </div>
-
-          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
-            <div
-              class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500"
-            >
-              <div
-                class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110"
-              >
-                <img
-                  src="https://unpkg.com/lucide-static/icons/activity.svg"
-                  class="w-8 h-8"
-                />
-              </div>
-
-              <h3 class="text-[22px] font-medium mb-4">Growth & Development</h3>
-
-              <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
-                Speak directly with our wellness experts for immediate support
-                and guidance
-              </p>
-
-              <a
-                href="#"
-                class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all"
-              >
-                view more →
-              </a>
-            </div>
-          </div>
-        </div>
+          Explore ↗
+        </a>
       </div>
+    </div>
+
+    <div class="flex gap-6 flex-col lg:flex-row items-center lg:items-start" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1200">
+      <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
+        <img
+          id="img1-el"
+          src="images/hero_1.png"
+          class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
+        />
+      </div>
+
+      <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
+        <img
+          id="img2-el"
+          src="images/hero_2.png"
+          class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] delay-200 ease-[cubic-bezier(0.25,1,0.5,1)]"
+        />
+      </div>
+    </div>
+
+  </div>
+</section>
+      <!-- after hero  -->
+<section class="w-full py-20 px-6 flex justify-center items-center overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center leading-relaxed specialist-text">
+            
+            <div data-aos="fade-up" data-aos-duration="800">
+                Specialists in Pediatric Care
+                
+                <span class="blue-pill group">
+                    <img src="images/after hero_1.png" alt="Doctor">
+                </span>
+                ,ChildWellness,
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" class="mt-2 md:mt-4">
+                Vaccinations, 
+                <img src="images/after hero_2.png" class="inline-pill" alt="Growth">
+                Growth & Development, 
+                <img src="images/after hero_3.png" class="inline-pill" alt="Preventive">
+            </div>
+
+            <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" class="mt-2 md:mt-4">
+                Preventive Healthcare at <span class="text-blue-700 font-semibold">Tera Clinic</span>
+            </div>
+
+        </div>
     </section>
 
-    <!-- care section  -->
-    <section class="w-full overflow-hidden">
-      <div
-        class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[620px]"
-      >
-        <div class="relative h-[400px] lg:h-auto">
-          <img
-            src="images/care.png"
-            alt="Care"
-            class="absolute inset-0 w-full h-full object-cover"
-          />
+  
+    
 
-          <div
-            class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/40 to-transparent flex px-8 lg:px-20"
-          >
-            <h2
-              class="text-white text-4xl lg:text-[56px] leading-tight font-medium py-10"
-            >
-              Care That<br />
-              Brings<br />
-              Back Smiles
-            </h2>
-          </div>
-        </div>
-
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:border-l border-gray-100"
-        >
-          <div
-            class="group p-10 lg:p-16 border-b border-gray-100 sm:border-r hover:bg-gray-50 transition-all duration-300 cursor-pointer"
-          >
-            <div class="mb-6">
-              <svg
-                class="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M4 12h6l2-4 2 8 2-4h4" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-medium text-gray-900 leading-snug">
-              Child & Adolescent<br class="hidden sm:block" />
-              Psychology
-            </h3>
-          </div>
-
-          <div
-            class="group p-10 lg:p-16 border-b border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
-          >
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              viewBox="0 0 24 24"
-            >
-              <rect x="3" y="3" width="18" height="18" rx="2" />
-              <path d="M12 8v8M8 12h8" />
-            </svg>
-            <h3 class="text-xl font-medium text-gray-900 leading-snug">
-              Clinical Psychology &<br class="hidden sm:block" />
-              Counseling
-            </h3>
-          </div>
-
-          <div
-            class="group p-10 lg:p-16 border-b sm:border-b-0 sm:border-r border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
-          >
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              viewBox="0 0 24 24"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" />
-              <path d="M8 2v4M16 2v4" />
-            </svg>
-            <h3 class="text-xl font-medium text-gray-900 leading-snug">
-              Family Therapy &<br class="hidden sm:block" />
-              Parenting Guidance
-            </h3>
-          </div>
-
-          <div
-            class="group p-10 lg:p-16 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
-          >
-            <svg
-              class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 21s-6-4.35-6-9a3.5 3.5 0 016-2 3.5 3.5 0 016 2c0 4.65-6 9-6 9z"
-              />
-            </svg>
-            <h3 class="text-xl font-medium text-gray-900 leading-snug">
-              Behavioral Therapy &<br class="hidden sm:block" />
-              Intervention
-            </h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- diffrent  -->
-    <section
-      class="max-w-[1440px] mx-auto px-6 lg:px-10 py-24 lg:py-32 bg-white"
-    >
-      <!-- Heading -->
-      <div class="text-center mb-16 lg:mb-24">
-        <h2 class="text-3xl lg:text-4xl font-semibold text-blue-600">
-          The Tera Wellbeing Difference
-        </h2>
-        <p class="mt-3 text-gray-600">Our Promise of Care</p>
+      <!-- welcome  -->
+<section class="welcome-section">
+  <div class="welcome-container">
+    
+    <div class="welcome-left">
+      <div class="welcome-tag" data-aos="fade-up">
+        <span class="tag-line"></span>
+        <span class="tag-text">WELCOME TO TERA</span>
       </div>
 
-      <div
-        class="flex flex-col lg:grid lg:grid-cols-[1fr_520px_1fr] lg:gap-x-24 items-start relative"
-      >
-        <!-- LEFT COLUMN -->
-        <div
-          class="flex flex-col gap-12 lg:gap-40 order-2 lg:order-1 w-full lg:text-left mt-16 lg:mt-0"
-        >
-          <div class="max-w-[280px] mx-auto lg:mr-0">
-            <div
-              class="text-blue-600 mb-4 flex justify-center lg:justify-start"
-            >
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M4 6a2 2 0 012-2h12v16H6a2 2 0 01-2-2z" />
-              </svg>
-            </div>
-            <h4 class="font-semibold text-lg mb-2 text-black">
-              Innovative Quality
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Bringing Trusted, Modern Care Closer to Your Family
-            </p>
-          </div>
+      <h2 class="welcome-title" data-aos="fade-up" data-aos-delay="100">
+        Your Path to<br />
+        Better<br />
+        <span style="color: #2563eb;">Health Starts Here</span>
+      </h2>
+    </div>
 
-          <div class="max-w-[280px] mx-auto lg:mr-0">
-            <div
-              class="text-blue-600 mb-4 flex justify-center lg:justify-start"
-            >
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <h4 class="font-semibold text-lg mb-2 text-black">
-              Standard Treatment
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              We follow evidence-based medical protocols to ensure safe care.
-            </p>
-          </div>
+    <div class="welcome-right">
+      
+      <div class="customers" data-aos="fade-up" data-aos-delay="200">
+        <div class="avatars group"> <img src="images/peple_circle1.png" alt="" />
+          <img src="images/peple_circle2.png" alt="" />
+          <img src="images/peple_circle3.png" alt="" />
+          <span class="avatar-plus">+</span>
         </div>
 
-        <!-- CENTER IMAGE -->
-        <div class="relative order-1 lg:order-2 w-full max-w-[520px] mx-auto">
-          <!-- Decorative Squares -->
-          <span
-            class="absolute -top-6 -left-6 lg:-top-10 lg:-left-10 w-12 h-12 bg-blue-900 z-10"
-          ></span>
-          <span
-            class="absolute -top-3 -left-3 lg:-top-0 lg:-left-0 w-12 h-12 bg-blue-500 z-10"
-          ></span>
-
-          <img
-            src="images/diffrence.png"
-            alt="Care"
-            class="w-full h-auto relative z-0"
-          />
-
-          <span
-            class="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 w-12 h-12 bg-blue-900 z-10"
-          ></span>
-          <span
-            class="absolute -bottom-1 -right-1 lg:-bottom-0 lg:-right-0 w-10 h-10 lg:w-12 lg:h-12 bg-blue-500 z-10"
-          ></span>
-
-          <div
-            class="absolute left-1/2 -translate-x-1/2 lg:left-[-50px] lg:translate-x-0 bottom-[-70px] lg:bottom-[0px] max-w-[300px] p-6 z-20"
-          >
-            <div class="text-blue-600 mb-3">
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M5.5 21a6.5 6.5 0 0113 0" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-            </div>
-
-            <h4 class="font-semibold text-lg mb-2 text-black">
-              Patient Experience
-            </h4>
-
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Your child’s comfort and your peace of mind matter to us.
-            </p>
-          </div>
-        </div>
-
-        <!-- RIGHT COLUMN -->
-        <div
-          class="flex flex-col gap-12 lg:gap-40 order-3 w-full mt-24 lg:mt-0 lg:pt-20"
-        >
-          <div class="max-w-[280px] mx-auto lg:ml-0">
-            <div
-              class="text-blue-600 mb-4 flex justify-center lg:justify-start"
-            >
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z" />
-              </svg>
-            </div>
-            <h4 class="font-semibold text-lg mb-2 text-black">
-              Infection Prevention
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              We maintain strict hygiene and infection-control practices.
-            </p>
-          </div>
-
-          <div class="max-w-[280px] mx-auto lg:ml-0">
-            <div
-              class="text-blue-600 mb-4 flex justify-center lg:justify-start"
-            >
-              <svg
-                class="w-7 h-7"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="1.8"
-                viewBox="0 0 24 24"
-              >
-                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3" />
-              </svg>
-            </div>
-            <h4 class="font-semibold text-lg mb-2 text-black">
-              Quality Health Services
-            </h4>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              Our services meet established healthcare standards.
-            </p>
-          </div>
-        </div>
+        <p class="customers-text">
+          <strong>We have 200+</strong> customers<br />
+          in the Middle East
+        </p>
       </div>
-    </section>
 
-    <!-- collabration  -->
-    <section
-      class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24 lg:py-32 my-24 overflow-hidden"
-    >
-      <div
-        class="grid grid-cols-1 lg:grid-cols-[360px_1fr] items-center gap-12 lg:gap-20"
-      >
-        <div class="text-center lg:text-left">
-          <h2
-            class="text-4xl lg:text-[48px] font-medium leading-tight text-[#1f6fb8]"
-          >
-            Institutional<br class="hidden lg:block" />
-            Collaborations
-          </h2>
+      <div class="welcome-content">
+        <p data-aos="fade-up" data-aos-delay="300">
+          Evidence-based clinical psychology for children and adolescents.
+          We combine medical rigor with human compassion to support your
+          child's developmental journey.
+        </p>
 
-          <a
-            href="#"
-            class="inline-block mt-8 text-base font-semibold text-black underline underline-offset-8 transition-opacity hover:opacity-70"
-          >
-            See All Partners →
+        <p data-aos="fade-up" data-aos-delay="400">
+          Our mission is simple: To be the most reliable partner for
+          interior solutions, ensuring every carpet laid and every
+          mattress.
+        </p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="500">
+        <a href="#" class="read-more-btn">Read more ↗</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- servises  -->
+<section class="max-w-[1440px] mx-auto px-5 lg:px-20 py-[120px] overflow-hidden">
+  
+  <div class="flex items-center justify-between mb-[64px] max-md:flex-col max-md:gap-6 max-md:items-start">
+    <h2 class="text-[48px] font-medium text-black max-md:text-[36px]" data-aos="fade-up">
+      Our Services
+    </h2>
+
+    <div class="flex gap-3" data-aos="fade-up" data-aos-delay="100">
+      <button id="prevBtn" class="w-12 h-12 rounded-full border border-blue-500 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50">
+        ←
+      </button>
+      <button id="nextBtn" class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300">
+        →
+      </button>
+    </div>
+  </div>
+
+  <div class="overflow-hidden">
+    <div id="servicesTrack" class="flex transition-transform duration-700 ease-in-out">
+      
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500">
+          <div class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110">
+            <img src="https://unpkg.com/lucide-static/icons/stethoscope.svg" class="w-8 h-8 text-black" />
+          </div>
+          <h3 class="text-[22px] font-medium mb-4">Vaccination services</h3>
+          <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
+            Speak directly with our wellness experts for immediate support and guidance
+          </p>
+          <a href="#" class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all">
+            view more →
           </a>
         </div>
+      </div>
 
-        <div
-          class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-16 lg:gap-y-14 place-items-center opacity-80"
-        >
-          <img
-            src="images/sky-removebg-preview 2.png"
-            alt="Skyborn Modern"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
-
-          <img
-            src="images/tera logo.png"
-            alt="Tera Wellbeing"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
-
-          <img
-            src="images/Untitled-2 2.png"
-            alt="Istore Digital"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
-
-          <img
-            src="images/sky-removebg-preview 2.png"
-            alt="Skyborn Modern"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
-
-          <img
-            src="images/tera logo.png"
-            alt="Tera Wellbeing"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
-
-          <img
-            src="images/Untitled-2 2.png"
-            alt="Istore Digital"
-            class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-          />
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500">
+          <div class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110">
+            <img src="https://unpkg.com/lucide-static/icons/heart-pulse.svg" class="w-8 h-8" />
+          </div>
+          <h3 class="text-[22px] font-medium mb-4">Child wellness</h3>
+          <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
+            Speak directly with our wellness experts for immediate support and guidance
+          </p>
+          <a href="#" class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all">
+            view more →
+          </a>
         </div>
       </div>
-    </section>
 
-    <!-- consoltation  -->
-    <section class="w-full">
-      <div class="grid grid-cols-2 min-h-[520px] max-md:grid-cols-1">
-        <!-- LEFT -->
-        <div
-          class="relative overflow-hidden px-20 py-20 text-white bg-gradient-to-b from-[#0b1730] to-[#0a1324] max-md:px-6 max-md:py-16"
-        >
-          <h3 class="text-[36px] font-medium leading-tight mb-6">
-            Online<br />consultation
-          </h3>
-
-          <p class="max-w-[520px] text-[16px] leading-[1.7] opacity-90 mb-10">
-            Never delay your child’s health care. Our telemedicine consultation
-            allows you to connect with experienced doctors from home and receive
-            timely, reliable medical advice whenever needed.
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500">
+          <div class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110">
+            <img src="https://unpkg.com/lucide-static/icons/activity.svg" class="w-8 h-8" />
+          </div>
+          <h3 class="text-[22px] font-medium mb-4">Growth & Development</h3>
+          <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
+            Speak directly with our wellness experts for immediate support and guidance
           </p>
+          <a href="#" class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all">
+            view more →
+          </a>
+        </div>
+      </div>
 
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4">
+        <div class="h-full border border-neutral-300 p-10 flex flex-col group hover:border-blue-500 hover:bg-blue-50/30 transition-all duration-500">
+          <div class="w-12 h-12 flex items-center justify-start mb-8 transition-transform duration-500 group-hover:scale-110">
+            <img src="https://unpkg.com/lucide-static/icons/brain-circuit.svg" class="w-8 h-8" />
+          </div>
+          <h3 class="text-[22px] font-medium mb-4">Psychology</h3>
+          <p class="text-[16px] text-neutral-600 leading-[1.6] mb-auto">
+            Speak directly with our wellness experts for immediate support and guidance
+          </p>
+          <a href="#" class="mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:gap-5 group-hover:text-blue-600 transition-all">
+            view more →
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('servicesTrack');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+
+    // Helper to check screen size
+    function getItemsPerScreen() {
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 768) return 2;
+      return 1;
+    }
+
+    function updateCarousel() {
+      const itemsPerScreen = getItemsPerScreen();
+      const cardWidth = 100 / itemsPerScreen;
+      track.style.transform = `translateX(-${currentIndex * cardWidth}%)`;
+
+      // Disable/Enable Buttons
+      const totalItems = track.children.length;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+      nextBtn.style.opacity = currentIndex >= (totalItems - itemsPerScreen) ? "0.5" : "1";
+    }
+
+    nextBtn.addEventListener('click', () => {
+      const itemsPerScreen = getItemsPerScreen();
+      if (currentIndex < track.children.length - itemsPerScreen) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      currentIndex = 0;
+      updateCarousel();
+    });
+    
+    // Init
+    updateCarousel();
+  });
+</script>
+
+      <!-- care section  -->
+<section class="w-full overflow-hidden border-t border-gray-100">
+  <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[620px]">
+    
+    <div class="relative h-[400px] lg:h-auto" data-aos="fade-right">
+      <img
+        src="images/care.png"
+        alt="Care"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+
+      <div class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/40 to-transparent flex px-8 lg:px-20 items-center lg:items-end lg:pb-20">
+        <h2 class="text-white text-4xl lg:text-[56px] leading-tight font-medium" data-aos="fade-up" data-aos-delay="200">
+          Care That<br />
+          Brings<br />
+          Back Smiles
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:border-l border-gray-100">
+      
+      <div class="group p-10 lg:p-16 border-b border-gray-100 sm:border-r hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
+           data-aos="fade-up" data-aos-delay="100">
+        <div class="mb-6">
+          <svg class="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path d="M4 12h6l2-4 2 8 2-4h4" />
+          </svg>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+          Child & Adolescent<br class="hidden sm:block" />
+          Psychology
+        </h3>
+      </div>
+
+      <div class="group p-10 lg:p-16 border-b border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
+           data-aos="fade-up" data-aos-delay="200">
+        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M12 8v8M8 12h8" />
+        </svg>
+        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+          Clinical Psychology &<br class="hidden sm:block" />
+          Counseling
+        </h3>
+      </div>
+
+      <div class="group p-10 lg:p-16 border-b sm:border-b-0 sm:border-r border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
+           data-aos="fade-up" data-aos-delay="300">
+        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <path d="M8 2v4M16 2v4" />
+        </svg>
+        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+          Family Therapy &<br class="hidden sm:block" />
+          Parenting Guidance
+        </h3>
+      </div>
+
+      <div class="group p-10 lg:p-16 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
+           data-aos="fade-up" data-aos-delay="400">
+        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path d="M12 21s-6-4.35-6-9a3.5 3.5 0 016-2 3.5 3.5 0 016 2c0 4.65-6 9-6 9z" />
+        </svg>
+        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+          Behavioral Therapy &<br class="hidden sm:block" />
+          Intervention
+        </h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- diffrent  -->
+<section
+  class="max-w-[1440px] mx-auto px-6 lg:px-10 py-24 lg:py-32 bg-white overflow-hidden"
+>
+  <div class="text-center mb-16 lg:mb-24" data-aos="fade-up">
+    <h2 class="text-3xl lg:text-4xl font-semibold text-blue-600">
+      The Tera Wellbeing Difference
+    </h2>
+    <p class="mt-3 text-gray-600">Our Promise of Care</p>
+  </div>
+
+  <div
+    class="flex flex-col lg:grid lg:grid-cols-[1fr_520px_1fr] lg:gap-x-24 items-start relative"
+  >
+    <div
+      class="flex flex-col gap-12 lg:gap-40 order-2 lg:order-1 w-full lg:text-left mt-16 lg:mt-0"
+    >
+      <div class="max-w-[280px] mx-auto lg:mr-0" data-aos="fade-right" data-aos-delay="200">
+        <div
+          class="text-blue-600 mb-4 flex justify-center lg:justify-start"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6a2 2 0 012-2h12v16H6a2 2 0 01-2-2z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2 text-black">
+          Innovative Quality
+        </h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Bringing Trusted, Modern Care Closer to Your Family
+        </p>
+      </div>
+
+      <div class="max-w-[280px] mx-auto lg:mr-0" data-aos="fade-right" data-aos-delay="300">
+        <div
+          class="text-blue-600 mb-4 flex justify-center lg:justify-start"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2 text-black">
+          Standard Treatment
+        </h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          We follow evidence-based medical protocols to ensure safe care.
+        </p>
+      </div>
+    </div>
+
+    <div 
+      class="relative order-1 lg:order-2 w-full max-w-[520px] mx-auto"
+      data-aos="zoom-in" 
+      data-aos-duration="1000"
+    >
+      <span
+        class="absolute -top-6 -left-6 lg:-top-10 lg:-left-10 w-12 h-12 bg-blue-900 z-10"
+      ></span>
+      <span
+        class="absolute -top-3 -left-3 lg:-top-0 lg:-left-0 w-12 h-12 bg-blue-500 z-10"
+      ></span>
+
+      <img
+        src="images/diffrence.png"
+        alt="Care"
+        class="w-full h-auto relative z-0"
+      />
+
+      <span
+        class="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 w-12 h-12 bg-blue-900 z-10"
+      ></span>
+      <span
+        class="absolute -bottom-1 -right-1 lg:-bottom-0 lg:-right-0 w-10 h-10 lg:w-12 lg:h-12 bg-blue-500 z-10"
+      ></span>
+
+      <div
+        class="absolute left-1/2 -translate-x-1/2 lg:left-[-50px] lg:translate-x-0 bottom-[-70px] lg:bottom-[0px] max-w-[300px] p-6 z-20"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
+        <div class="text-blue-600 mb-3">
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5.5 21a6.5 6.5 0 0113 0" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+
+        <h4 class="font-semibold text-lg mb-2 text-black">
+          Patient Experience
+        </h4>
+
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Your child’s comfort and your peace of mind matter to us.
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="flex flex-col gap-12 lg:gap-40 order-3 w-full mt-24 lg:mt-0 lg:pt-20"
+    >
+      <div class="max-w-[280px] mx-auto lg:ml-0" data-aos="fade-left" data-aos-delay="200">
+        <div
+          class="text-blue-600 mb-4 flex justify-center lg:justify-start"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2 text-black">
+          Infection Prevention
+        </h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          We maintain strict hygiene and infection-control practices.
+        </p>
+      </div>
+
+      <div class="max-w-[280px] mx-auto lg:ml-0" data-aos="fade-left" data-aos-delay="300">
+        <div
+          class="text-blue-600 mb-4 flex justify-center lg:justify-start"
+        >
+          <svg
+            class="w-7 h-7"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2 text-black">
+          Quality Health Services
+        </h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Our services meet established healthcare standards.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- collabration  -->
+<section
+  class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24 lg:py-32 my-24 overflow-hidden"
+>
+  <div
+    class="grid grid-cols-1 lg:grid-cols-[360px_1fr] items-center gap-12 lg:gap-20"
+  >
+    <div class="text-center lg:text-left" data-aos="fade-right" data-aos-delay="0">
+      <h2
+        class="text-4xl lg:text-[48px] font-medium leading-tight text-[#1f6fb8]"
+      >
+        Institutional<br class="hidden lg:block" />
+        Collaborations
+      </h2>
+
+      <a
+        href="#"
+        class="inline-block mt-8 text-base font-semibold text-black underline underline-offset-8 transition-opacity hover:opacity-70"
+        data-aos="fade-up" 
+        data-aos-delay="200"
+      >
+        See All Partners →
+      </a>
+    </div>
+
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-16 lg:gap-y-14 place-items-center opacity-80"
+    >
+      <img
+        src="images/sky-removebg-preview 2.png"
+        alt="Skyborn Modern"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      />
+
+      <img
+        src="images/tera logo.png"
+        alt="Tera Wellbeing"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+      />
+
+      <img
+        src="images/Untitled-2 2.png"
+        alt="Istore Digital"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+      />
+
+      <img
+        src="images/sky-removebg-preview 2.png"
+        alt="Skyborn Modern"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="500"
+      />
+
+      <img
+        src="images/tera logo.png"
+        alt="Tera Wellbeing"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+      />
+
+      <img
+        src="images/Untitled-2 2.png"
+        alt="Istore Digital"
+        class="h-10 lg:h-14 w-auto max-w-[140px] lg:max-w-[160px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+        data-aos="zoom-in"
+        data-aos-delay="700"
+      />
+    </div>
+  </div>
+</section>
+
+      <!-- consoltation  -->
+<section class="w-full overflow-hidden">
+  <div class="grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
+    
+    <div class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-gradient-to-b from-[#0b1730] to-[#0a1324]">
+      
+      <div class="relative z-10">
+        <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up" data-aos-delay="0">
+          Online<br />consultation
+        </h3>
+
+        <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-slate-300" data-aos="fade-up" data-aos-delay="100">
+          Never delay your child’s health care. Our telemedicine
+          consultation allows you to connect with experienced doctors from
+          home and receive timely, reliable medical advice whenever needed.
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="200">
           <a
             href="#"
-            class="inline-block rounded-md bg-blue-500 px-6 py-3 text-sm font-medium hover:bg-blue-600 transition"
+            class="inline-block rounded-md bg-blue-600 px-8 py-3.5 text-sm font-semibold hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-900/50"
           >
             Book a Teleconsultation
           </a>
-
-          <!-- SVG WATERMARK -->
-          <svg
-            class="absolute bottom-[-40px] right-10 w-[220px] opacity-[0.08] max-md:w-[160px] max-md:right-4"
-            viewBox="0 0 200 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <rect
-              x="60"
-              y="20"
-              width="80"
-              height="160"
-              rx="16"
-              stroke="white"
-              stroke-width="8"
-            />
-            <polygon points="140,80 180,100 140,120" fill="white" />
-            <rect x="90" y="150" width="20" height="8" rx="4" fill="white" />
-          </svg>
         </div>
+      </div>
 
-        <!-- RIGHT -->
-        <div
-          class="relative overflow-hidden px-20 py-20 text-white bg-[#1f4e8c] max-md:px-6 max-md:py-16"
-        >
-          <h3 class="text-[36px] font-medium leading-tight mb-6">
-            Full time family<br />counsellor
-          </h3>
+      <img 
+        src="images/tele_icon.png" 
+        alt="" 
+        class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
+        data-aos="zoom-in"
+        data-aos-delay="300"
+        data-aos-duration="1500"
+      />
+    </div>
 
-          <p class="max-w-[520px] text-[16px] leading-[1.7] opacity-90 mb-10">
-            We provide professional home healthcare services focused on comfort,
-            safety, and personalized care. Our trained medical team delivers
-            quality treatment at your doorstep, ensuring continuous support and
-            peace of mind for your family.
-          </p>
+    <div class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-[#1f4e8c]">
+      
+      <div class="relative z-10">
+        <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
+          Full time family<br />counsellor
+        </h3>
 
+        <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-blue-100" data-aos="fade-up" data-aos-delay="200">
+          We provide professional home healthcare services focused on
+          comfort, safety, and personalized care. Our trained medical team
+          delivers quality treatment at your doorstep.
+        </p>
+
+        <div data-aos="fade-up" data-aos-delay="300">
           <a
             href="#"
-            class="inline-block rounded-md bg-blue-500 px-6 py-3 text-sm font-medium hover:bg-blue-600 transition"
+            class="inline-block rounded-md bg-blue-500 px-8 py-3.5 text-sm font-semibold hover:bg-blue-400 transition-all duration-300 shadow-lg shadow-blue-900/20"
           >
             Know More
           </a>
+        </div>
+      </div>
 
-          <!-- SVG WATERMARK -->
-          <svg
-            class="absolute bottom-[-40px] right-10 w-[220px] opacity-[0.08] max-md:w-[160px] max-md:right-4"
-            viewBox="0 0 200 200"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
+      <img 
+        src="images/home_icon.png" 
+        alt="" 
+        class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
+        data-aos="zoom-in"
+        data-aos-delay="400"
+        data-aos-duration="1500"
+      />
+    </div>
+  </div>
+</section>
+
+      <!-- expert care  -->
+<section
+  class="bg-gradient-to-br from-[#bcdcff] to-[#e9f4ff] px-6 lg:px-20 py-[80px] lg:py-[120px] overflow-hidden"
+>
+  <div
+    class="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px]"
+  >
+    <div>
+      <h1 
+        class="text-[40px] lg:text-[64px] leading-[1.05] mb-10"
+        data-aos="fade-right"
+        data-aos-delay="0"
+      >
+        <span class="font-bold text-black">Expert care</span><br />
+        <span class="font-normal text-gray-600">for your</span><br />
+        <span class="font-bold text-black">children</span>
+      </h1>
+
+      <div
+        class="relative w-[260px] rounded-xl overflow-hidden group cursor-pointer shadow-lg shadow-blue-900/10"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+        data-aos-duration="1000"
+      >
+        <img
+          src="images/expert.png"
+          alt="Clinic"
+          class="w-full grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+        />
+
+        <span
+          class="absolute bottom-4 left-4 text-white text-[13px] leading-tight font-medium drop-shadow-md"
+        >
+          Watch more about<br />our clinic
+        </span>
+
+        <span
+          class="absolute bottom-4 right-4 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black/70 text-white text-sm transition-transform duration-300 group-hover:scale-110 backdrop-blur-sm"
+        >
+          ▶
+        </span>
+      </div>
+    </div>
+
+    <div class="flex flex-col divide-y divide-black/10">
+      
+      <details name="care-services" class="group py-6" open data-aos="fade-up" data-aos-delay="100">
+        <summary
+          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
+        >
+          Autism Spectrum Disorders
+          <span
+            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
-            <path
-              d="M30 90 L100 30 L170 90 V170 H30 Z"
-              stroke="white"
-              stroke-width="8"
-              fill="none"
-            />
-            <path
-              d="M100 140
-                  C85 120, 60 120, 60 95
-                  C60 75, 85 65, 100 85
-                  C115 65, 140 75, 140 95
-                  C140 120, 115 120, 100 140 Z"
-              fill="white"
-            />
+            ↘
+          </span>
+        </summary>
+        <p
+          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
+        >
+          Comprehensive assessment and individualized therapy plans
+          designed to support children with autism spectrum disorders and
+          their families.
+        </p>
+      </details>
+
+      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="200">
+        <summary
+          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
+        >
+          Developmental Delay Support
+          <span
+            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
+          >
+            ↘
+          </span>
+        </summary>
+        <p
+          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
+        >
+          Early identification and intervention programs to enhance
+          cognitive, emotional, and social development.
+        </p>
+      </details>
+
+      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="300">
+        <summary
+          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
+        >
+          Behavioral Therapy
+          <span
+            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
+          >
+            ↘
+          </span>
+        </summary>
+        <p
+          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
+        >
+          Evidence-based behavioral interventions that promote positive
+          behavior and emotional regulation.
+        </p>
+      </details>
+
+      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="400">
+        <summary
+          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
+        >
+          Child Psychology Care
+          <span
+            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
+          >
+            ↘
+          </span>
+        </summary>
+        <p
+          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
+        >
+          Personalized psychological care focused on mental well-being,
+          confidence building, and emotional resilience.
+        </p>
+      </details>
+
+      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="500">
+        <summary
+          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
+        >
+          Family Counseling
+          <span
+            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
+          >
+            ↘
+          </span>
+        </summary>
+        <p
+          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
+        >
+          Collaborative counseling sessions to support families and
+          strengthen parent-child relationships.
+        </p>
+      </details>
+    </div>
+  </div>
+</section>
+      <!-- care process  -->
+<section class="bg-[#1f6fb8] text-white py-[120px] overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+    
+    <div class="text-center mb-[96px]" data-aos="fade-down" data-aos-duration="1000">
+      <div class="flex items-center justify-center gap-3 mb-4 opacity-80">
+        <span class="w-8 h-[1px] bg-white"></span>
+        <span class="uppercase tracking-widest text-[12px] font-bold">Our Workflow</span>
+        <span class="w-8 h-[1px] bg-white"></span>
+      </div>
+      <h2 class="text-[40px] md:text-[48px] font-medium tracking-tight leading-tight">
+        Our Care Process
+      </h2>
+      <p class="mt-4 text-[18px] opacity-90 font-light">
+        Thoughtful Care, From Start to Finish
+      </p>
+    </div>
+
+    <div class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-20 md:gap-x-12">
+      
+      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="100">
+        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19h16M4 5h16M8 5v14M16 5v14" />
+          </svg>
+        </div>
+
+        <h4 class="text-[20px] font-bold mb-4">Understanding You</h4>
+
+        <p class="text-[15px] leading-relaxed opacity-80 px-4">
+          We begin by carefully understanding your child’s health
+          concerns, detailed medical history, and specific individual
+          needs to ensure we have a comprehensive foundation for care.
+        </p>
+
+        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
           </svg>
         </div>
       </div>
-    </section>
 
-    <!-- expert care  -->
-    <section
-      class="bg-gradient-to-br from-[#bcdcff] to-[#e9f4ff] px-20 py-[120px] max-md:px-5"
+      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="300">
+        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+            <polyline points="10 9 9 9 8 9"></polyline>
+          </svg>
+        </div>
+
+        <h4 class="text-[20px] font-bold mb-4">Professional Assessment</h4>
+
+        <p class="text-[15px] leading-relaxed opacity-80 px-4">
+          Our specialized doctors conduct a rigorous assessment of all
+          physical symptoms and psychological patterns to establish an
+          accurate, evidence-based diagnosis for your child.
+        </p>
+
+        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 Q25,20 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="500">
+        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+        </div>
+
+        <h4 class="text-[20px] font-bold mb-4">Personalized Care</h4>
+
+        <p class="text-[15px] leading-relaxed opacity-80 px-4">
+          Once the assessment is complete, we design a bespoke treatment
+          plan that incorporates therapy and clinical support specifically
+          tailored to your child's unique developmental needs.
+        </p>
+
+        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+            <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="text-center group" data-aos="fade-up" data-aos-delay="700">
+        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+
+        <h4 class="text-[20px] font-bold mb-4">Continuous Support</h4>
+
+        <p class="text-[15px] leading-relaxed opacity-80 px-4">
+          Our commitment doesn't end after treatment; we provide ongoing
+          monitoring and emotional support to ensure long-term wellbeing
+          and sustained recovery for your family.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- doctors  -->
+<section id="ourteam" class="bg-[#1f6fb8] py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-8">
+    
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
+      
+      <div data-aos="fade-right">
+        <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
+          <svg width="34" height="10" viewBox="0 0 34 10" fill="none">
+            <path d="M1 5C5 1 9 9 13 5C17 1 21 9 25 5C29 1 33 9 33 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          Our Experts
+        </div>
+        <h2 class="text-white text-3xl md:text-[36px] font-medium leading-tight">
+          Meet Our Trusted Psychologists
+        </h2>
+      </div>
+
+      <div class="flex gap-3" data-aos="fade-left" data-aos-delay="200">
+        <button
+          onclick="scrollGrid(-1)"
+          class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95"
+        >
+          ‹
+        </button>
+        <button
+          onclick="scrollGrid(1)"
+          class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95"
+        >
+          ›
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="expertGrid"
+      class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 transition-transform duration-500"
+      style="-ms-overflow-style: none; scrollbar-width: none"
     >
-      <div
-        class="mx-auto max-w-[1440px] grid grid-cols-2 gap-[100px] max-lg:grid-cols-1 max-lg:gap-[60px]"
+      
+      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="200">
+        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+          <img src="images/doc1.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
+          <div class="absolute bottom-0 w-full px-6 pb-6">
+            <div class="flex justify-between items-end">
+              <div>
+                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Jamie Oliver</h4>
+                <p class="text-gray-600 text-sm mt-1">Therapy Expert</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                ↗
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="300">
+        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+          <img src="images/doc2.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
+          <div class="absolute bottom-0 w-full px-6 pb-6">
+            <div class="flex justify-between items-end">
+              <div>
+                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Sarah Smith</h4>
+                <p class="text-gray-600 text-sm mt-1">Clinical Expert</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                ↗
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="400">
+        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+          <img src="images/doc3.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
+          <div class="absolute bottom-0 w-full px-6 pb-6">
+            <div class="flex justify-between items-end">
+              <div>
+                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Mark Wilson</h4>
+                <p class="text-gray-600 text-sm mt-1">Child Specialist</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                ↗
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="500">
+        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+          <img src="images/doc4.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
+          <div class="absolute bottom-0 w-full px-6 pb-6">
+            <div class="flex justify-between items-end">
+              <div>
+                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Emily Blunt</h4>
+                <p class="text-gray-600 text-sm mt-1">Behavior Expert</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                ↗
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="600">
+        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+          <img src="images/doc1.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
+          <div class="absolute bottom-0 w-full px-6 pb-6">
+            <div class="flex justify-between items-end">
+              <div>
+                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Alan Rick</h4>
+                <p class="text-gray-600 text-sm mt-1">Consultant</p>
+              </div>
+              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                ↗
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8" data-aos="fade-up" data-aos-delay="400">
+      
+      <div class="flex gap-2">
+        <span class="dot w-8 h-[2px] bg-white transition-all duration-300"></span>
+        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+      </div>
+
+      <a href="#" class="text-white text-sm hover:underline flex items-center gap-2">
+        See All Doctors ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+
+      <style>
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      </style>
+
+      <!-- appoiment  -->
+ <section class="bg-[#1f6fb8] text-white px-6 py-20 lg:px-20 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+    
+    <div class="order-2 lg:order-1 text-center lg:text-left" data-aos="fade-right" data-aos-delay="0">
+      <h3 class="text-4xl lg:text-[56px] font-medium leading-[1.1] mb-8">
+        Book An<br class="hidden lg:block" />
+        Appointment
+      </h3>
+
+      <a
+        href="#"
+        class="appointment-link group inline-flex items-center gap-2 text-base font-medium pb-1 border-b-2 border-white/30 hover:border-white transition-all duration-300"
+        data-aos="fade-up" 
+        data-aos-delay="200"
       >
-        <div>
-          <h1 class="text-[64px] leading-[1.05] mb-10 max-md:text-[40px]">
-            <span class="font-bold text-black">Expert care</span><br />
-            <span class="font-normal text-gray-600">for your</span><br />
-            <span class="font-bold text-black">children</span>
-          </h1>
+        Book An Appointment
+        <span class="transition-transform duration-300 arrow-icon group-hover:translate-x-1 group-hover:-translate-y-1">
+          ↗
+        </span>
+      </a>
+    </div>
 
-          <div
-            class="relative w-[260px] rounded-xl overflow-hidden group cursor-pointer"
-          >
-            <img
-              src="images/expert.png"
-              alt="Clinic"
-              class="w-full grayscale transition-all duration-500 group-hover:grayscale-0"
-            />
+    <div class="order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+      <div class="relative group cursor-pointer">
+        <div class="absolute -inset-1 bg-white/20 rounded-[32px] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
 
-            <span
-              class="absolute bottom-4 left-4 text-white text-[13px] leading-tight"
-            >
-              Watch more about<br />our clinic
-            </span>
-
-            <span
-              class="absolute bottom-4 right-4 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black/70 text-white text-sm transition-transform duration-300 group-hover:scale-110"
-            >
-              ▶
-            </span>
-          </div>
-        </div>
-
-        <div class="flex flex-col divide-y divide-black/30">
-          <details name="care-services" class="group py-6" open>
-            <summary
-              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium"
-            >
-              Autism Spectrum Disorders
-              <span
-                class="transition-transform duration-300 group-open:rotate-45"
-              >
-                ↘
-              </span>
-            </summary>
-            <p
-              class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-700"
-            >
-              Comprehensive assessment and individualized therapy plans designed
-              to support children with autism spectrum disorders and their
-              families.
-            </p>
-          </details>
-
-          <details name="care-services" class="group py-6">
-            <summary
-              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium"
-            >
-              Developmental Delay Support
-              <span
-                class="transition-transform duration-300 group-open:rotate-45"
-              >
-                ↘
-              </span>
-            </summary>
-            <p
-              class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-700"
-            >
-              Early identification and intervention programs to enhance
-              cognitive, emotional, and social development.
-            </p>
-          </details>
-
-          <details name="care-services" class="group py-6">
-            <summary
-              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium"
-            >
-              Behavioral Therapy
-              <span
-                class="transition-transform duration-300 group-open:rotate-45"
-              >
-                ↘
-              </span>
-            </summary>
-            <p
-              class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-700"
-            >
-              Evidence-based behavioral interventions that promote positive
-              behavior and emotional regulation.
-            </p>
-          </details>
-
-          <details name="care-services" class="group py-6">
-            <summary
-              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium"
-            >
-              Child Psychology Care
-              <span
-                class="transition-transform duration-300 group-open:rotate-45"
-              >
-                ↘
-              </span>
-            </summary>
-            <p
-              class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-700"
-            >
-              Personalized psychological care focused on mental well-being,
-              confidence building, and emotional resilience.
-            </p>
-          </details>
-
-          <details name="care-services" class="group py-6">
-            <summary
-              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium"
-            >
-              Family Counseling
-              <span
-                class="transition-transform duration-300 group-open:rotate-45"
-              >
-                ↘
-              </span>
-            </summary>
-            <p
-              class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-700"
-            >
-              Collaborative counseling sessions to support families and
-              strengthen parent-child relationships.
-            </p>
-          </details>
-        </div>
+        <img
+          src="images/appoment.jpg"
+          alt="Book an appointment"
+          class="relative rounded-[24px] w-full h-[300px] lg:h-[450px] object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
+        />
       </div>
-    </section>
-    <!-- care process  -->
-    <section class="bg-[#1f6fb8] text-white py-[120px] overflow-hidden">
-      <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
-        <div class="text-center mb-[96px]">
-          <div class="flex items-center justify-center gap-3 mb-4 opacity-80">
-            <span class="w-8 h-[1px] bg-white"></span>
-            <span class="uppercase tracking-widest text-[12px] font-bold"
-              >Our Workflow</span
-            >
-            <span class="w-8 h-[1px] bg-white"></span>
-          </div>
-          <h2
-            class="text-[40px] md:text-[48px] font-medium tracking-tight leading-tight"
-          >
-            Our Care Process
-          </h2>
-          <p class="mt-4 text-[18px] opacity-90 font-light">
-            Thoughtful Care, From Start to Finish
-          </p>
-        </div>
+    </div>
+    
+  </div>
+</section>
 
-        <div
-          class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-20 md:gap-x-12"
-        >
-          <div class="relative text-center group">
-            <div
-              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#1f6fb8"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 19h16M4 5h16M8 5v14M16 5v14" />
-              </svg>
-            </div>
+      <style>
+        /* Hover animation for the arrow */
+        .appointment-link:hover .arrow-icon {
+          transform: translate(4px, -4px);
+        }
+      </style>
 
-            <h4 class="text-[20px] font-bold mb-4">Understanding You</h4>
+      <!-- testimonial  -->
 
-            <p class="text-[15px] leading-relaxed opacity-80 px-4">
-              We begin by carefully understanding your child’s health concerns,
-              detailed medical history, and specific individual needs to ensure
-              we have a comprehensive foundation for care.
-            </p>
+  <section class="py-12 lg:py-28 px-6 lg:px-20 overflow-hidden bg-white">
+  <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-20 items-center">
+    
+    <div class="z-30">
+      <span class="text-blue-600 text-sm block mb-4 font-semibold italic">〰 Testimonials</span>
+      <h2 class="text-4xl lg:text-5xl font-medium text-blue-600 leading-tight mb-6">
+        What Parents Say<br />About Us
+      </h2>
+      <p class="text-gray-700 leading-relaxed max-w-sm">
+        Caring doctors who listen.<br />
+        Supportive staff who understand.<br />
+        Families who feel safe with us.
+      </p>
+    </div>
 
-            <div
-              class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30"
-            >
-              <svg
-                width="100%"
-                height="20"
-                viewBox="0 0 100 20"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,10 Q25,0 50,10 T100,10"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-dasharray="4 6"
-                  fill="none"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div class="relative text-center group">
-            <div
-              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#1f6fb8"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                ></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-              </svg>
-            </div>
-
-            <h4 class="text-[20px] font-bold mb-4">Professional Assessment</h4>
-
-            <p class="text-[15px] leading-relaxed opacity-80 px-4">
-              Our specialized doctors conduct a rigorous assessment of all
-              physical symptoms and psychological patterns to establish an
-              accurate, evidence-based diagnosis for your child.
-            </p>
-
-            <div
-              class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30"
-            >
-              <svg
-                width="100%"
-                height="20"
-                viewBox="0 0 100 20"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,10 Q25,20 50,10 T100,10"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-dasharray="4 6"
-                  fill="none"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div class="relative text-center group">
-            <div
-              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#1f6fb8"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-              </svg>
-            </div>
-
-            <h4 class="text-[20px] font-bold mb-4">Personalized Care</h4>
-
-            <p class="text-[15px] leading-relaxed opacity-80 px-4">
-              Once the assessment is complete, we design a bespoke treatment
-              plan that incorporates therapy and clinical support specifically
-              tailored to your child's unique developmental needs.
-            </p>
-
-            <div
-              class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30"
-            >
-              <svg
-                width="100%"
-                height="20"
-                viewBox="0 0 100 20"
-                preserveAspectRatio="none"
-              >
-                <path
-                  d="M0,10 Q25,0 50,10 T100,10"
-                  stroke="white"
-                  stroke-width="2"
-                  stroke-dasharray="4 6"
-                  fill="none"
-                />
-              </svg>
-            </div>
-          </div>
-
-          <div class="text-center group">
-            <div
-              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]"
-            >
-              <svg
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#1f6fb8"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-              </svg>
-            </div>
-
-            <h4 class="text-[20px] font-bold mb-4">Continuous Support</h4>
-
-            <p class="text-[15px] leading-relaxed opacity-80 px-4">
-              Our commitment doesn't end after treatment; we provide ongoing
-              monitoring and emotional support to ensure long-term wellbeing and
-              sustained recovery for your family.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- doctors  -->
-    <section id="ourteam" class="bg-[#1f6fb8] py-24 overflow-hidden">
-      <div class="max-w-[1440px] mx-auto px-8">
-        <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6"
-        >
-          <div>
-            <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
-              <svg width="34" height="10" viewBox="0 0 34 10" fill="none">
-                <path
-                  d="M1 5C5 1 9 9 13 5C17 1 21 9 25 5C29 1 33 9 33 5"
-                  stroke="white"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-              Our Experts
-            </div>
-            <h2
-              class="text-white text-3xl md:text-[36px] font-medium leading-tight"
-            >
-              Meet Our Trusted Psychologists
-            </h2>
-          </div>
-
-          <div class="flex gap-3">
-            <button
-              onclick="scrollGrid(-1)"
-              class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer"
-            >
-              ‹
-            </button>
-            <button
-              onclick="scrollGrid(1)"
-              class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer"
-            >
-              ›
-            </button>
-          </div>
-        </div>
-
-        <div
-          id="expertGrid"
-          class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4"
-          style="-ms-overflow-style: none; scrollbar-width: none"
-        >
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc1.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Jamie Oliver
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Therapy Expert</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc2.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Sarah Smith
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Clinical Expert</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc3.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Mark Wilson
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Child Specialist</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc4.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Emily Blunt
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Behavior Expert</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc1.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Alan Rick
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Consultant</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc2.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Anna Joy
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Trauma Expert</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc3.jpg"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Kevin Hart
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Family Therapy</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group">
-            <div
-              class="relative h-[460px] rounded-[24px] overflow-hidden bg-white"
-            >
-              <img
-                src="images/doc4.png"
-                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-              />
-              <div
-                class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"
-              ></div>
-              <div class="absolute bottom-0 w-full px-6 pb-6">
-                <div class="flex justify-between items-end">
-                  <div>
-                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">
-                      Dr. Lisa Kudrow
-                    </h4>
-                    <p class="text-gray-600 text-sm mt-1">Expert Analyst</p>
-                  </div>
-                  <div
-                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform group-hover:rotate-45"
-                  >
-                    ↗
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div
-          class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8"
-        >
-          <div class="flex gap-2">
-            <span class="dot w-8 h-[2px] bg-white"></span>
-            <span class="dot w-8 h-[2px] bg-white/30"></span>
-            <span class="dot w-8 h-[2px] bg-white/30"></span>
-            <span class="dot w-8 h-[2px] bg-white/30"></span>
-          </div>
-          <a
-            href="#"
-            class="text-white text-sm hover:underline flex items-center gap-2"
-          >
-            See All Doctors ↗
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-      }
-      .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
-    </style>
-
-    <!-- appoiment  -->
-    <section
-      class="bg-[#1f6fb8] text-white px-6 py-20 lg:px-20 overflow-hidden"
-    >
-      <div
-        class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center"
-      >
-        <div class="order-2 lg:order-1 text-center lg:text-left">
-          <h3 class="text-4xl lg:text-[56px] font-medium leading-[1.1] mb-8">
-            Book An<br class="hidden lg:block" />
-            Appointment
-          </h3>
-
-          <a
-            href="#"
-            class="appointment-link inline-flex items-center gap-2 text-base font-medium pb-1 border-b-2 border-white/30 hover:border-white transition-all duration-300"
-          >
-            Book An Appointment
-            <span class="transition-transform duration-300 arrow-icon">↗</span>
-          </a>
-        </div>
-
-        <div class="order-1 lg:order-2">
-          <div class="relative group">
-            <div
-              class="absolute -inset-1 bg-white/10 rounded-[32px] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000"
-            ></div>
-
-            <img
-              src="images/appoment.jpg"
-              alt="Book an appointment"
-              class="relative rounded-[24px] w-full h-[300px] lg:h-[450px] object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Hover animation for the arrow */
-      .appointment-link:hover .arrow-icon {
-        transform: translate(4px, -4px);
-      }
-    </style>
-
-    <!-- testimonial  -->
-
-    <section class="py-12 lg:py-28 px-6 lg:px-20 overflow-hidden bg-white">
-      <div
-        class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-20 items-center"
-      >
-        <div class="z-50">
-          <span class="text-blue-600 text-sm block mb-4 font-semibold italic"
-            >〰 Testimonials</span
-          >
-          <h2
-            class="text-4xl lg:text-5xl font-medium text-blue-600 leading-tight mb-6"
-          >
-            What Parents Say<br />About Us
-          </h2>
-          <p class="text-gray-700 leading-relaxed max-w-sm">
-            Caring doctors who listen.<br />
-            Supportive staff who understand.<br />
-            Families who feel safe with us.
-          </p>
-        </div>
-
-        <div class="relative">
-          <div class="absolute -top-12 lg:-top-16 right-0 flex gap-3 z-50">
-            <button
-              id="prevBtn"
-              class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors"
-            >
-              ‹
-            </button>
-            <button
-              id="nextBtn"
-              class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors"
-            >
-              ›
-            </button>
-          </div>
-
-          <div class="relative h-[400px] lg:h-[380px] w-full" id="sliderStage">
-            <div
-              id="cardBig"
-              class="absolute left-0 top-0 w-full lg:w-[520px] h-[360px] rounded-2xl overflow-hidden z-20 shadow-xl"
-            >
-              <img
-                class="w-full h-full object-cover"
-                src="images/testimonial1.png"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 lg:p-8 flex flex-col justify-end text-white"
-              >
-                <div class="text-lg font-bold name">Michael Ross</div>
-                <div class="text-yellow-400 text-sm mb-2">★★★★★</div>
-                <p class="text-sm leading-relaxed text">
-                  I was anxious about starting therapy, but the team guided me
-                  with such patience.
-                </p>
-              </div>
-            </div>
-
-            <div
-              id="cardSmall"
-              class="hidden lg:block absolute right-0 top-20 w-[260px] h-[200px] rounded-xl overflow-hidden opacity-90 z-10 shadow-lg cursor-pointer"
-            >
-              <img
-                class="w-full h-full object-cover"
-                src="images/testimonial2.png"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white"
-              >
-                <div class="text-xs font-medium name">Sarah Jenkins</div>
-                <div class="text-yellow-400 text-xs">★★★★★</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <style>
-      /* Prevents accidental text selection while swiping */
-      #sliderStage {
-        touch-action: pan-y;
-        user-select: none;
-      }
-    </style>
-
-    <!-- call out  -->
-    <section class="cta">
-      <div class="cta-inner">
-        <div class="cta-content">
-          <h2>We would love to hear from you!</h2>
-          <p>
-            From the first conversation to lasting healing, you are never alone.
-          </p>
-          <a href="#" class="cta-btn">Get in touch</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer
-      class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden"
-    >
-      <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 py-16 sm:py-20">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8"
-        >
-          <!-- Brand Column -->
-          <div class="space-y-5">
-            <div class="flex items-center">
-              <img
-                src="images/tera logo.png"
-                alt="Tera Wellbeing"
-                class="h-10 w-auto object-contain"
-                loading="lazy"
-              />
-            </div>
-            <p class="text-sm text-white/70 leading-relaxed max-w-[260px]">
-              Our clinicians provide gold-standard, evidence-based treatment
-              tailored to your unique journey.
-            </p>
-          </div>
-
-          <!-- Navigation Column -->
-          <div>
-            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-              <span class="text-blue-400">✦</span> Navigation
-            </h4>
-            <ul class="space-y-3 text-sm text-white/70">
-              <li><a href="index.html" class="footer-link">Home</a></li>
-              <li><a href="about.html" class="footer-link">About</a></li>
-              <li><a href="services.html" class="footer-link">Services</a></li>
-              <li><a href="contact.html" class="footer-link">Contact</a></li>
-            </ul>
-          </div>
-
-          <!-- Working Hours Column -->
-          <div>
-            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-              <span class="text-blue-400">✦</span> Working Hours
-            </h4>
-            <div class="space-y-3 text-sm text-white/70">
-              <div class="flex justify-between border-b border-white/10 pb-2">
-                <span>Mon – Fri:</span>
-                <span class="text-white font-medium">9:00 AM – 6:00 PM</span>
-              </div>
-              <div class="flex justify-between border-b border-white/10 pb-2">
-                <span>Sat – Sun:</span>
-                <span class="text-white font-medium">8:00 AM – 4:00 PM</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Contact Column -->
-          <div>
-            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-              <span class="text-blue-400">✦</span> Get in Touch
-            </h4>
-
-            <ul class="space-y-3 text-sm text-white/70 mb-6">
-              <li class="flex items-start gap-3">
-                <svg
-                  class="w-5 h-5 text-blue-400 shrink-0 mt-0.5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 21s-6-5.33-6-10a6 6 0 1 1 12 0c0 4.67-6 10-6 10Z"
-                  />
-                  <circle cx="12" cy="11" r="2.5" />
-                </svg>
-                <span>123 Clinic St, Medical District</span>
-              </li>
-              <li class="flex items-center gap-3">
-                <svg
-                  class="w-5 h-5 text-blue-400 shrink-0"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M4 6h16v12H4z" />
-                  <path d="m4 6 8 6 8-6" />
-                </svg>
-                <a
-                  href="mailto:hello@teraclinic.com"
-                  class="hover:text-white transition-colors"
-                  >hello@teraclinic.com</a
-                >
-              </li>
-            </ul>
-
-            <div class="flex gap-3">
-              <a href="#" class="social-btn" aria-label="Facebook">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  />
-                </svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="Instagram">
-                <svg
-                  class="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-                </svg>
-              </a>
-              <a href="#" class="social-btn" aria-label="YouTube">
-                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
-                  />
-                  <polygon
-                    points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div
-          class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4"
-        >
-          <p>© 2025 Tera Clinic — All rights reserved</p>
-          <div class="flex items-center gap-2">
-            <span>Designed by</span>
-            <a
-              href="https://binocularads.com"
-              class="text-white hover:text-red-500 font-medium transition-colors"
-              >Binocular Ads</a
-            >
-          </div>
-        </div>
-      </div>
-    </footer>
+    <div class="relative">
+      
+     <div class="absolute -top-12 lg:-top-16 right-0 flex gap-3 z-50">
+  <button id="testimPrev" class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
+    ‹
+  </button>
+  <button id="testimNext" class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
+    ›
+  </button>
 </div>
+
+      <div class="relative h-[400px] lg:h-[380px] w-full" id="sliderStage">
+        
+        <div id="cardBig" class="absolute left-0 top-0 w-full lg:w-[520px] h-[360px] rounded-2xl overflow-hidden z-20 shadow-xl bg-gray-100">
+          <img class="w-full h-full object-cover" src="images/testimonial1.png" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 lg:p-8 flex flex-col justify-end text-white">
+            <div class="text-lg font-bold name">Michael Ross</div>
+            <div class="text-yellow-400 text-sm mb-2">★★★★★</div>
+            <p class="text-sm leading-relaxed text">
+              I was anxious about starting therapy, but the team guided me with such patience.
+            </p>
+          </div>
+        </div>
+
+        <div id="cardSmall" class="hidden lg:block absolute right-0 top-20 w-[260px] h-[200px] rounded-xl overflow-hidden opacity-90 z-10 shadow-lg cursor-pointer bg-gray-100">
+          <img class="w-full h-full object-cover" src="images/testimonial2.png" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+            <div class="text-xs font-medium name">Sarah Jenkins</div>
+            <div class="text-yellow-400 text-xs">★★★★★</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+      <style>
+        /* Prevents accidental text selection while swiping */
+        #sliderStage {
+          touch-action: pan-y;
+          user-select: none;
+        }
+      </style>
+
+      <!-- call out  -->
+<section class="cta" data-aos="fade-up" data-aos-duration="1000">
+  <div class="cta-inner">
+    <div class="cta-content">
+      
+      <h2 data-aos="fade-up" data-aos-delay="100">
+        We would love to hear from you!
+      </h2>
+      
+      <p data-aos="fade-up" data-aos-delay="200">
+        From the first conversation to lasting healing, you are never alone.
+      </p>
+      
+      <div data-aos="zoom-in" data-aos-delay="300">
+        <a href="#" class="cta-btn">Get in touch</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+      <!-- ================= FOOTER ================= -->
+
+<footer class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 py-16 sm:py-20">
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+      
+      <div class="space-y-5" data-aos="fade-up" data-aos-delay="0">
+        <div class="flex items-center">
+          <img
+            src="images/tera logo.png"
+            alt="Tera Wellbeing"
+            class="h-10 w-auto object-contain " 
+            loading="lazy"
+          />
+          </div>
+        <p class="text-sm text-white/70 leading-relaxed max-w-[260px]">
+          Our clinicians provide gold-standard, evidence-based treatment
+          tailored to your unique journey.
+        </p>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="100">
+        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+          <span class="text-blue-400">✦</span> Navigation
+        </h4>
+        <ul class="space-y-3 text-sm text-white/70">
+          <li><a href="index.html" class="footer-link hover:text-blue-400 transition-colors">Home</a></li>
+          <li><a href="about.html" class="footer-link hover:text-blue-400 transition-colors">About</a></li>
+          <li><a href="services.html" class="footer-link hover:text-blue-400 transition-colors">Services</a></li>
+          <li><a href="contact.html" class="footer-link hover:text-blue-400 transition-colors">Contact</a></li>
+        </ul>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+          <span class="text-blue-400">✦</span> Working Hours
+        </h4>
+        <div class="space-y-3 text-sm text-white/70">
+          <div class="flex justify-between border-b border-white/10 pb-2">
+            <span>Mon – Fri:</span>
+            <span class="text-white font-medium">9:00 AM – 6:00 PM</span>
+          </div>
+          <div class="flex justify-between border-b border-white/10 pb-2">
+            <span>Sat – Sun:</span>
+            <span class="text-white font-medium">8:00 AM – 4:00 PM</span>
+          </div>
+        </div>
+      </div>
+
+      <div data-aos="fade-up" data-aos-delay="300">
+        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+          <span class="text-blue-400">✦</span> Get in Touch
+        </h4>
+
+        <ul class="space-y-3 text-sm text-white/70 mb-6">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot text-blue-400 text-lg mt-0.5 w-5 text-center"></i>
+            <span>123 Clinic St, Medical District</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center"></i>
+            <a href="mailto:hello@teraclinic.com" class="hover:text-white transition-colors">hello@teraclinic.com</a>
+          </li>
+        </ul>
+
+        <div class="flex gap-3">
+          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f text-lg"></i>
+          </a>
+          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#E4405F] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="Instagram">
+            <i class="fa-brands fa-instagram text-lg"></i>
+          </a>
+          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="YouTube">
+            <i class="fa-brands fa-youtube text-lg"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4">
+      <p>© 2025 Tera Clinic — All rights reserved</p>
+ <div class="flex items-center gap-2">
+  <span>Designed by</span>
+  <a 
+    href="https://binocularads.com" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    class="text-white hover:text-red-500 font-medium transition-colors"
+  >
+    Binocular Ads
+  </a>
+</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    <!-- aos  -->
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    // 1. DURATION: 1 second (1000ms) makes it feel "heavy" and expensive.
+    duration: 1000, 
+    
+    // 2. EASING: 'ease-out-quart' starts fast and brakes hard at the end.
+    // This is the secret to that "Apple/Agency" smooth stop.
+    easing: 'ease-out-quart', 
+    
+    // 3. ONCE: Prevents animations from re-playing when scrolling up.
+    once: true, 
+    
+    // 4. OFFSET: Triggers the animation 50px before the element is visible.
+    offset: 50,      
+  });
+</script>
     <!-- hero section animation  -->
     <script>
       document.addEventListener("DOMContentLoaded", () => {
@@ -1913,54 +1594,70 @@ html {
             title:
               "Supporting<br>Growing <span class='text-blue-600'>Families</span>",
             desc: "Personalized care plans for emotional and developmental needs.",
-            img1: "images/hero_1.png",
+            img1: "images/hero_1.png", // Replace with real image paths if you have them
             img2: "images/hero_2.png",
           },
         ];
 
         let index = 0;
 
-        const heroText = document.getElementById("hero-text");
-        const title = document.getElementById("hero-title");
-        const desc = document.getElementById("hero-desc");
-        const img1 = document.querySelector("#img1 img");
-        const img2 = document.querySelector("#img2 img");
+        // Select the elements to animate
+        const elements = {
+          title: document.getElementById("hero-title"),
+          desc: document.getElementById("hero-desc"),
+          btn: document.getElementById("hero-btn"),
+          img1: document.getElementById("img1-el"),
+          img2: document.getElementById("img2-el"),
+        };
 
-        function hide() {
-          heroText.classList.add("opacity-0", "translate-y-10");
-          heroText.classList.remove("opacity-100", "translate-y-0");
+        function nextSlide() {
+          // 1. EXIT PHASE: Slide everything UP and OUT
+          // We add these classes to move elements out of view
+          Object.values(elements).forEach((el) => {
+            el.classList.remove("translate-y-0", "opacity-100");
+            el.classList.add("-translate-y-full", "opacity-0");
+          });
 
-          img1.parentElement.classList.add("opacity-0", "translate-y-10");
-          img2.parentElement.classList.add("opacity-0", "-translate-y-10");
-        }
-
-        function show() {
-          heroText.classList.remove("opacity-0", "translate-y-10");
-          heroText.classList.add("opacity-100", "translate-y-0");
-
-          img1.parentElement.classList.remove("opacity-0", "translate-y-10");
-          img2.parentElement.classList.remove("opacity-0", "-translate-y-10");
-        }
-
-        function updateHero() {
-          hide();
-
+          // 2. RESET PHASE: Wait for exit animation to finish (1000ms)
           setTimeout(() => {
+            index = (index + 1) % slides.length;
             const s = slides[index];
-            title.innerHTML = s.title;
-            desc.textContent = s.desc;
-            img1.src = s.img1;
-            img2.src = s.img2;
-            show();
-          }, 600);
+
+            // Swap Data
+            elements.title.innerHTML = s.title;
+            elements.desc.textContent = s.desc;
+            elements.img1.src = s.img1;
+            elements.img2.src = s.img2;
+
+            // INSTANT RESET (Disable transition to jump to bottom)
+            Object.values(elements).forEach((el) => {
+              // Disable transition temporarily
+              el.classList.add("duration-0", "transition-none");
+
+              // Jump to bottom position
+              el.classList.remove("-translate-y-full");
+              el.classList.add("translate-y-full");
+
+              // FORCE REFLOW (Critical Step: tells browser to apply the change NOW)
+              void el.offsetWidth;
+
+              // Re-enable transition
+              el.classList.remove("duration-0", "transition-none");
+            });
+
+            // 3. ENTER PHASE: Slide In from Bottom
+            // We use a tiny timeout to ensure the transition is back on
+            requestAnimationFrame(() => {
+              Object.values(elements).forEach((el) => {
+                el.classList.remove("translate-y-full", "opacity-0");
+                el.classList.add("translate-y-0", "opacity-100");
+              });
+            });
+          }, 1000); // Waits 1s for the exit animation to complete
         }
 
-        updateHero();
-
-        setInterval(() => {
-          index = (index + 1) % slides.length;
-          updateHero();
-        }, 6000);
+        // Run the animation every 5 seconds
+        setInterval(nextSlide, 5000);
       });
     </script>
     <!-- servise section fuction  -->
@@ -1987,171 +1684,148 @@ html {
       });
     </script>
     <!-- for testimonial  -->
-    <script>
-      const testimonials = [
-        {
-          name: "Michael Ross",
-          text: "I was anxious about starting therapy, but the team guided me with such patience.",
-          img: "images/testimonial1.png",
-        },
-        {
-          name: "Sarah Jenkins",
-          text: "The doctors here made my son feel so comfortable. We felt like family.",
-          img: "images/testimonial2.png",
-        },
-        {
-          name: "Emily Chen",
-          text: "Evidence-based treatment that actually works. The facility is beautiful.",
-          img: "images/testimonial3.jpg",
-        },
-        {
-          name: "David Miller",
-          text: "Professional, clean, and compassionate. They explained every step clearly.",
-          img: "images/testimonial4.jpg",
-        },
-      ];
 
-      let currentIndex = 0;
-      let isAnimating = false;
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    
+    // ... (Keep your testimonials array data here) ...
+    const testimonials = [
+       // ... keep your existing data ...
+       { name: "Michael Ross", text: "I was anxious...", img: "images/testimonial1.png" },
+       { name: "Sarah Jenkins", text: "The doctors here...", img: "images/testimonial2.png" },
+       { name: "Emily Chen", text: "Evidence-based...", img: "images/doc1.jpg" },
+       { name: "David Miller", text: "Professional...", img: "images/doc2.jpg" },
+    ];
 
-      const cardBig = document.querySelector("#cardBig");
-      const cardSmall = document.querySelector("#cardSmall");
+    let currentIndex = 0;
+    let isAnimating = false;
 
-      function updateContent(card, data) {
-        card.querySelector("img").src = data.img;
-        card.querySelector(".name").innerText = data.name;
-        const p = card.querySelector("p");
-        if (p) p.innerText = data.text;
-      }
+    const cardBig = document.querySelector("#cardBig");
+    const cardSmall = document.querySelector("#cardSmall");
+    const sliderStage = document.querySelector("#sliderStage");
+    
+    // UPDATED SELECTORS
+    const nextBtn = document.querySelector("#testimNext");
+    const prevBtn = document.querySelector("#testimPrev");
 
-      function moveNext() {
-        if (isAnimating) return;
-        isAnimating = true;
+    function updateContent(card, data) {
+      if(!card) return;
+      const img = card.querySelector("img");
+      const name = card.querySelector(".name");
+      const p = card.querySelector("p"); // Only big card has p
 
-        const nextIndex = (currentIndex + 1) % testimonials.length;
-        const previewIndex = (currentIndex + 2) % testimonials.length;
+      if (img) img.src = data.img;
+      if (name) name.innerText = data.name;
+      if (p) p.innerText = data.text;
+    }
 
-        // 1. Prepare a "Ghost" card that enters as the new small card
-        const ghost = cardSmall.cloneNode(true);
-        document.querySelector("#sliderStage").appendChild(ghost);
-        gsap.set(ghost, { x: 100, opacity: 0, zIndex: 5 });
-        updateContent(ghost, testimonials[previewIndex]);
+    function moveNext() {
+      if (isAnimating) return;
+      isAnimating = true;
 
-        // 2. Butter-Slide Small to Big
-        gsap.to(cardSmall, {
-          duration: 0.8,
-          left: 0,
-          top: 0,
-          width: window.innerWidth < 1024 ? "100%" : 520,
-          height: 360,
-          opacity: 1,
-          zIndex: 30,
-          ease: "power3.inOut",
-        });
+      const nextIndex = (currentIndex + 1) % testimonials.length;
+      const previewIndex = (currentIndex + 2) % testimonials.length;
+      const isMobile = window.innerWidth < 1024;
 
-        // 3. Current Big Card slides away
+      if (isMobile) {
         gsap.to(cardBig, {
-          duration: 0.8,
-          x: -100,
           opacity: 0,
-          ease: "power3.inOut",
-        });
-
-        // 4. Ghost Card becomes the new Small Card
-        gsap.to(ghost, {
-          duration: 0.8,
-          x: 0,
-          opacity: 0.9,
-          ease: "power3.inOut",
+          duration: 0.3,
           onComplete: () => {
             currentIndex = nextIndex;
             updateContent(cardBig, testimonials[currentIndex]);
-            updateContent(cardSmall, testimonials[previewIndex]);
-
-            // Reset original elements and remove ghost
-            gsap.set([cardBig, cardSmall], { clearProps: "all" });
-            ghost.remove();
+            gsap.to(cardBig, { opacity: 1, duration: 0.3 });
             isAnimating = false;
-          },
+          }
         });
+        return;
       }
 
-      function movePrev() {
-        if (isAnimating) return;
-        isAnimating = true;
-        // For Prev, we reverse the logic with a simple fade swap for better UX
-        gsap.to([cardBig, cardSmall], {
-          duration: 0.4,
-          opacity: 0,
-          onComplete: () => {
-            currentIndex =
-              (currentIndex - 1 + testimonials.length) % testimonials.length;
-            updateContent(cardBig, testimonials[currentIndex]);
-            updateContent(
-              cardSmall,
-              testimonials[(currentIndex + 1) % testimonials.length],
-            );
-            gsap.to([cardBig, cardSmall], { duration: 0.4, opacity: 1 });
-            isAnimating = false;
-          },
-        });
-      }
+      // Desktop Animation
+      const ghost = cardSmall.cloneNode(true);
+      sliderStage.appendChild(ghost);
+      gsap.set(ghost, { x: 50, opacity: 0, zIndex: 5 });
+      updateContent(ghost, testimonials[previewIndex]);
 
-      // Swipe Support for Mobile
-      let startX = 0;
-      document
-        .querySelector("#sliderStage")
-        .addEventListener("touchstart", (e) => (startX = e.touches[0].clientX));
-      document
-        .querySelector("#sliderStage")
-        .addEventListener("touchend", (e) => {
-          let endX = e.changedTouches[0].clientX;
-          if (startX - endX > 50) moveNext(); // Swipe Left
-          if (endX - startX > 50) movePrev(); // Swipe Right
-        });
-
-      // Buttons and Clicks
-      document.getElementById("nextBtn").addEventListener("click", moveNext);
-      document.getElementById("prevBtn").addEventListener("click", movePrev);
-      cardSmall.addEventListener("click", moveNext);
-
-      // Initial Data
-      updateContent(cardBig, testimonials[0]);
-      updateContent(cardSmall, testimonials[1]);
-    </script>
-    <!-- doctors  -->
-    <script>
-      const grid = document.getElementById("expertGrid");
-      const dots = document.querySelectorAll(".dot");
-
-      function scrollGrid(direction) {
-        const cardWidth = grid.querySelector("div").offsetWidth + 24; // Width + gap
-        grid.scrollBy({
-          left: direction * cardWidth,
-          behavior: "smooth",
-        });
-      }
-
-      // Update dots based on scroll position
-      grid.addEventListener("scroll", () => {
-        const totalScrollWidth = grid.scrollWidth - grid.clientWidth;
-        const currentScroll = grid.scrollLeft;
-        const activeDot = Math.min(
-          Math.floor((currentScroll / totalScrollWidth) * dots.length),
-          dots.length - 1,
-        );
-
-        dots.forEach((dot, index) => {
-          dot.style.backgroundColor =
-            index === activeDot
-              ? "rgba(255,255,255,1)"
-              : "rgba(255,255,255,0.3)";
-        });
+      const tl = gsap.timeline({
+        onComplete: () => {
+          currentIndex = nextIndex;
+          updateContent(cardBig, testimonials[currentIndex]);
+          updateContent(cardSmall, testimonials[previewIndex]);
+          gsap.set(cardBig, { clearProps: "all" });
+          gsap.set(cardSmall, { clearProps: "all" });
+          ghost.remove();
+          isAnimating = false;
+        }
       });
-    </script>
+
+      tl.to(cardBig, { duration: 0.6, x: -50, opacity: 0, ease: "power2.inOut" }, 0);
+      tl.to(cardSmall, { duration: 0.6, top: 0, left: 0, width: "520px", height: "360px", opacity: 1, zIndex: 20, ease: "power2.inOut" }, 0);
+      tl.to(ghost, { duration: 0.6, x: 0, opacity: 0.9, ease: "power2.inOut" }, 0);
+    }
+
+    function movePrev() {
+      if (isAnimating) return;
+      isAnimating = true;
+      const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      const nextSmallIndex = currentIndex; 
+
+      gsap.to([cardBig, cardSmall], {
+        duration: 0.3,
+        opacity: 0,
+        onComplete: () => {
+          currentIndex = prevIndex;
+          updateContent(cardBig, testimonials[currentIndex]);
+          updateContent(cardSmall, testimonials[nextSmallIndex]);
+          gsap.to([cardBig, cardSmall], { duration: 0.3, opacity: 1 });
+          isAnimating = false;
+        }
+      });
+    }
+
+    if(nextBtn) nextBtn.addEventListener("click", moveNext);
+    if(prevBtn) prevBtn.addEventListener("click", movePrev);
+    if(cardSmall) cardSmall.addEventListener("click", moveNext);
+
+    updateContent(cardBig, testimonials[0]);
+    updateContent(cardSmall, testimonials[1]);
+  });
+</script>
+    <!-- doctors  -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById("expertGrid");
+    const dots = document.querySelectorAll(".dot");
+
+    // Make functions globally available for buttons
+    window.scrollGrid = function(direction) {
+      const cardWidth = grid.querySelector("div").offsetWidth + 24; // Width + gap
+      grid.scrollBy({
+        left: direction * cardWidth,
+        behavior: "smooth",
+      });
+    };
+
+    // Update dots based on scroll position
+    grid.addEventListener("scroll", () => {
+      const totalScrollWidth = grid.scrollWidth - grid.clientWidth;
+      const currentScroll = grid.scrollLeft;
+      const activeDot = Math.min(
+        Math.floor((currentScroll / totalScrollWidth) * dots.length),
+        dots.length - 1,
+      );
+
+      dots.forEach((dot, index) => {
+        dot.style.backgroundColor =
+          index === activeDot
+            ? "rgba(255,255,255,1)"
+            : "rgba(255,255,255,0.3)";
+      });
+    });
+  });
+</script>
 
     <script src="style/js/nav.js"></script>
     <script src="style/js/transition.js"></script>
-    
   </body>
 </html>

@@ -28,91 +28,95 @@
       transform: translateY(-40px);
     }
 /* === after hero === */
-.specialists {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 96px 80px;
-}
+/* === CUSTOM STYLES TO MATCH UI PERFECTLY === */
+        
+        /* 1. The Main Text */
+        .specialist-text {
+            font-family: 'Inter', sans-serif; /* Or your site's font */
+            color: #334155; /* Slate-700 */
+            line-height: 1.6;
+            font-weight: 500;
+            text-align: center;
+            /* RESPONSIVE SIZE: Mobile 24px -> Desktop 42px (Exact UI match) */
+            font-size: 24px; 
+        }
+        @media (min-width: 768px) {
+            .specialist-text { font-size: 32px; }
+        }
+        @media (min-width: 1024px) {
+            .specialist-text { font-size: 42px; }
+        }
 
-.specialists-text {
-  max-width: 1100px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 44px;
-  line-height: 1.35;
-  font-weight: 500;
-  color: #355466;
-}
+        /* 2. Blue Pop-Out Pill */
+        .blue-pill {
+            display: inline-flex;
+            vertical-align: middle;
+            position: relative;
+            background-color: #1d4ed8; /* Deep Blue */
+            border-radius: 9999px;
+            height: 1.1em;  /* Height relative to text */
+            width: 2.5em;   /* Width relative to text */
+            margin: 0 0.3em;
+            cursor: pointer;
+            transition: all 0.4s ease;
+        }
 
-/* pill */
-.pill-bg {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 12px;
-  height: 44px;
-  padding: 0 26px;
-  background: #eaf2ff;
-  border-radius: 22px;
-}
+        /* The Baby Doctor Image */
+        .blue-pill img {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 150%; /* Taller than pill to pop out */
+            width: auto;
+            max-width: none;
+            z-index: 10;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.pill-bg img {
-  height: 44px;
-  width: auto;
-  display: block;
-}
+        /* Clean Hover Effect */
+        .blue-pill:hover img {
+            transform: translateX(-50%) scale(1.1) translateY(-5px);
+        }
+        .blue-pill:hover {
+            background-color: #1e40af; /* Darker blue */
+            width: 2.8em; /* Subtle expand */
+        }
 
-/* inline image */
-.inline-image {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 12px;
-}
-
-.inline-image img {
-  height: 44px;
-  width: auto;
-  display: block;
-}
-
-/* mobile */
-@media (max-width: 768px) {
-  .specialists {
-    padding: 64px 20px;
-  }
-
-  .specialists-text {
-    font-size: 26px;
-    line-height: 1.45;
-  }
-
-  .pill-bg,
-  .pill-bg img,
-  .inline-image img {
-    height: 32px;
-  }
-}
+        /* 3. Regular Inline Images */
+        .inline-pill {
+            display: inline-block;
+            vertical-align: middle;
+            height: 1em; /* Matches text height exactly */
+            width: auto;
+            border-radius: 9999px;
+            margin: 0 0.2em;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .inline-pill:hover {
+            transform: scale(1.05);
+        }
 /* =========================
    WELCOME SECTION
    ========================= */
-
+/* ================= YOUR BASE STYLES ================= */
 .welcome-section {
   padding: 120px 80px;
+  background: #fff; /* Ensure white background */
+  overflow: hidden; /* Prevents animation scrollbars */
 }
 
 .welcome-container {
   max-width: 1440px;
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   gap: 120px;
-
-  align-items: flex-start; /* 🔥 KEY FIX */
+  align-items: flex-start;
 }
 
 /* LEFT */
-
 .welcome-tag {
   display: flex;
   align-items: center;
@@ -128,30 +132,31 @@
 
 .tag-text {
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700; /* Made slightly bolder for premium feel */
   letter-spacing: 1.5px;
   color: #2563eb;
+  text-transform: uppercase;
 }
 
 .welcome-title {
   font-size: 56px;
   line-height: 1.15;
   font-weight: 500;
-  color: #000;
+  color: #0f172a; /* Slate-900 (Softer than #000) */
 }
 
 /* RIGHT */
-
 .welcome-right {
   max-width: 560px;
-  /* margin-top: 52px; */
 }
 
 .customers {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 20px; /* Increased gap slightly */
   margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #f1f5f9; /* Added subtle divider line */
 }
 
 .avatars {
@@ -159,13 +164,19 @@
   align-items: center;
 }
 
+/* === PREMIUM AVATAR UPGRADE === */
 .avatars img {
-  width: 36px;
-  height: 36px;
+  width: 48px; /* Bigger avatars look better */
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #fff;
-  margin-left: -10px;
+  border: 3px solid #fff; /* Thicker border for clean cut */
+  margin-left: -12px;
+  transition: transform 0.3s ease; /* For hover effect */
+}
+
+.avatars:hover img {
+  transform: translateX(5px); /* Spreads them out on hover */
 }
 
 .avatars img:first-child {
@@ -173,61 +184,65 @@
 }
 
 .avatar-plus {
-  width: 36px;
-  height: 36px;
-  margin-left: -10px;
+  width: 48px;
+  height: 48px;
+  margin-left: -12px;
   border-radius: 50%;
-  background: #222;
+  background: #0f172a;
   color: #fff;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-weight: 600;
+  border: 3px solid #fff;
+  position: relative;
+  z-index: 2;
 }
 
 .customers-text {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.4;
-  color: #111;
+  color: #334155; /* Slate-700 */
 }
 
 .welcome-content p {
   font-size: 16px;
-  line-height: 1.7;
-  color: #555;
-  margin-bottom: 16px;
+  line-height: 1.8; /* Increased breathing room */
+  color: #475569; /* Slate-600 */
+  margin-bottom: 24px;
 }
 
+/* === PREMIUM BUTTON UPGRADE === */
 .read-more-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   margin-top: 20px;
-  padding: 12px 32px;
-
-  background: #3b82f6;
+  padding: 14px 36px;
+  background: #2563eb;
   color: #fff;
   border-radius: 999px;
-
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   text-decoration: none;
+  
+  /* The Magic */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
 }
 
-/* =================
-   RESPONSIVE
-   ================= */
+.read-more-btn:hover {
+  transform: translateY(-3px); /* Lifts up */
+  background: #1d4ed8; /* Darker blue */
+  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); /* Glows */
+}
 
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
   .welcome-container {
     grid-template-columns: 1fr;
     gap: 60px;
   }
-
-  .welcome-right {
-    margin-top: 0;
-  }
-
   .welcome-title {
     font-size: 44px;
   }
@@ -235,9 +250,8 @@
 
 @media (max-width: 768px) {
   .welcome-section {
-    padding: 80px 20px;
+    padding: 80px 24px;
   }
-
   .welcome-title {
     font-size: 36px;
   }
