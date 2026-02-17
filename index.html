@@ -23,6 +23,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  rel="stylesheet"
+/>
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
@@ -144,106 +149,144 @@
   <body class="text-black">
     <div class="page-transition-wrapper">
       <!-- HEADER -->
- <header class="w-full bg-white relative z-50 font-sans">
-  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-6 flex items-start justify-between">
+<div class="w-full bg-white font-sans relative z-50">
+  
+  <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex">
     
-    <a href="index.html" class="flex items-center gap-2 z-50 relative" data-aos="fade-down" data-aos-delay="0">
-      <img
-        src="images/tera logo.png"
-        class="h-14 md:h-15 object-contain"
-        alt="Tera Wellbeing"
-      />
-    </a>
-
-    <nav class="hidden md:flex items-center gap-10 text-sm font-medium text-slate-600" data-aos="fade-down" data-aos-delay="100">
-      <a href="#" class="text-blue-600 font-bold tracking-wide"> Home </a>
-
-      <a href="about.html" class="relative group py-2 hover:text-blue-600 transition-colors">
-        About
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
+    <div class="shrink-0 flex items-center pr-12 pl-10 py-6">
+      <a href="index.html" class="block">
+        <img
+          src="images/tera logo.png"
+          class="h-20 w-auto object-contain"
+          alt="Tera Wellbeing"
+        />
       </a>
-
-      <a href="#ourteam" class="relative group py-2 hover:text-blue-600 transition-colors">
-        Our team
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="services.html" class="relative group py-2 hover:text-blue-600 transition-colors">
-        Services
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="contact.html" class="relative group py-2 hover:text-blue-600 transition-colors">
-        Contact
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-    </nav>
-
-    <button
-      id="mobile-btn"
-      class="md:hidden z-50 relative w-10 h-10 flex items-center justify-center text-slate-800 focus:outline-none transition-transform duration-300 active:scale-90"
-      data-aos="fade-down" data-aos-delay="100"
-    >
-      <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
-
-  <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-500">
-    <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
-    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full blur-3xl opacity-50 -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50 translate-y-1/2 -translate-x-1/2"></div>
-
-    <div class="relative z-50 h-full flex flex-col items-center justify-center gap-6" id="mobile-links-container">
-      <a href="#" class="mobile-link text-3xl font-bold text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Home</a>
-      <a href="about.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">About</a>
-      <a href="#ourteam" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Our Team</a>
-      <a href="services.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Services</a>
-      <a href="contact.html" class="mobile-link text-3xl font-medium text-slate-700 hover:text-blue-600 transform translate-y-8 opacity-0 transition-all duration-500">Contact</a>
     </div>
-  </div>
-</header>
 
-<div class="relative bg-gradient-to-r from-white to-[#f6f9ff]  overflow-hidden" data-aos="fade-in" data-aos-delay="200">
-  <div class="pointer-events-none absolute left-0 top-0 h-full w-16 bg-gradient-to-r from-white to-transparent z-10"></div>
-  <div class="pointer-events-none absolute right-0 top-0 h-full w-16 bg-gradient-to-l from-[#f6f9ff] to-transparent z-10"></div>
+    <div class="flex-1 flex flex-col">
+      
+      <div class="flex items-center justify-end py-8">
+        
+        <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
+          <a href="#" class="hover:text-blue-600 text-black transition-colors">Home</a>
+          <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+          <a href="#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
+          <a href="services.html" class="hover:text-blue-600 transition-colors">Services</a>
+          <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+        </nav>
+<!-- MOBILE MENU BUTTON -->
+<button
+  id="mobile-btn"
+  class="md:hidden text-3xl text-slate-800 ml-4"
+  aria-label="Open menu"
+>
+  <i class="bi bi-list"></i>
+</button>
 
-  <div class="flex md:hidden w-max animate-marquee items-center py-4">
-    <div class="flex gap-8 px-4">
-      <span class="nav-item">ADHD Management</span>
-      <span class="nav-item">Behavioral Challenges</span>
-      <span class="nav-item">Learning Disabilities</span>
-      <span class="nav-item">Emotional Well-Being</span>
-      <span class="nav-item">Speech & Language</span>
-    </div>
-    <div class="flex gap-8 px-4">
-      <span class="nav-item">ADHD Management</span>
-      <span class="nav-item">Behavioral Challenges</span>
-      <span class="nav-item">Learning Disabilities</span>
-      <span class="nav-item">Emotional Well-Being</span>
-      <span class="nav-item">Speech & Language</span>
+      </div>
+      
+
+      <div class="hidden md:flex items-center  justify-end gap-12 bg-gradient-to-r from-white to-[#f6f9ff] py-5 px-8 w-full">
+        <a href="#" class="cat-link">ADHD Management</a>
+        <a href="#" class="cat-link">Behavioral Challenges</a>
+        <!-- <a href="#" class="cat-link">Emotional Well-Being</a> -->
+        <a href="#" class="cat-link">Speech & Language</a>
+        <a href="#" class="cat-link">Occupational Therapy</a>
+      </div>
+
     </div>
   </div>
 
-  <div class="hidden md:flex justify-center items-center gap-12 py-5 max-w-[1440px] mx-auto">
-    <a href="#" class="nav-item hover:text-blue-600 transition-colors">ADHD Management</a>
-    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Behavioral Challenges</a>
-    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Learning Disabilities</a>
-    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Emotional Well-Being</a>
-    <a href="#" class="nav-item hover:text-blue-600 transition-colors">Speech & Language</a>
+  <div class="md:hidden bg-[#f8f9fa] border-t border-slate-100 overflow-hidden">
+     <div class="flex w-max animate-marquee items-center py-3">
+        <div class="flex gap-8 px-4">
+          <span class="cat-link-mobile">ADHD Management</span>
+          <span class="cat-link-mobile">Behavioral Challenges</span>
+        </div>
+        <div class="flex gap-8 px-4">
+          <span class="cat-link-mobile">Speech & Language</span>
+          <span class="cat-link-mobile">Occupational Therapy</span>
+        </div>
+     </div>
+  </div>
+
+<!-- MOBILE MENU -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-300"
+>
+  <!-- BLUR BACKDROP -->
+  <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
+
+  <!-- CLOSE BUTTON (NOW VISIBLE) -->
+  <button
+    id="mobile-close"
+    class="absolute top-6 right-6 z-50 text-4xl text-slate-900"
+    aria-label="Close menu"
+  >
+    <i class="bi bi-x"></i>
+  </button>
+
+  <!-- MENU LINKS -->
+  <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8">
+    <a href="#" class="text-3xl font-bold text-slate-900">Home</a>
+    <a href="about.html" class="text-3xl font-medium text-slate-600">About</a>
+    <a href="#ourteam" class="text-3xl font-medium text-slate-600">Our Team</a>
+    <a href="services.html" class="text-3xl font-medium text-slate-600">Services</a>
+    <a href="contact.html" class="text-3xl font-medium text-slate-600">Contact</a>
   </div>
 </div>
 
-<style>
-  .nav-item {
+
+  <style>
+  .cat-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #64748b;
+    transition: color 0.2s;
+  }
+  .cat-link:hover {
+    color: #2563eb;
+  }
+
+  .cat-link-mobile {
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: #64748b;
+    color: #94a3b8;
     white-space: nowrap;
-    cursor: pointer;
+  }
+
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-marquee {
+    animation: marquee 20s linear infinite;
+  }
+</style>
+
+</div>
+
+
+<style>
+  /* Reference Style for Secondary Links */
+  .cat-link {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: capitalize; /* Or uppercase based on preference */
+    color: #64748b;
+    transition: color 0.2s;
+  }
+  .cat-link:hover {
+    color: #2563eb;
+  }
+  .cat-link-mobile {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #94a3b8;
+    white-space: nowrap;
   }
   @keyframes marquee {
     0% { transform: translateX(0); }
@@ -255,7 +298,7 @@
 </style>
 
 <section id="hero" class="relative overflow-hidden bg-white">
-  <div class="max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     
     <div id="hero-text" class="relative z-10 flex flex-col justify-center" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200">
       
@@ -1456,7 +1499,7 @@
       </p>
       
       <div data-aos="zoom-in" data-aos-delay="300">
-        <a href="#" class="cta-btn">Get in touch</a>
+        <a href="" class="cta-btn">Get in touch</a>
       </div>
 
     </div>
@@ -1501,16 +1544,18 @@
         <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
           <span class="text-blue-400">✦</span> Working Hours
         </h4>
-        <div class="space-y-3 text-sm text-white/70">
-          <div class="flex justify-between border-b border-white/10 pb-2">
-            <span>Mon – Fri:</span>
-            <span class="text-white font-medium">9:00 AM – 6:00 PM</span>
-          </div>
-          <div class="flex justify-between border-b border-white/10 pb-2">
-            <span>Sat – Sun:</span>
-            <span class="text-white font-medium">8:00 AM – 4:00 PM</span>
-          </div>
-        </div>
+<div class="space-y-3 text-sm text-white/70">
+  <div class="flex justify-between border-b border-white/10 pb-2">
+    <span>Mon – Sat:</span>
+    <span class="text-white font-medium">10:00 AM – 5:30 PM</span>
+  </div>
+
+  <div class="flex justify-between border-b border-white/10 pb-2">
+    <span>Sunday:</span>
+    <span class="text-white font-medium">Closed</span>
+  </div>
+</div>
+
       </div>
 
       <div data-aos="fade-up" data-aos-delay="300">
@@ -1521,11 +1566,13 @@
         <ul class="space-y-3 text-sm text-white/70 mb-6">
           <li class="flex items-start gap-3">
             <i class="fa-solid fa-location-dot text-blue-400 text-lg mt-0.5 w-5 text-center"></i>
-            <span>123 Clinic St, Medical District</span>
+            <span>2nd Floor, Manatti Tower <br>
+                  Manna Junction, Taliparamba<br>
+                  Kannur, Kerala</span>
           </li>
           <li class="flex items-center gap-3">
             <i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center"></i>
-            <a href="mailto:hello@teraclinic.com" class="hover:text-white transition-colors">hello@teraclinic.com</a>
+            <a href="mailto:terawellbeing@gmail.com" class="hover:text-white transition-colors">terawellbeing@gmail.com</a>
           </li>
         </ul>
 
