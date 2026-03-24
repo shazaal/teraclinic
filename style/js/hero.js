@@ -1,15 +1,21 @@
 const slides = [
   {
     title: "Nurturing<br>Young <span class='text-blue-600'>Minds</span>",
-    desc: "Evidence-based clinical psychology for children and adolescents.",
+    desc: "Specialist behavioral and academic interventions to help your child thrive.",
     img1: "images/hero-1.jpg",
     img2: "images/hero-2.jpg",
   },
   {
-    title: "Supporting<br>Growing <span class='text-blue-600'>Families</span>",
-    desc: "Personalized care plans for emotional and developmental needs.",
+    title: "Building  <br> Healthier <span class='text-blue-600'>Relationships</span>",
+    desc: "Professional guidance to foster understanding, resolve conflict, and strengthen family bonds.",
     img1: "images/hero-3.jpg",
     img2: "images/hero-4.jpg",
+  }, 
+  {
+    title: "Your  <br> Path to  <span class='text-blue-600'>Inner Balance</span>",
+    desc: "Evidence-based psychotherapy and counseling for a more resilient you.",
+    img1: "images/hero-4.jpg",
+    img2: "images/hero-1.jpg",
   },
 ];
 

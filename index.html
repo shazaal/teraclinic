@@ -167,13 +167,38 @@
       
       <div class="flex items-center justify-end py-8">
         
-        <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
-          <a href="#" class="hover:text-blue-600 text-black transition-colors">Home</a>
-          <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
-          <a href="#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
-          <a href="services.html" class="hover:text-blue-600 transition-colors">Services</a>
-          <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
-        </nav>
+      <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
+  <a href="#" class="hover:text-blue-600 text-black transition-colors">Home</a>
+  <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+  <a href="#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
+  
+  <div class="relative group py-6 -my-6"> <a href="services.html" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
+      Services
+      <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+    
+    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[20px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-4 group-hover:translate-y-0 z-50 p-2">
+      
+      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+        Clinical Services
+      </a>
+      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+        Assessments
+      </a>
+      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+        Capacity Building & Training
+      </a>
+      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+        Community Outreach
+      </a>
+      
+    </div>
+  </div>
+
+  <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+</nav>
 <!-- MOBILE MENU BUTTON -->
 <button
   id="mobile-btn"
@@ -228,13 +253,28 @@
   </button>
 
   <!-- MENU LINKS -->
-  <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8">
-    <a href="#" class="text-3xl font-bold text-slate-900">Home</a>
-    <a href="about.html" class="text-3xl font-medium text-slate-600">About</a>
-    <a href="#ourteam" class="text-3xl font-medium text-slate-600">Our Team</a>
-    <a href="services.html" class="text-3xl font-medium text-slate-600">Services</a>
-    <a href="contact.html" class="text-3xl font-medium text-slate-600">Contact</a>
-  </div>
+ <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8 w-full overflow-y-auto py-12">
+  <a href="#" class="text-3xl font-medium text-slate-900 transition-colors">Home</a>
+  <a href="about.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
+  <a href="#ourteam" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Our Team</a>
+  
+  <details class="w-full text-center group">
+    <summary class="text-3xl font-medium text-slate-600 hover:text-slate-900 cursor-pointer list-none flex items-center justify-center gap-2 transition-colors">
+      Services
+      <svg class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-open:rotate-180 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </summary>
+    <div class="flex flex-col items-center gap-6 mt-8">
+      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Clinical Services</a>
+      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Assessments</a>
+      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Capacity Building & Training</a>
+      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Community Outreach</a>
+    </div>
+  </details>
+
+  <a href="contact.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+</div>
 </div>
 
 
@@ -317,7 +357,7 @@
           id="hero-desc"
           class="text-gray-600 max-w-md transform translate-y-0 opacity-100 transition-all duration-1000 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
         >
-          Evidence-based clinical psychology for children and adolescents.
+          Specialist behavioral and academic interventions to help your child thrive.
         </p>
       </div>
 
@@ -327,7 +367,7 @@
           href="#"
           class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 transform translate-y-0 opacity-100 transition-all duration-1000 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1"
         >
-          Explore ↗
+         Book Now ↗
         </a>
       </div>
     </div>
@@ -393,9 +433,9 @@
       </div>
 
       <h2 class="welcome-title" data-aos="fade-up" data-aos-delay="100">
-        Your Path to<br />
-        Better<br />
-        <span style="color: #2563eb;">Health Starts Here</span>
+        Holistic  <br />
+        Mental Healthcare <br />
+        <span style="color: #2563eb;">for All. </span>
       </h2>
     </div>
 
@@ -416,15 +456,11 @@
 
       <div class="welcome-content">
         <p data-aos="fade-up" data-aos-delay="300">
-          Evidence-based clinical psychology for children and adolescents.
-          We combine medical rigor with human compassion to support your
-          child's developmental journey.
+         Tera Wellbeing is a committed mental health service platform dedicated to providing comprehensive support for individuals, families, organizations, and the wider community. Based in Taliparamba, Kerala, we bridge the gap between clinical expertise and compassionate care. 
         </p>
 
         <p data-aos="fade-up" data-aos-delay="400">
-          Our mission is simple: To be the most reliable partner for
-          interior solutions, ensuring every carpet laid and every
-          mattress.
+          Our mission is to empower growth through evidence-based interventions, helping  children overcome behavioral challenges, supporting families thrive, assisting individual and team in enhancing wellbeing.
         </p>
       </div>
 
@@ -455,97 +491,213 @@
   </div>
 
   <div class="overflow-hidden -m-4 p-4">
-    <div id="servicesTrack" class="flex transition-transform duration-700 ease-in-out">
+  <div id="servicesTrack" class="flex transition-transform duration-700 ease-in-out">
       
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2  cursor-pointer">
-          
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-8 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/stethoscope.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
-          </div>
-          
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Vaccination services</h3>
-          
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Speak directly with our wellness experts for immediate support and guidance
-          </p>
-          
-          <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
-            view more 
-            <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
-          </a>
-        </div>
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/user.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
       </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2  cursor-pointer">
-          
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-8 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/heart-pulse.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
-          </div>
-          
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Child wellness</h3>
-          
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Speak directly with our wellness experts for immediate support and guidance
-          </p>
-          
-          <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
-            view more 
-            <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2  cursor-pointer">
-          
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-8 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/activity.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
-          </div>
-          
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Growth & Development</h3>
-          
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Speak directly with our wellness experts for immediate support and guidance
-          </p>
-          
-          <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
-            view more 
-            <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
-          </a>
-        </div>
-      </div>
-
-       <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="600">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2  cursor-pointer">
-          
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-8 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/brain-circuit.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" />
-          </div>
-          
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Psychology</h3>
-          
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Speak directly with our wellness experts for immediate support and guidance
-          </p>
-          
-          <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
-            view more 
-            <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
-          </a>
-        </div>
-      </div>
-
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Individual Psychotherapy</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Personalized support for anxiety, depression, and stress management.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
     </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/users.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Couple Therapy</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Navigating relationship challenges and enhancing communication.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/home.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Family Therapy</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Addressing systemic issues to create a harmonious home environment.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/brain-circuit.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Child Behavior Therapy</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Specialized interventions for ADHD, learning, developmental delays, and behavioral regulation.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/clipboard-list.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Psychodiagnostics</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Scientific testing for personality, mental health conditions, and cognitive functioning.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/graduation-cap.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Academic Interventions</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Identifying and supporting learning difficulties and educational hurdles.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/briefcase.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Career Counseling</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Expert guidance for students and professionals using standardized tools to find the right path.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/building.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Capacity Building</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Corporate Training</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Quality improvement programs, leadership development, and workplace wellness.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/presentation.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Capacity Building</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Workshops & Events</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Interactive sessions on emotional intelligence, parenting, and soft skills.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/shield-check.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Capacity Building</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Professional Supervision</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Supporting the next generation of mental health practitioners.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/handshake.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Community Outreach</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Collaborative Programs</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Partnering with government and private sectors for social impact.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+      <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
+      <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+        <img src="https://unpkg.com/lucide-static/icons/megaphone.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+      </div>
+      <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Community Outreach</span>
+      <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Mental Health Awareness</h3>
+      <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+        Reducing stigma through community-led movements and educational campaigns.
+      </p>
+      <a href="#" class="relative z-10 mt-10 font-medium text-black inline-flex items-center gap-2 group-hover:text-blue-600 transition-all duration-300">
+        view more <span class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+      </a>
+    </div>
+  </div>
+
+</div>
   </div>
 </section>
 
@@ -1039,7 +1191,7 @@
         <summary
           class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
         >
-          Autism Spectrum Disorders
+         Anger Management for Kids 
           <span
             class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
@@ -1049,9 +1201,7 @@
         <p
           class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
         >
-          Comprehensive assessment and individualized therapy plans
-          designed to support children with autism spectrum disorders and
-          their families.
+          Teaching children how to identify triggers and express frustrations through healthy, age-appropriate coping mechanisms.
         </p>
       </details>
 
@@ -1059,7 +1209,7 @@
         <summary
           class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
         >
-          Developmental Delay Support
+          Emotional Regulation Training 
           <span
             class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
@@ -1069,8 +1219,7 @@
         <p
           class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
         >
-          Early identification and intervention programs to enhance
-          cognitive, emotional, and social development.
+          Helping young minds understand and manage complex feelings, building the resilience needed to handle life’s ups and downs.
         </p>
       </details>
 
@@ -1078,7 +1227,7 @@
         <summary
           class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
         >
-          Behavioral Therapy
+          Deepening Mutual Understanding 
           <span
             class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
@@ -1088,8 +1237,7 @@
         <p
           class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
         >
-          Evidence-based behavioral interventions that promote positive
-          behavior and emotional regulation.
+          Facilitating sessions that help family members see perspectives beyond their own, fostering empathy and reducing conflict.
         </p>
       </details>
 
@@ -1097,7 +1245,7 @@
         <summary
           class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
         >
-          Child Psychology Care
+          Open Communication Coaching 
           <span
             class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
@@ -1107,8 +1255,7 @@
         <p
           class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
         >
-          Personalized psychological care focused on mental well-being,
-          confidence building, and emotional resilience.
+          Breaking down barriers to honesty and teaching practical tools for healthy, transparent, and non-judgmental dialogue.
         </p>
       </details>
 
@@ -1116,7 +1263,7 @@
         <summary
           class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
         >
-          Family Counseling
+          Individual Psychotherapy 
           <span
             class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
           >
@@ -1126,8 +1273,7 @@
         <p
           class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
         >
-          Collaborative counseling sessions to support families and
-          strengthen parent-child relationships.
+          One-on-one sessions tailored to manage anxiety, depression, trauma, and other clinical conditions using proven psychological frameworks.
         </p>
       </details>
     </div>
@@ -1160,7 +1306,7 @@
           </svg>
         </div>
 
-        <h4 class="text-[20px] font-bold mb-4">Understanding You</h4>
+        <h4 class="text-[20px] font-bold mb-4">Child Behaviour therapy</h4>
 
         <p class="text-[15px] leading-relaxed opacity-80 px-4">
           We begin by carefully understanding your child’s health
@@ -1186,7 +1332,7 @@
           </svg>
         </div>
 
-        <h4 class="text-[20px] font-bold mb-4">Professional Assessment</h4>
+        <h4 class="text-[20px] font-bold mb-4">Counselling & Psychotherapy </h4>
 
         <p class="text-[15px] leading-relaxed opacity-80 px-4">
           Our specialized doctors conduct a rigorous assessment of all
@@ -1209,7 +1355,7 @@
           </svg>
         </div>
 
-        <h4 class="text-[20px] font-bold mb-4">Personalized Care</h4>
+        <h4 class="text-[20px] font-bold mb-4">Family wellbeing & Therapy</h4>
 
         <p class="text-[15px] leading-relaxed opacity-80 px-4">
           Once the assessment is complete, we design a bespoke treatment
@@ -1231,7 +1377,7 @@
           </svg>
         </div>
 
-        <h4 class="text-[20px] font-bold mb-4">Continuous Support</h4>
+        <h4 class="text-[20px] font-bold mb-4">Community wellbeing </h4>
 
         <p class="text-[15px] leading-relaxed opacity-80 px-4">
           Our commitment doesn't end after treatment; we provide ongoing
@@ -1658,20 +1804,24 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const slides = [
-          {
-            title:
-              "Nurturing<br>Young <span class='text-blue-600'>Minds</span>",
-            desc: "Evidence-based clinical psychology for children and adolescents.",
-            img1: "images/hero_1.png",
-            img2: "images/hero_2.png",
-          },
-          {
-            title:
-              "Supporting<br>Growing <span class='text-blue-600'>Families</span>",
-            desc: "Personalized care plans for emotional and developmental needs.",
-            img1: "images/hero_1.png", // Replace with real image paths if you have them
-            img2: "images/hero_2.png",
-          },
+           {
+    title: "Nurturing<br>Young <span class='text-blue-600'>Minds</span>",
+    desc: "Specialist behavioral and academic interventions to help your child thrive.",
+      img1: "images/hero_1.png",
+      img2: "images/hero_2.png",
+  },
+  {
+    title: "Building  <br> Healthier <span class='text-blue-600'>Relationships</span>",
+    desc: "Professional guidance to foster understanding, resolve conflict, and strengthen family bonds.",
+    img1: "images/hero_3.jpg",
+    img2: "images/hero_4.jpg",
+  }, 
+  {
+    title: "Your  <br> Path to  <span class='text-blue-600'>Inner Balance</span>",
+    desc: "Evidence-based psychotherapy and counseling for a more resilient you.",
+    img1: "images/hero_5.jpg",
+    img2: "images/hero_6.jpg",
+  },
         ];
 
         let index = 0;
