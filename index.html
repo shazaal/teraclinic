@@ -609,93 +609,72 @@
   </div>
 </section>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.getElementById('servicesTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+document.addEventListener('DOMContentLoaded', () => {
+  const viewport = document.querySelector('.overflow-hidden'); // your wrapper div
+  const track    = document.getElementById('servicesTrack');
+  const prevBtn  = document.getElementById('prevBtn');
+  const nextBtn  = document.getElementById('nextBtn');
 
-    let position = 0;
-    const speed = 0.8; // Adjust this to make the continuous scroll faster or slower
-    let isPaused = false;
-    let isAnimatingJump = false; // Prevents spam-clicking the buttons
-    let animationId;
+  // Clone all cards for seamless infinite loop
+  const originals = Array.from(track.children);
+  const total     = originals.length; // 8
 
-    // Calculate the exact width of ONE full set of 8 cards.
-    // The track contains 2 identical sets, so we divide by 2.
-    let setWidth = track.scrollWidth / 2;
-
-    // Recalculate if the user resizes their browser window
-    window.addEventListener('resize', () => {
-      setWidth = track.scrollWidth / 2;
-    });
-
-    // 1. The Continuous Smooth Scroll Loop
-    function scrollLoop() {
-      // Only scroll automatically if we aren't hovering, and aren't mid-jump from a button click
-      if (!isPaused && !isAnimatingJump) {
-        position += speed;
-
-        // Seamless infinite loop forward
-        if (position >= setWidth) {
-          position -= setWidth;
-        }
-        // Seamless infinite loop backward
-        if (position < 0) {
-          position += setWidth;
-        }
-
-        track.style.transform = `translateX(-${position}px)`;
-      }
-      
-      // Keep the loop running
-      animationId = requestAnimationFrame(scrollLoop);
-    }
-
-    // Start the continuous scroll immediately
-    scrollLoop();
-
-    // 2. Pause the continuous scroll when the user hovers over the cards
-    track.addEventListener('mouseenter', () => isPaused = true);
-    track.addEventListener('mouseleave', () => isPaused = false);
-
-    // 3. The Button Click Function (Smooth Jumps)
-    function jump(direction) {
-      if (isAnimatingJump) return; // Ignore click if a jump is already happening
-      isAnimatingJump = true;
-
-      // Calculate the width of one card + the gap (16px) to know exactly how far to jump
-      const firstSet = track.children[0];
-      const cardWidth = firstSet.children[0].offsetWidth + 16; 
-      
-      const jumpAmount = cardWidth * direction;
-
-      // Add a CSS transition temporarily for the smooth jump effect
-      track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-      position += jumpAmount;
-      track.style.transform = `translateX(-${position}px)`;
-
-      // Wait 500ms (the length of the transition) before resuming normal scrolling
-      setTimeout(() => {
-        track.style.transition = 'none'; // Remove the CSS transition
-
-        // Quietly fix boundaries in the background if the jump pushed us past the loop limits
-        if (position >= setWidth) {
-          position -= setWidth;
-        } else if (position < 0) {
-          position += setWidth;
-        }
-        
-        // Snap to the corrected seamless position instantly
-        track.style.transform = `translateX(-${position}px)`;
-        
-        isAnimatingJump = false; // Re-enable continuous scrolling and button clicks
-      }, 500); 
-    }
-
-    // Attach jumps to the buttons (1 is forward, -1 is backward)
-    nextBtn.addEventListener('click', () => jump(1));
-    prevBtn.addEventListener('click', () => jump(-1));
+  // Append clones at end (for looping forward)
+  originals.forEach(card => {
+    const clone = card.cloneNode(true);
+    track.appendChild(clone);
   });
+  // Prepend clones at start (for looping backward)
+  [...originals].reverse().forEach(card => {
+    const clone = card.cloneNode(true);
+    track.prepend(clone);
+  });
+
+  let index  = total;   // start at first real card
+  let busy   = false;
+  let paused = false;
+  let autoTimer = null;
+
+  function cardWidth() {
+    return track.children[0].offsetWidth;
+  }
+
+  function applyTranslate(animate) {
+    track.style.transition = animate
+      ? 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)'
+      : 'none';
+    track.style.transform = `translateX(-${index * cardWidth()}px)`;
+  }
+
+  applyTranslate(false); // silent jump to real start on load
+
+  track.addEventListener('transitionend', () => {
+    if (index >= total * 2) { index = total;          applyTranslate(false); }
+    if (index < total)       { index = total * 2 - 1; applyTranslate(false); }
+    busy = false;
+  });
+
+  function move(dir) {
+    if (busy) return;
+    busy = true;
+    index += dir;
+    applyTranslate(true);
+  }
+
+  function startAuto() {
+    autoTimer = setInterval(() => { if (!paused) move(1); }, 2500);
+  }
+
+  viewport.addEventListener('mouseenter', () => paused = true);
+  viewport.addEventListener('mouseleave', () => paused = false);
+
+  nextBtn.addEventListener('click', () => { move(1);  clearInterval(autoTimer); startAuto(); });
+  prevBtn.addEventListener('click', () => { move(-1); clearInterval(autoTimer); startAuto(); });
+
+  window.addEventListener('resize', () => applyTranslate(false));
+
+  startAuto();
+});
 </script>
       <!-- care section  -->
 <section class="w-full overflow-hidden border-t border-gray-100">
