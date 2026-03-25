@@ -1,216 +1,416 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Tera Wellbeing</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Tera Wellbeing</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="images/tera_favicon.png" />
 
-  <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="style/css/transition.css" />
-      <link rel="stylesheet" href="style/css/main.css">
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Sora', 'sans-serif'],
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Sora", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
           },
-          colors: {
-            'tera-blue-light': '#3B82F6',   /* Card 1 */
-            'tera-blue-med': '#1D4ED8',     /* Card 2 */
-            'tera-dark': '#0F172A',         /* Card 3 */
-          }
         },
-      },
-    }
-  </script>
-      <style>
-html {
-  scroll-behavior: auto; /* disable native smooth */
-}
+      };
+    </script>
 
-body {
-  overflow-x: hidden;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-
-      /* Width */
-      ::-webkit-scrollbar {
-        width: 8px; /* Slightly slimmer for elegance */
+    <style>
+      :root {
+        --blue-dark:   #1a3a6b;
+        --blue-deep:   #0f2550;
+        --blue-mid:    #1f6fb8;
+        --blue-card:   #1a3a6b;
+        --input-bg:    #dde9f7;
+        --input-focus: #c8dbf2;
+        --input-ring:  rgba(31,111,184,0.18);
+        --page-bg:     #f4f8fd;
+        --text-dark:   #0d1f3c;
+        --accent:      #e8a020;
       }
 
-      /* Track (Background) */
-      ::-webkit-scrollbar-track {
-        background: transparent; /* Makes it look like it's floating */
-      }
+      html { scroll-behavior: smooth; }
 
-      /* Handle (The gradient part) */
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #eaf1fb; }
       ::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          180deg,
-          #60a5fa 0%,
-          #2563eb 100%
-        ); /* Blue Gradient */
-        border-radius: 100vh; /* Perfectly rounded ends */
-        border: 2px solid #fff; /* White border creates a 'floating' effect */
+        background: linear-gradient(180deg, #5b9bd5 0%, #1a3a6b 100%);
+        border-radius: 100vh;
+        border: 2px solid #fff;
       }
 
-      /* Handle on Hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(
-          180deg,
-          #2563eb 0%,
-          #1e40af 100%
-        ); /* Darker gradient */
+      input:-webkit-autofill,
+      textarea:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 50px var(--input-bg) inset;
+        -webkit-text-fill-color: var(--text-dark);
       }
+
+      body {
+        background: var(--page-bg);
+        color: var(--text-dark);
+        font-family: 'Sora', sans-serif;
+      }
+
+      .form-input {
+        width: 100%;
+        background: var(--input-bg);
+        border: 1.5px solid transparent;
+        border-radius: 14px;
+        padding: 14px 18px;
+        font-size: 14px;
+        color: var(--text-dark);
+        font-family: 'Sora', sans-serif;
+        transition: all 0.25s ease;
+        outline: none;
+      }
+      .form-input::placeholder { color: #7fa8d0; }
+      .form-input:focus {
+        border-color: var(--blue-mid);
+        background: var(--input-focus);
+        box-shadow: 0 0 0 4px var(--input-ring);
+      }
+
+      .phone-wrapper {
+        display: flex;
+        align-items: center;
+        background: var(--input-bg);
+        border: 1.5px solid transparent;
+        border-radius: 14px;
+        overflow: hidden;
+        transition: all 0.25s ease;
+      }
+      .phone-wrapper:focus-within {
+        border-color: var(--blue-mid);
+        background: var(--input-focus);
+        box-shadow: 0 0 0 4px var(--input-ring);
+      }
+      .phone-flag {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 14px 12px 14px 18px;
+        border-right: 1.5px solid rgba(26,58,107,0.14);
+        color: #3a6aa0;
+        font-size: 13px;
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .phone-flag i { font-size: 9px; }
+      .phone-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        padding: 14px 18px;
+        font-size: 14px;
+        color: var(--text-dark);
+        font-family: 'Sora', sans-serif;
+        outline: none;
+      }
+      .phone-input::placeholder { color: #7fa8d0; }
+
+      .info-card {
+        background: var(--blue-card);
+        color: white;
+        border-radius: 24px;
+        padding: 32px 28px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .info-card::before {
+        content: '';
+        position: absolute;
+        top: -40px; right: -40px;
+        width: 110px; height: 110px;
+        background: rgba(255,255,255,0.05);
+        border-radius: 50%;
+      }
+      .info-card::after {
+        content: '';
+        position: absolute;
+        bottom: -25px; left: -25px;
+        width: 80px; height: 80px;
+        background: rgba(255,255,255,0.04);
+        border-radius: 50%;
+      }
+      .info-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 50px rgba(26,58,107,0.28);
+      }
+      .info-card h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        letter-spacing: 0.01em;
+        position: relative;
+        z-index: 1;
+      }
+      .info-card .val {
+        font-size: 14px;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.82);
+        position: relative;
+        z-index: 1;
+      }
+      .info-card .lbl {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.4);
+        display: block;
+        margin-bottom: 3px;
+        position: relative;
+        z-index: 1;
+      }
+      .card-icon {
+        width: 42px; height: 42px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+        color: rgba(255,255,255,0.85);
+        position: relative;
+        z-index: 1;
+      }
+
+      .social-btn {
+        width: 44px; height: 44px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255,255,255,0.25);
+        display: flex; align-items: center; justify-content: center;
+        font-size: 17px;
+        transition: all 0.3s ease;
+        color: white;
+        text-decoration: none;
+        position: relative;
+        z-index: 1;
+      }
+      .social-btn:hover {
+        background: white;
+        color: var(--blue-dark);
+        border-color: white;
+        transform: scale(1.1);
+      }
+
+      .submit-btn {
+        background: var(--blue-dark);
+        color: white;
+        font-family: 'Sora', sans-serif;
+        font-weight: 500;
+        font-size: 15px;
+        padding: 14px 38px;
+        border-radius: 100px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        letter-spacing: 0.01em;
+        box-shadow: 0 8px 24px rgba(26,58,107,0.3);
+      }
+      .submit-btn:hover {
+        background: var(--blue-deep);
+        transform: translateY(-2px);
+        box-shadow: 0 14px 32px rgba(26,58,107,0.4);
+      }
+
+      label {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text-dark);
+        display: block;
+        margin-bottom: 8px;
+        margin-left: 2px;
+      }
+
+      .hero-img-wrap {
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 30px 70px rgba(26,58,107,0.18);
+      }
+
+      .map-wrap {
+        border-radius: 28px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(26,58,107,0.13);
+      }
+
+      .nav-active { color: #1a3a6b !important; font-weight: 700 !important; }
     </style>
-</head>
+  </head>
 
-<body class="font-sans ">
-    <div class="page-transition-wrapper">
-<div class="relative w-full h-screen overflow-hidden">
+  <body>
 
-<header class="absolute top-0 left-0 w-full z-50">
-  <div class="max-w-[1440px] mx-auto px-6 md:px-20 py-6 flex justify-between items-center">
-    
-    <a href="index.html" class="z-50 relative flex items-center">
-      <img src="images/tera logo.png" class="h-14 md:h-15 object-contain " alt="Tera Wellbeing">
-    </a>
-
-    <nav class="hidden md:flex gap-10 text-sm font-medium items-center">
-      
-      <a href="index.html" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
-        Home
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="about.html" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
-        About Us
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="index.html#ourteam" class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300">
-        Our Team
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="services.html"class="relative group py-2 text-white/90 hover:text-blue-400 transition-colors duration-300" >
-        Services
-        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 ease-out group-hover:w-full"></span>
-      </a>
-
-      <a href="contact.html" class="relative py-2 text-blue-400 font-bold tracking-wide">
-        Contact
-        
-      </a>
-      
-  
-    </nav>
-
-    <button id="mobile-btn" class="md:hidden z-50 relative w-10 h-10 flex items-center justify-center text-white focus:outline-none transition-transform duration-300 active:scale-90">
-      <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-
-  </div>
-
-  <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-500">
-    
-    <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-xl"></div>
-    
-    <div class="absolute top-0 right-0 w-64 h-64 bg-blue-500 rounded-full blur-3xl opacity-20 -translate-y-1/2 translate-x-1/2"></div>
-    <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-600 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2"></div>
-
-    <div class="relative z-50 h-full flex flex-col items-center justify-center gap-6" id="mobile-links-container">
-      
-      <a href="index.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Home</a>
-      <a href="about.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">About Us</a>
-      <a href="#" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Our Team</a>
-      
-      <a href="services.html" class="mobile-link text-3xl font-bold text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Services</a>
-      
-      <a href="contact.html" class="mobile-link text-3xl font-light text-white hover:text-blue-400 transform translate-y-8 opacity-0 transition-all duration-500">Contact</a>
-      
-    
-
+    <!-- NAVBAR -->
+    <div class="w-full bg-white relative z-50" style="border-bottom:1px solid rgba(26,58,107,0.08); box-shadow:0 1px 12px rgba(26,58,107,0.06);">
+      <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex">
+        <div class="shrink-0 flex items-center pr-12 pl-10 py-6">
+          <a href="index.html">
+            <img src="images/tera logo.png" class="h-20 w-auto object-contain" alt="Tera Wellbeing" />
+          </a>
+        </div>
+        <div class="flex-1 flex flex-col">
+          <div class="flex items-center justify-end py-8">
+            <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
+              <a href="index.html" class="hover:text-blue-800 transition-colors">Home</a>
+              <a href="about.html" class="hover:text-blue-800 transition-colors">About Us</a>
+              <div class="relative group py-6 -my-6">
+                <a href="services.html" class="flex items-center gap-1.5 hover:text-blue-800 transition-colors">
+                  Services
+                  <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[20px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-4 group-hover:translate-y-0 z-50 p-2">
+                  <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-800 hover:bg-blue-50 rounded-xl transition-all duration-300">Clinical Services</a>
+                  <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-800 hover:bg-blue-50 rounded-xl transition-all duration-300">Assessments</a>
+                  <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-800 hover:bg-blue-50 rounded-xl transition-all duration-300">Capacity Building & Training</a>
+                  <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-800 hover:bg-blue-50 rounded-xl transition-all duration-300">Community Outreach</a>
+                </div>
+              </div>
+              <a href="index.html#ourteam" class="hover:text-blue-800 transition-colors">Our Team</a>
+              <a href="contact.html" class="nav-active transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-btn" class="md:hidden text-3xl text-slate-800 ml-4" aria-label="Open menu">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</header>
 
-  <section class="relative w-full h-full">
-    
-    <img src="images/contact-bg.png" alt="Contact Background" class="absolute inset-0 w-full h-full object-cover" />
+    <!-- MAIN -->
+    <main style="padding: 80px 24px 0;">
+      <div class="max-w-[1300px] mx-auto">
 
-    <div class="absolute inset-0 bg-gradient-to-r from-black/20 via-black/30 to-black/50"></div>
+        <!-- SPLIT -->
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-10 lg:gap-16 items-stretch">
 
-    <div class="relative z-20 h-full max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 flex flex-col justify-center">
-      
-      <div class="grid grid-cols-1 lg:grid-cols-12 h-full pb-32 lg:pb-0">
-        
-        <div class="hidden lg:block lg:col-span-6"></div>
+          <!-- Image -->
+          <div class="hero-img-wrap w-full" style="min-height:420px;" data-aos="fade-right" data-aos-duration="900">
+            <img
+              src="images/contanct-img.jpg"
+              alt="Contact Tera Wellbeing"
+              style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;"
+            />
+          </div>
 
-        <div class="col-span-1 lg:col-span-6 flex flex-col justify-center lg:pl-12 h-full">
-          
-          <div class="text-white mb-auto mt-auto lg:mt-[20vh]">
-            <h1 class="text-[42px] md:text-[54px] leading-tight font-light mb-6">
-              When you need<br>
-              answer, you know<br>
-              where to go
-            </h1>
-            <p class="text-white/80 text-lg font-light">
-              The No.1 hospital brand in the nation for you
-            </p>
+          <!-- Form -->
+          <div class="w-full flex flex-col justify-center py-4" data-aos="fade-left" data-aos-duration="900">
+
+            <div style="margin-bottom:36px;">
+              <p style="font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--blue-mid); margin-bottom:12px;">GET IN TOUCH</p>
+              <h1 class="font-serif" style="font-size:clamp(42px,5vw,62px); font-weight:700; line-height:1.1; color:var(--blue-deep);">
+                Connect <span style="color:var(--accent);">with us</span>
+              </h1>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:20px;">
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label>Name</label>
+                  <input type="text" placeholder="Enter Your Name" class="form-input" />
+                </div>
+                <div>
+                  <label>Email</label>
+                  <input type="email" placeholder="Enter Your Email" class="form-input" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <label>Contact Number</label>
+                  <div class="phone-wrapper">
+                    <div class="phone-flag">🇮🇳 <i class="fa-solid fa-chevron-down"></i></div>
+                    <input type="tel" placeholder="Enter Your Contact Number" class="phone-input" />
+                  </div>
+                </div>
+                <div>
+                  <label>Subject</label>
+                  <input type="text" placeholder="Enter Your Subject" class="form-input" />
+                </div>
+              </div>
+
+              <div>
+                <label>Message</label>
+                <textarea rows="5" placeholder="Enter Your Message" class="form-input" style="resize:none;"></textarea>
+              </div>
+
+              <div style="padding-top:4px;">
+                <button class="submit-btn">Submit Message</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- INFO CARDS -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5" style="margin-top:64px;">
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icon"><i class="fa-solid fa-phone"></i></div>
+            <h3>Contact Us</h3>
+            <div style="display:flex; flex-direction:column; gap:12px; position:relative; z-index:1;">
+              <div><span class="lbl">Mobile</span><span class="val">+91 98765 43210</span></div>
+              <div><span class="lbl">Email</span><span class="val">terawellbeing@gmail.com</span></div>
+            </div>
+          </div>
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <h3>Address</h3>
+            <div style="position:relative; z-index:1;">
+              <span class="lbl">Location</span>
+              <span class="val">2nd Floor, Manatti Tower<br>Manna Junction, Taliparamba<br>Kannur, Kerala</span>
+            </div>
+          </div>
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+            <h3>Open Hours</h3>
+            <div style="display:flex; flex-direction:column; gap:12px; position:relative; z-index:1;">
+              <div><span class="lbl">Weekdays</span><span class="val">Mon – Sat: 10:00 AM – 6:00 PM</span></div>
+              <div><span class="lbl">Weekend</span><span class="val">Sunday: Appointments Only</span></div>
+            </div>
+          </div>
+
+          <div class="info-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-icon"><i class="fa-solid fa-share-nodes"></i></div>
+            <h3>Social Media</h3>
+            <p style="font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:18px; position:relative; z-index:1;">Follow us for updates</p>
+            <div style="display:flex; gap:10px; position:relative; z-index:1;">
+              <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
+            </div>
           </div>
 
         </div>
-      </div>
 
-      <div class="absolute bottom-0 right-0 left-0 lg:left-auto w-full lg:w-auto z-30">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 lg:px-0">
-           <div class="grid grid-cols-3 w-full lg:w-[600px] ml-auto">
-              
-              <a href="#" class="bg-[#3B82F6] text-white p-6 md:p-8 relative group hover:bg-blue-400 transition-colors">
-                <span class="absolute top-5 right-5 text-xl">↗</span>
-                <p class="text-sm opacity-90 mb-1">Phone</p>
-                <h4 class="text-xl font-medium">Consultation</h4>
-              </a>
-
-              <a href="#" class="bg-[#1D4ED8] text-white p-6 md:p-8 relative group hover:bg-blue-700 transition-colors">
-                 <span class="absolute top-5 right-5 text-xl">↗</span>
-                <p class="text-sm opacity-90 mb-1">Phone</p>
-                <h4 class="text-xl font-medium">Consultation</h4>
-              </a>
-
-              <a href="#" class="bg-[#0F172A] text-white p-6 md:p-8 relative group hover:bg-slate-800 transition-colors">
-                 <span class="absolute top-5 right-5 text-xl">↗</span>
-                <p class="text-sm opacity-90 mb-1">Phone</p>
-                <h4 class="text-xl font-medium">Consultation</h4>
-              </a>
-
-           </div>
+        <!-- MAP -->
+        <div class="map-wrap" style="margin-top:64px; height:460px;" data-aos="fade-up" data-aos-duration="900">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.138407000554!2d75.3621453!3d12.0336215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba43d0015555555%3A0x5555555555555555!2sTaliparamba%2C%20Kerala!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
         </div>
+
       </div>
-
-    </div>
-  </section>
-
-</div>
-</div>
-
-
+    </main>
       <!-- ================= FOOTER ================= -->
 
 <footer class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden">
@@ -312,8 +512,10 @@ html {
     </div>
   </div>
 </footer>
-<script src="style/js/nav.js"></script>
-<script src="style/js/transition.js"></script>
-<script src="style/js/scroll.js"></script>
-</body>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 900, easing: 'ease-out-quart', once: true, offset: 50 });
+    </script>
+  </body>
 </html>
