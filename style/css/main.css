@@ -47,56 +47,41 @@
             .specialist-text { font-size: 42px; }
         }
 
-        /* 2. Blue Pop-Out Pill */
-        .blue-pill {
-            display: inline-flex;
-            vertical-align: middle;
-            position: relative;
-            background-color: #1d4ed8; /* Deep Blue */
-            border-radius: 9999px;
-            height: 1.1em;  /* Height relative to text */
-            width: 2.5em;   /* Width relative to text */
-            margin: 0 0.3em;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
+/* Blue Pop-Out Pill */
+.blue-pill {
+    display: inline-flex;
+    vertical-align: middle;
+    position: relative;
+    background-color: #1d4ed8;
+    border-radius: 9999px;
+    height: 1.4em;
+    width: 2.6em;
+    margin: 0 0.25em;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    overflow: hidden; /* clips image to pill shape */
+}
 
-        /* The Baby Doctor Image */
-        .blue-pill img {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            height: 150%; /* Taller than pill to pop out */
-            width: auto;
-            max-width: none;
-            z-index: 10;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
+.blue-pill img {
+    position: absolute;
+    bottom: -20%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 140%;
+    width: 100%;
+    object-fit: cover; /* THIS is the key fix */
+    z-index: 10;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
-        /* Clean Hover Effect */
-        .blue-pill:hover img {
-            transform: translateX(-50%) scale(1.1) translateY(-5px);
-        }
-        .blue-pill:hover {
-            background-color: #1e40af; /* Darker blue */
-            width: 2.8em; /* Subtle expand */
-        }
+.blue-pill:hover img {
+    transform: translateX(-50%) scale(1.1) translateY(-4px);
+}
 
-        /* 3. Regular Inline Images */
-        .inline-pill {
-            display: inline-block;
-            vertical-align: middle;
-            height: 1em; /* Matches text height exactly */
-            width: auto;
-            border-radius: 9999px;
-            margin: 0 0.2em;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .inline-pill:hover {
-            transform: scale(1.05);
-        }
+.blue-pill:hover {
+    background-color: #1e40af;
+    width: 2.9em;
+}
 /* =========================
    WELCOME SECTION
    ========================= */
@@ -258,7 +243,10 @@
 }
 /* doctor  */
 
-  
+ /* colabration   */
+ .sky img{
+  height: 160px;
+ }
 
 /* CTA STYLES */
 .cta {
