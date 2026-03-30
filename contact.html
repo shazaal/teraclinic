@@ -5,6 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us - Tera Wellbeing</title>
+  
+  <!-- SEO & Social Graph Tags -->
+  <meta name="description" content="Tera Clinic is India's leading psychological center for child development & mental health. Offering evidence-based therapy and assessments." />
+  <meta name="keywords" content="Child psychology, behavioral therapy, family counseling, Tera Clinic, mental health, Kannur" />
+  <meta property="og:title" content="Tera Wellbeing | Child Development Center" />
+  <meta property="og:description" content="Evidence-based clinical psychology for children and adolescents." />
+  <meta property="og:image" content="images/tera_logo.png" />
+  <meta property="og:url" content="https://www.terawellbeing.com/contact.html" />
   <link rel="icon" type="image/png" sizes="96x96" href="images/tera_favicon.png" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -374,16 +382,19 @@
             </h1>
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:20px;">
+          <form action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:20px;">
+            
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="db750d4c-a241-4b89-b6af-1006dd5d10d8">
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label>Name</label>
-                <input type="text" placeholder="Enter Your Name" class="form-input" />
+                <input type="text" name="name" placeholder="Enter Your Name" class="form-input" required />
               </div>
               <div>
                 <label>Email</label>
-                <input type="email" placeholder="Enter Your Email" class="form-input" />
+                <input type="email" name="email" placeholder="Enter Your Email" class="form-input" required />
               </div>
             </div>
 
@@ -392,25 +403,28 @@
                 <label>Contact Number</label>
                 <div class="phone-wrapper">
                   <div class="phone-flag">🇮🇳 <i class="fa-solid fa-chevron-down"></i></div>
-                  <input type="tel" placeholder="Enter Your Contact Number" class="phone-input" />
+                  <input type="tel" name="phone" placeholder="Enter Your Contact Number" class="phone-input" />
                 </div>
               </div>
               <div>
                 <label>Subject</label>
-                <input type="text" placeholder="Enter Your Subject" class="form-input" />
+                <input type="text" name="subject" placeholder="Enter Your Subject" class="form-input" required />
               </div>
             </div>
 
             <div>
               <label>Message</label>
-              <textarea rows="5" placeholder="Enter Your Message" class="form-input" style="resize:none;"></textarea>
+              <textarea name="message" rows="5" placeholder="Enter Your Message" class="form-input" style="resize:none;" required></textarea>
             </div>
+
+            <!-- Optional: Web3Forms redirects here on success -->
+            <input type="hidden" name="redirect" value="https://web3forms.com/success">
 
             <div style="padding-top:4px;">
-              <button class="submit-btn">Submit Message</button>
+              <button type="submit" class="submit-btn">Submit Message</button>
             </div>
 
-          </div>
+          </form>
         </div>
       </div>
 
@@ -487,7 +501,7 @@
           </p>
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="100">
+        <div class="lg:justify-self-center" data-aos="fade-up" data-aos-delay="100">
           <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
             <span class="text-blue-400">✦</span> Navigation
           </h4>
@@ -499,7 +513,7 @@
           </ul>
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="200">
+        <div class="lg:justify-self-center" data-aos="fade-up" data-aos-delay="200">
           <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
             <span class="text-blue-400">✦</span> Working Hours
           </h4>

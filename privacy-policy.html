@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Tera Wellbeing</title>
+  
+  <!-- SEO & Social Graph Tags -->
+  <meta name="description" content="Privacy Policy for Tera Clinic. Learn how we handle and protect patient information." />
+  <meta name="keywords" content="Privacy Policy, Tera Clinic, HIPAA, health data, patient privacy" />
+  <meta property="og:title" content="Privacy Policy | Tera Wellbeing" />
+  <meta property="og:description" content="Privacy Policy for Tera Clinic." />
+  <meta property="og:image" content="images/tera_logo.png" />
+  <meta property="og:url" content="https://www.terawellbeing.com/privacy-policy.html" />
+  <link rel="icon" type="image/png" sizes="96x96" href="images/tera_favicon.png" />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- aos -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Sora", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; background-color: #fafafa;}
+    
+    .prose h2 {
+      color: #0f172a;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .prose p {
+      color: #475569;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .prose ul {
+      color: #475569;
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .prose li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+  </style>
+
+  <link rel="stylesheet" href="style/css/main.css" />
+  <link rel="stylesheet" href="style/css/transition.css" />
+</head>
+
+<body class="text-black">
+  <div class="page-transition-wrapper">
+    <!-- HEADER -->
+    <div class="w-full bg-white font-sans relative z-50 shadow-sm border-b border-gray-100">
+      <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex">
+        <div class="shrink-0 flex items-center pr-12 pl-10 py-6">
+          <a href="index.html" class="block">
+            <img src="images/tera logo.png" class="h-20 w-auto object-contain" alt="Tera Wellbeing" />
+          </a>
+        </div>
+        <div class="flex-1 flex flex-col">
+          <div class="flex items-center justify-end py-8">
+            <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
+              <a href="index.html" class="hover:text-blue-600 transition-colors">Home</a>
+              <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+              <a href="index.html#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
+              <a href="services.html" class="hover:text-blue-600 transition-colors">Services</a>
+              <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            <button id="mobile-btn" class="md:hidden text-3xl text-slate-800 ml-4" aria-label="Open menu">
+              <i class="bi bi-list"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- MOBILE MENU -->
+      <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-300">
+        <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
+        <button id="mobile-close" class="absolute top-6 right-6 z-50 text-4xl text-slate-900" aria-label="Close menu"><i class="bi bi-x"></i></button>
+        <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8 w-full overflow-y-auto py-12">
+          <a href="index.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Home</a>
+          <a href="about.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
+          <a href="index.html#ourteam" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Our Team</a>
+          <a href="services.html" class="text-3xl font-medium text-blue-600 transition-colors">Services</a>
+          <a href="contact.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN POLICY CONTENT -->
+    <main class="max-w-[900px] mx-auto px-6 py-20 font-sans" style="min-height: 70vh;">
+      
+      <div data-aos="fade-up">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Privacy Policy</h1>
+        <p class="text-slate-500 mb-12">Last Updated: March 2026</p>
+      </div>
+
+      <div class="prose bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+        <p>At Tera Clinic, we take your privacy and the security of your health information very seriously. This Privacy Policy details how we collect, use, and protect your personal and medical information in accordance with applicable healthcare laws.</p>
+
+        <h2>1. Information We Collect</h2>
+        <p>We may collect the following types of information when you use our website or visit our clinic:</p>
+        <ul>
+          <li><strong>Personal Identification Data:</strong> Name, email address, phone number, and physical address provided via our contact forms.</li>
+          <li><strong>Health Information:</strong> Medical history, assessment records, treatment notes, and related details shared securely with your practitioner.</li>
+          <li><strong>Usage Data:</strong> Anonymous browsing details on our website (e.g., pages visited, time spent) using standard analytical tools.</li>
+        </ul>
+
+        <h2>2. How We Use Your Information</h2>
+        <p>The information we collect is strictly used for the following purposes:</p>
+        <ul>
+          <li>To evaluate, diagnose, and provide the appropriate psychological treatment or behavioral therapy.</li>
+          <li>To schedule appointments and communicate with you regarding your ongoing care.</li>
+          <li>To process billing, insurance claims, and internal administrative duties.</li>
+          <li>To improve our clinic services and website user experience.</li>
+        </ul>
+
+        <h2>3. Data Protection and Confidentiality</h2>
+        <p>All clinical records and personal data are kept strictly confidential. Our therapists adhere to ethical codes and healthcare data protection laws. Information will <strong>never</strong> be disclosed to third parties without your explicit written consent, except where required by law (e.g., in cases of immediate harm or pursuant to a court order).</p>
+
+        <h2>4. Your Rights</h2>
+        <p>As a patient, you have the right to request access to your clinical records, request corrections to any inaccurate information, and ask questions regarding how your data is processed.</p>
+
+        <h2>5. Changes to This Policy</h2>
+        <p>Tera Clinic may update this Privacy Policy periodically to reflect changes in legal or operational requirements. We encourage you to review this page continuously for the latest information on our privacy practices.</p>
+
+        <h2>6. Contact Us</h2>
+        <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> terawellbeing@gmail.com<br>
+        <strong>Phone:</strong> +91 98765 43210<br>
+        <strong>Location:</strong> 2nd Floor, Manatti Tower, Manna Junction, Taliparamba, Kannur, Kerala</p>
+      </div>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden mt-12 w-full">
+      <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 py-16 sm:py-20">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+          <div class="space-y-5">
+            <div class="flex items-center">
+              <img src="images/tera logo.png" alt="Tera Wellbeing" class="h-10 w-auto object-contain " loading="lazy" />
+            </div>
+            <p class="text-sm text-white/70 leading-relaxed max-w-[260px]">
+              Our clinicians provide gold-standard, evidence-based treatment
+              tailored to your unique journey.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Navigation
+            </h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li><a href="index.html" class="footer-link hover:text-blue-400 transition-colors">Home</a></li>
+              <li><a href="about.html" class="footer-link hover:text-blue-400 transition-colors">About</a></li>
+              <li><a href="services.html" class="footer-link hover:text-blue-400 transition-colors">Services</a></li>
+              <li><a href="contact.html" class="footer-link hover:text-blue-400 transition-colors">Contact</a></li>
+              <li><a href="privacy-policy.html" class="footer-link hover:text-blue-400 transition-colors">Privacy Policy</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Working Hours
+            </h4>
+            <div class="space-y-3 text-sm text-white/70">
+              <div class="flex justify-between border-b border-white/10 pb-2">
+                <span>Mon – Sat:</span>
+                <span class="text-white font-medium">10:00 AM – 5:30 PM</span>
+              </div>
+              <div class="flex justify-between border-b border-white/10 pb-2">
+                <span>Sunday:</span>
+                <span class="text-white font-medium">Closed</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Get in Touch
+            </h4>
+
+            <ul class="space-y-3 text-sm text-white/70 mb-6">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-blue-400 text-lg mt-0.5 w-5 text-center"></i>
+                <span>2nd Floor, Manatti Tower <br>
+                  Manna Junction, Taliparamba<br>
+                  Kannur, Kerala</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center"></i>
+                <a href="mailto:terawellbeing@gmail.com"
+                  class="hover:text-white transition-colors">terawellbeing@gmail.com</a>
+              </li>
+            </ul>
+
+            <div class="flex gap-3">
+              <a href="https://facebook.com/" target="_blank" class="social-btn flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300 text-white">
+                <i class="fa-brands fa-facebook-f text-lg"></i>
+              </a>
+              <a href="https://instagram.com/" target="_blank" class="social-btn flex items-center justify-center w-10 h-10 rounded-full bg-white/5 hover:bg-[#E4405F] hover:-translate-y-1 transition-all duration-300 text-white">
+                <i class="fa-brands fa-instagram text-lg"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4">
+          <p>© 2025 Tera Clinic — All rights reserved</p>
+          <div class="flex items-center gap-2">
+            <span>Designed by</span>
+            <a href="https://binocularads.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-500 font-medium transition-colors">
+              Binocular Ads
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    if(typeof AOS !== 'undefined') {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-quart',
+        once: true,
+        offset: 50,
+      });
+    }
+  </script>
+  
+  <script src="style/js/nav.js"></script>
+  <script src="style/js/transition.js"></script>
+</body>
+
+</html>
