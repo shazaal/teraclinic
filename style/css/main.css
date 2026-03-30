@@ -1,14 +1,20 @@
-    body { font-family: 'Sora', sans-serif; }
+    body {
+      font-family: 'Sora', sans-serif;
+    }
+
     /* adhd  */
     /* Hide scrollbar but keep scroll */
-.adhd-scroll {
-  scrollbar-width: none;        /* Firefox */
-  -ms-overflow-style: none;     /* IE */
-}
+    .adhd-scroll {
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE */
+    }
 
-.adhd-scroll::-webkit-scrollbar {
-  display: none;                /* Chrome, Safari */
-}
+    .adhd-scroll::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari */
+    }
 
 
     /* ===== HERO ANIMATION  ===== */
@@ -17,358 +23,395 @@
       transform: translateY(40px);
       transition: all .7s ease;
     }
+
     .hero.show .hero-text,
     .hero.show .hero-img {
       opacity: 1;
       transform: translateY(0);
     }
+
     .hero.exit .hero-text,
     .hero.exit .hero-img {
       opacity: 0;
       transform: translateY(-40px);
     }
-/* === after hero === */
-/* === CUSTOM STYLES TO MATCH UI PERFECTLY === */
-        
-        /* 1. The Main Text */
-        .specialist-text {
-            font-family: 'Inter', sans-serif; /* Or your site's font */
-            color: #334155; /* Slate-700 */
-            line-height: 1.6;
-            font-weight: 500;
-            text-align: center;
-            /* RESPONSIVE SIZE: Mobile 24px -> Desktop 42px (Exact UI match) */
-            font-size: 24px; 
-        }
-        @media (min-width: 768px) {
-            .specialist-text { font-size: 32px; }
-        }
-        @media (min-width: 1024px) {
-            .specialist-text { font-size: 42px; }
-        }
 
-/* Blue Pop-Out Pill */
-.blue-pill {
-    display: inline-flex;
-    vertical-align: middle;
-    position: relative;
-    background-color: #1d4ed8;
-    border-radius: 9999px;
-    height: 1.4em;
-    width: 2.6em;
-    margin: 0 0.25em;
-    cursor: pointer;
-    transition: all 0.4s ease;
-    overflow: hidden; /* clips image to pill shape */
-}
+    /* === after hero === */
+    /* === CUSTOM STYLES TO MATCH UI PERFECTLY === */
 
-.blue-pill img {
-    position: absolute;
-    bottom: -20%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 140%;
-    width: 100%;
-    object-fit: cover; /* THIS is the key fix */
-    z-index: 10;
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+    /* 1. The Main Text */
+    .specialist-text {
+      font-family: 'Inter', sans-serif;
+      /* Or your site's font */
+      color: #334155;
+      /* Slate-700 */
+      line-height: 1.6;
+      font-weight: 500;
+      text-align: center;
+      /* RESPONSIVE SIZE: Mobile 24px -> Desktop 42px (Exact UI match) */
+      font-size: 24px;
+    }
 
-.blue-pill:hover img {
-    transform: translateX(-50%) scale(1.1) translateY(-4px);
-}
+    @media (min-width: 768px) {
+      .specialist-text {
+        font-size: 32px;
+      }
+    }
 
-.blue-pill:hover {
-    background-color: #1e40af;
-    width: 2.9em;
-}
-/* =========================
+    @media (min-width: 1024px) {
+      .specialist-text {
+        font-size: 42px;
+      }
+    }
+
+    /* Blue Pop-Out Pill */
+    .blue-pill {
+      display: inline-flex;
+      vertical-align: middle;
+      position: relative;
+      background-color: #1d4ed8;
+      border-radius: 9999px;
+      height: 1.4em;
+      width: 2.6em;
+      margin: 0 0.25em;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      overflow: hidden;
+      /* clips image to pill shape */
+    }
+
+    .blue-pill img {
+      position: absolute;
+      bottom: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 140%;
+      width: 100%;
+      object-fit: cover;
+      /* THIS is the key fix */
+      z-index: 10;
+      transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .blue-pill:hover img {
+      transform: translateX(-50%) scale(1.1) translateY(-4px);
+    }
+
+    .blue-pill:hover {
+      background-color: #1e40af;
+      width: 2.9em;
+    }
+
+    /* =========================
    WELCOME SECTION
    ========================= */
-/* ================= YOUR BASE STYLES ================= */
-.welcome-section {
-  padding: 120px 80px;
-  background: #fff; /* Ensure white background */
-  overflow: hidden; /* Prevents animation scrollbars */
-}
+    /* ================= YOUR BASE STYLES ================= */
+    .welcome-section {
+      padding: 120px 80px;
+      background: #fff;
+      /* Ensure white background */
+      overflow: hidden;
+      /* Prevents animation scrollbars */
+    }
 
-.welcome-container {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  gap: 120px;
-  align-items: flex-start;
-}
+    .welcome-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 120px;
+      align-items: flex-start;
+    }
 
-/* LEFT */
-.welcome-tag {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
-}
+    /* LEFT */
+    .welcome-tag {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
 
-.tag-line {
-  width: 44px;
-  height: 2px;
-  background: #111;
-}
+    .tag-line {
+      width: 44px;
+      height: 2px;
+      background: #111;
+    }
 
-.tag-text {
-  font-size: 14px;
-  font-weight: 700; /* Made slightly bolder for premium feel */
-  letter-spacing: 1.5px;
-  color: #2563eb;
-  text-transform: uppercase;
-}
+    .tag-text {
+      font-size: 14px;
+      font-weight: 700;
+      /* Made slightly bolder for premium feel */
+      letter-spacing: 1.5px;
+      color: #2563eb;
+      text-transform: uppercase;
+    }
 
-.welcome-title {
-  font-size: 56px;
-  line-height: 1.15;
-  font-weight: 500;
-  color: #0f172a; /* Slate-900 (Softer than #000) */
-}
+    .welcome-title {
+      font-size: 56px;
+      line-height: 1.15;
+      font-weight: 500;
+      color: #0f172a;
+      /* Slate-900 (Softer than #000) */
+    }
 
-/* RIGHT */
-.welcome-right {
-  max-width: 560px;
-}
+    /* RIGHT */
+    .welcome-right {
+      max-width: 560px;
+    }
 
-.customers {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Increased gap slightly */
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid #f1f5f9; /* Added subtle divider line */
-}
+    .customers {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      /* Increased gap slightly */
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid #f1f5f9;
+      /* Added subtle divider line */
+    }
 
-.avatars {
-  display: flex;
-  align-items: center;
-}
+    .avatars {
+      display: flex;
+      align-items: center;
+    }
 
-/* === PREMIUM AVATAR UPGRADE === */
-.avatars img {
-  width: 48px; /* Bigger avatars look better */
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #fff; /* Thicker border for clean cut */
-  margin-left: -12px;
-  transition: transform 0.3s ease; /* For hover effect */
-}
+    /* === PREMIUM AVATAR UPGRADE === */
+    .avatars img {
+      width: 48px;
+      /* Bigger avatars look better */
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      /* Thicker border for clean cut */
+      margin-left: -12px;
+      transition: transform 0.3s ease;
+      /* For hover effect */
+    }
 
-.avatars:hover img {
-  transform: translateX(5px); /* Spreads them out on hover */
-}
+    .avatars:hover img {
+      transform: translateX(5px);
+      /* Spreads them out on hover */
+    }
 
-.avatars img:first-child {
-  margin-left: 0;
-}
+    .avatars img:first-child {
+      margin-left: 0;
+    }
 
-.avatar-plus {
-  width: 48px;
-  height: 48px;
-  margin-left: -12px;
-  border-radius: 50%;
-  background: #0f172a;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  border: 3px solid #fff;
-  position: relative;
-  z-index: 2;
-}
+    .avatar-plus {
+      width: 48px;
+      height: 48px;
+      margin-left: -12px;
+      border-radius: 50%;
+      background: #0f172a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      border: 3px solid #fff;
+      position: relative;
+      z-index: 2;
+    }
 
-.customers-text {
-  font-size: 15px;
-  line-height: 1.4;
-  color: #334155; /* Slate-700 */
-}
+    .customers-text {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #334155;
+      /* Slate-700 */
+    }
 
-.welcome-content p {
-  font-size: 16px;
-  line-height: 1.8; /* Increased breathing room */
-  color: #475569; /* Slate-600 */
-  margin-bottom: 24px;
-}
+    .welcome-content p {
+      font-size: 16px;
+      line-height: 1.8;
+      /* Increased breathing room */
+      color: #475569;
+      /* Slate-600 */
+      margin-bottom: 24px;
+    }
 
-/* === PREMIUM BUTTON UPGRADE === */
-.read-more-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 20px;
-  padding: 14px 36px;
-  background: #2563eb;
-  color: #fff;
-  border-radius: 999px;
-  font-size: 15px;
-  font-weight: 600;
-  text-decoration: none;
-  
-  /* The Magic */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
-}
+    /* === PREMIUM BUTTON UPGRADE === */
+    .read-more-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      padding: 14px 36px;
+      background: #2563eb;
+      color: #fff;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
 
-.read-more-btn:hover {
-  transform: translateY(-3px); /* Lifts up */
-  background: #1d4ed8; /* Darker blue */
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3); /* Glows */
-}
+      /* The Magic */
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .welcome-container {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-  .welcome-title {
-    font-size: 44px;
-  }
-}
+    .read-more-btn:hover {
+      transform: translateY(-3px);
+      /* Lifts up */
+      background: #1d4ed8;
+      /* Darker blue */
+      box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+      /* Glows */
+    }
 
-@media (max-width: 768px) {
-  .welcome-section {
-    padding: 80px 24px;
-  }
-  .welcome-title {
-    font-size: 36px;
-  }
-}
-/* doctor  */
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1024px) {
+      .welcome-container {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
 
- /* colabration   */
- .sky img{
-  height: 160px;
- }
+      .welcome-title {
+        font-size: 44px;
+      }
+    }
 
-/* CTA STYLES */
-.cta {
-  width: 100%;
-  position: relative;
-  background:
-    linear-gradient(
-      to right,
-      rgba(255,255,255,0.1) 0%,
-      rgba(30,90,160,0.6) 55%,
-      rgba(30,90,160,0.9) 100%
-    ),
-    url("/images/callout-bg.png");
-  background-size: cover;
-  background-position: center;
-}
+    @media (max-width: 768px) {
+      .welcome-section {
+        padding: 80px 24px;
+      }
 
-.cta-inner {
-  max-width: 1440px;
-  margin: 0 auto;
-  /* Reduced padding to make it smaller (Was 64px) */
-  padding: 40px 20px; 
-  display: flex;
-  justify-content: flex-end;
-}
+      .welcome-title {
+        font-size: 36px;
+      }
+    }
 
-.cta-content {
-  max-width: 500px;
-  color: #fff;
-}
+    /* doctor  */
 
-.cta-content h2 {
-  font-size: 28px; /* Slightly smaller font */
-  font-weight: 700;
-  margin-bottom: 8px;
-}
+    /* colabration   */
+    .sky img {
+      height: 160px;
+    }
 
-.cta-content p {
-  font-size: 15px;
-  opacity: 0.9;
-  margin-bottom: 24px;
-  line-height: 1.5;
-}
+    /* CTA STYLES */
+    .cta {
+      width: 100%;
+      position: relative;
+      background:
+        linear-gradient(to right,
+          rgba(255, 255, 255, 0.1) 0%,
+          rgba(30, 90, 160, 0.6) 55%,
+          rgba(30, 90, 160, 0.9) 100%),
+        url("/images/callout-bg.png");
+      background-size: cover;
+      background-position: center;
+    }
 
-/* CTA BUTTON HOVER */
-.cta-btn {
-  display: inline-block;
-  padding: 10px 24px;
-  border: 2px solid #fff;
-  border-radius: 6px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
+    .cta-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      /* Reduced padding to make it smaller (Was 64px) */
+      padding: 40px 20px;
+      display: flex;
+      justify-content: flex-end;
+    }
 
-.cta-btn:hover {
-  background-color: #fff;
-  color: #1e5aa0; /* Blue text on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+    .cta-content {
+      max-width: 500px;
+      color: #fff;
+    }
+
+    .cta-content h2 {
+      font-size: 28px;
+      /* Slightly smaller font */
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .cta-content p {
+      font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    /* CTA BUTTON HOVER */
+    .cta-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background-color: #fff;
+      color: #1e5aa0;
+      /* Blue text on hover */
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
 
 
-/* Footer Links */
-.footer-link {
-  display: inline-block;
-  color: rgba(255, 255, 255, 0.7);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    /* Footer Links */
+    .footer-link {
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.7);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.footer-link:hover,
-.footer-link:focus-visible {
-  color: #60a5fa; /* blue-400 — matches the ✦ icon */
-  transform: translateX(4px);
-}
+    .footer-link:hover,
+    .footer-link:focus-visible {
+      color: #60a5fa;
+      /* blue-400 — matches the ✦ icon */
+      transform: translateX(4px);
+    }
 
-.footer-link:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
-  border-radius: 2px;
-}
+    .footer-link:focus-visible {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
 
-/* Social Buttons — Single Definition */
-.social-btn {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+    /* Social Buttons — Single Definition */
+    .social-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-.social-btn:hover,
-.social-btn:focus-visible {
-  background: #3b82f6; /* blue-500 */
-  border-color: #60a5fa; /* blue-400 */
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
-}
+    .social-btn:hover,
+    .social-btn:focus-visible {
+      background: #3b82f6;
+      /* blue-500 */
+      border-color: #60a5fa;
+      /* blue-400 */
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+    }
 
-.social-btn:focus-visible {
-  outline: 2px solid #60a5fa;
-  outline-offset: 2px;
-}
+    .social-btn:focus-visible {
+      outline: 2px solid #60a5fa;
+      outline-offset: 2px;
+    }
 
-/* ============================================
+    /* ============================================
    RESPONSIVE ADJUSTMENTS
    ============================================ */
 
-@media (max-width: 640px) {
-  .footer-link:hover {
-    transform: none; /* Disable slide on touch devices */
-  }
-  
-  .social-btn:active {
-    transform: scale(0.95);
-  }
-}
+    @media (max-width: 640px) {
+      .footer-link:hover {
+        transform: none;
+        /* Disable slide on touch devices */
+      }
+
+      .social-btn:active {
+        transform: scale(0.95);
+      }
+    }

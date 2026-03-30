@@ -1,1481 +1,1538 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tera Wellbeing</title>
-    <!-- ===== FAVICONS ===== -->
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="images/tera_favicon.png"
-    />
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tera Wellbeing</title>
+  <!-- ===== FAVICONS ===== -->
+  <link rel="icon" type="image/png" sizes="96x96" href="images/tera_favicon.png" />
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link
-  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-  rel="stylesheet"
-/>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
 
-    <!-- Lucide Icons (SVG based) -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- aos  -->
-     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+
+  <!-- Lucide Icons (SVG based) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- aos  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
 
-    <!-- Tailwind config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#2563EB", // Royal Blue
-              secondary: "#1E293B", // Dark Navy
-              accent: "#EFF6FF", // Light BG
-            },
-            fontFamily: {
-              sans: ["Sora", "sans-serif"],
-              serif: ["Playfair Display", "serif"],
-            },
+  <!-- Tailwind config -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563EB", // Royal Blue
+            secondary: "#1E293B", // Dark Navy
+            accent: "#EFF6FF", // Light BG
+          },
+          fontFamily: {
+            sans: ["Sora", "sans-serif"],
+            serif: ["Playfair Display", "serif"],
           },
         },
-      };
-    </script>
-    <style>
-      html {
-        scroll-behavior: auto; /* disable native smooth */
-      }
+      },
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: auto;
+      /* disable native smooth */
+    }
 
-      body {
-        overflow-x: hidden;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
+    body {
+      overflow-x: hidden;
+    }
 
-      /* Width */
-      ::-webkit-scrollbar {
-        width: 8px; /* Slightly slimmer for elegance */
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      /* Track (Background) */
-      ::-webkit-scrollbar-track {
-        background: transparent; /* Makes it look like it's floating */
-      }
+    /* Width */
+    ::-webkit-scrollbar {
+      width: 8px;
+      /* Slightly slimmer for elegance */
+    }
 
-      /* Handle (The gradient part) */
-      ::-webkit-scrollbar-thumb {
-        background: linear-gradient(
-          180deg,
+    /* Track (Background) */
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      /* Makes it look like it's floating */
+    }
+
+    /* Handle (The gradient part) */
+    ::-webkit-scrollbar-thumb {
+      background: linear-gradient(180deg,
           #60a5fa 0%,
-          #2563eb 100%
-        ); /* Blue Gradient */
-        border-radius: 100vh; /* Perfectly rounded ends */
-        border: 2px solid #fff; /* White border creates a 'floating' effect */
+          #2563eb 100%);
+      /* Blue Gradient */
+      border-radius: 100vh;
+      /* Perfectly rounded ends */
+      border: 2px solid #fff;
+      /* White border creates a 'floating' effect */
+    }
+
+    /* Handle on Hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(180deg,
+          #2563eb 0%,
+          #1e40af 100%);
+      /* Darker gradient */
+    }
+  </style>
+  <button id="backToTop"
+    class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg translate-y-20 opacity-0 transition-all duration-500 hover:bg-slate-900 hover:-translate-y-1 focus:outline-none z-50 flex items-center justify-center"
+    aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="m18 15-6-6-6 6" />
+    </svg>
+  </button>
+
+  <script>
+    // Logic to show/hide the button
+    const backToTopBtn = document.getElementById("backToTop");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        // Show button (move up and become visible)
+        backToTopBtn.classList.remove("translate-y-20", "opacity-0");
+      } else {
+        // Hide button (move down and become invisible)
+        backToTopBtn.classList.add("translate-y-20", "opacity-0");
+      }
+    });
+
+    // Scroll to top logic
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  </script>
+  <!-- custom CSS -->
+  <link rel="stylesheet" href="style/css/main.css" />
+  <link rel="stylesheet" href="style/css/transition.css" />
+</head>
+
+<body class="text-black">
+  <div class="page-transition-wrapper">
+    <!-- HEADER -->
+    <div class="w-full bg-white font-sans relative z-50">
+
+      <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex">
+
+        <div class="shrink-0 flex items-center pr-12 pl-10 py-6">
+          <a href="index.html" class="block">
+            <img src="images/tera logo.png" class="h-20 w-auto object-contain" alt="Tera Wellbeing" />
+          </a>
+        </div>
+
+        <div class="flex-1 flex flex-col">
+
+          <div class="flex items-center justify-end py-8">
+
+            <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
+              <a href="#" class="hover:text-blue-600 text-black transition-colors">Home</a>
+              <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
+              <a href="#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
+
+              <div class="relative group py-6 -my-6"> <a href="services.html"
+                  class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
+                  Services
+                  <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 opacity-60"
+                    fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+
+                <div
+                  class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[20px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-4 group-hover:translate-y-0 z-50 p-2">
+
+                  <a href="#"
+                    class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+                    Clinical Services
+                  </a>
+                  <a href="#"
+                    class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+                    Assessments
+                  </a>
+                  <a href="#"
+                    class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+                    Capacity Building & Training
+                  </a>
+                  <a href="#"
+                    class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
+                    Community Outreach
+                  </a>
+
+                </div>
+              </div>
+
+              <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
+            </nav>
+            <!-- MOBILE MENU BUTTON -->
+            <button id="mobile-btn" class="md:hidden text-3xl text-slate-800 ml-4" aria-label="Open menu">
+              <i class="bi bi-list"></i>
+            </button>
+
+          </div>
+
+
+          <div
+            class="hidden md:flex items-center  justify-end gap-12 bg-gradient-to-r from-white to-[#f6f9ff] py-5 px-8 w-full">
+            <a href="#" class="cat-link">ADHD Management</a>
+            <a href="#" class="cat-link">Behavioral Challenges</a>
+            <!-- <a href="#" class="cat-link">Emotional Well-Being</a> -->
+            <a href="#" class="cat-link">Speech & Language</a>
+            <a href="#" class="cat-link">Occupational Therapy</a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="md:hidden bg-[#f8f9fa] border-t border-slate-100 overflow-hidden">
+        <div class="flex w-max animate-marquee items-center py-3">
+          <div class="flex gap-8 px-4">
+            <span class="cat-link-mobile">ADHD Management</span>
+            <span class="cat-link-mobile">Behavioral Challenges</span>
+          </div>
+          <div class="flex gap-8 px-4">
+            <span class="cat-link-mobile">Speech & Language</span>
+            <span class="cat-link-mobile">Occupational Therapy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MOBILE MENU -->
+      <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-300">
+        <!-- BLUR BACKDROP -->
+        <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
+
+        <!-- CLOSE BUTTON (NOW VISIBLE) -->
+        <button id="mobile-close" class="absolute top-6 right-6 z-50 text-4xl text-slate-900" aria-label="Close menu">
+          <i class="bi bi-x"></i>
+        </button>
+
+        <!-- MENU LINKS -->
+        <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8 w-full overflow-y-auto py-12">
+          <a href="#" class="text-3xl font-medium text-slate-900 transition-colors">Home</a>
+          <a href="about.html"
+            class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
+          <a href="#ourteam" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Our
+            Team</a>
+
+          <details class="w-full text-center group">
+            <summary
+              class="text-3xl font-medium text-slate-600 hover:text-slate-900 cursor-pointer list-none flex items-center justify-center gap-2 transition-colors">
+              Services
+              <svg
+                class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-open:rotate-180 opacity-40"
+                fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="flex flex-col items-center gap-6 mt-8">
+              <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Clinical
+                Services</a>
+              <a href="#"
+                class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Assessments</a>
+              <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Capacity
+                Building & Training</a>
+              <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Community
+                Outreach</a>
+            </div>
+          </details>
+
+          <a href="contact.html"
+            class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
+        </div>
+      </div>
+
+
+      <style>
+        .cat-link {
+          font-size: 0.85rem;
+          font-weight: 500;
+          color: #64748b;
+          transition: color 0.2s;
+        }
+
+        .cat-link:hover {
+          color: #2563eb;
+        }
+
+        .cat-link-mobile {
+          font-size: 0.75rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #94a3b8;
+          white-space: nowrap;
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-marquee {
+          animation: marquee 20s linear infinite;
+        }
+      </style>
+
+    </div>
+
+
+    <style>
+      /* Reference Style for Secondary Links */
+      .cat-link {
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-transform: capitalize;
+        /* Or uppercase based on preference */
+        color: #64748b;
+        transition: color 0.2s;
       }
 
-      /* Handle on Hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(
-          180deg,
-          #2563eb 0%,
-          #1e40af 100%
-        ); /* Darker gradient */
+      .cat-link:hover {
+        color: #2563eb;
+      }
+
+      .cat-link-mobile {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #94a3b8;
+        white-space: nowrap;
+      }
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .animate-marquee {
+        animation: marquee 20s linear infinite;
       }
     </style>
-    <button
-      id="backToTop"
-      class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg translate-y-20 opacity-0 transition-all duration-500 hover:bg-slate-900 hover:-translate-y-1 focus:outline-none z-50 flex items-center justify-center"
-      aria-label="Back to top"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2.5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <path d="m18 15-6-6-6 6" />
-      </svg>
-    </button>
 
-    <script>
-      // Logic to show/hide the button
-      const backToTopBtn = document.getElementById("backToTop");
+    <section id="hero" class="relative overflow-hidden bg-white">
+      <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          // Show button (move up and become visible)
-          backToTopBtn.classList.remove("translate-y-20", "opacity-0");
-        } else {
-          // Hide button (move down and become invisible)
-          backToTopBtn.classList.add("translate-y-20", "opacity-0");
-        }
-      });
+        <div id="hero-text" class="relative z-10 flex flex-col justify-center" data-aos="fade-right"
+          data-aos-delay="300" data-aos-duration="1200">
 
-      // Scroll to top logic
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth",
-        });
-      });
-    </script>
-    <!-- custom CSS -->
-    <link rel="stylesheet" href="style/css/main.css" />
-    <link rel="stylesheet" href="style/css/transition.css" />
-  </head>
-
-  <body class="text-black">
-    <div class="page-transition-wrapper">
-      <!-- HEADER -->
-<div class="w-full bg-white font-sans relative z-50">
-  
-  <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex">
-    
-    <div class="shrink-0 flex items-center pr-12 pl-10 py-6">
-      <a href="index.html" class="block">
-        <img
-          src="images/tera logo.png"
-          class="h-20 w-auto object-contain"
-          alt="Tera Wellbeing"
-        />
-      </a>
-    </div>
-
-    <div class="flex-1 flex flex-col">
-      
-      <div class="flex items-center justify-end py-8">
-        
-      <nav class="hidden md:flex items-center gap-12 text-[15px] font-medium text-slate-500 mr-10">
-  <a href="#" class="hover:text-blue-600 text-black transition-colors">Home</a>
-  <a href="about.html" class="hover:text-blue-600 transition-colors">About</a>
-  <a href="#ourteam" class="hover:text-blue-600 transition-colors">Our Team</a>
-  
-  <div class="relative group py-6 -my-6"> <a href="services.html" class="flex items-center gap-1.5 hover:text-blue-600 transition-colors">
-      Services
-      <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180 opacity-60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </a>
-    
-    <div class="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[280px] bg-white rounded-[20px] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.08)] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-4 group-hover:translate-y-0 z-50 p-2">
-      
-      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
-        Clinical Services
-      </a>
-      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
-        Assessments
-      </a>
-      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
-        Capacity Building & Training
-      </a>
-      <a href="#" class="block px-4 py-3.5 text-[14px] text-slate-600 hover:text-blue-600 hover:bg-[#F8FAFC] rounded-xl transition-all duration-300">
-        Community Outreach
-      </a>
-      
-    </div>
-  </div>
-
-  <a href="contact.html" class="hover:text-blue-600 transition-colors">Contact</a>
-</nav>
-<!-- MOBILE MENU BUTTON -->
-<button
-  id="mobile-btn"
-  class="md:hidden text-3xl text-slate-800 ml-4"
-  aria-label="Open menu"
->
-  <i class="bi bi-list"></i>
-</button>
-
-      </div>
-      
-
-      <div class="hidden md:flex items-center  justify-end gap-12 bg-gradient-to-r from-white to-[#f6f9ff] py-5 px-8 w-full">
-        <a href="#" class="cat-link">ADHD Management</a>
-        <a href="#" class="cat-link">Behavioral Challenges</a>
-        <!-- <a href="#" class="cat-link">Emotional Well-Being</a> -->
-        <a href="#" class="cat-link">Speech & Language</a>
-        <a href="#" class="cat-link">Occupational Therapy</a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="md:hidden bg-[#f8f9fa] border-t border-slate-100 overflow-hidden">
-     <div class="flex w-max animate-marquee items-center py-3">
-        <div class="flex gap-8 px-4">
-          <span class="cat-link-mobile">ADHD Management</span>
-          <span class="cat-link-mobile">Behavioral Challenges</span>
-        </div>
-        <div class="flex gap-8 px-4">
-          <span class="cat-link-mobile">Speech & Language</span>
-          <span class="cat-link-mobile">Occupational Therapy</span>
-        </div>
-     </div>
-  </div>
-
-<!-- MOBILE MENU -->
-<div
-  id="mobile-menu"
-  class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-300"
->
-  <!-- BLUR BACKDROP -->
-  <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
-
-  <!-- CLOSE BUTTON (NOW VISIBLE) -->
-  <button
-    id="mobile-close"
-    class="absolute top-6 right-6 z-50 text-4xl text-slate-900"
-    aria-label="Close menu"
-  >
-    <i class="bi bi-x"></i>
-  </button>
-
-  <!-- MENU LINKS -->
- <div class="relative z-40 h-full flex flex-col items-center justify-center gap-8 w-full overflow-y-auto py-12">
-  <a href="#" class="text-3xl font-medium text-slate-900 transition-colors">Home</a>
-  <a href="about.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">About</a>
-  <a href="#ourteam" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Our Team</a>
-  
-  <details class="w-full text-center group">
-    <summary class="text-3xl font-medium text-slate-600 hover:text-slate-900 cursor-pointer list-none flex items-center justify-center gap-2 transition-colors">
-      Services
-      <svg class="w-6 h-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-open:rotate-180 opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-      </svg>
-    </summary>
-    <div class="flex flex-col items-center gap-6 mt-8">
-      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Clinical Services</a>
-      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Assessments</a>
-      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Capacity Building & Training</a>
-      <a href="#" class="text-lg font-medium text-slate-500 hover:text-blue-600 transition-colors">Community Outreach</a>
-    </div>
-  </details>
-
-  <a href="contact.html" class="text-3xl font-medium text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
-</div>
-</div>
-
-
-  <style>
-  .cat-link {
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #64748b;
-    transition: color 0.2s;
-  }
-  .cat-link:hover {
-    color: #2563eb;
-  }
-
-  .cat-link-mobile {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #94a3b8;
-    white-space: nowrap;
-  }
-
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
-  }
-</style>
-
-</div>
-
-
-<style>
-  /* Reference Style for Secondary Links */
-  .cat-link {
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-transform: capitalize; /* Or uppercase based on preference */
-    color: #64748b;
-    transition: color 0.2s;
-  }
-  .cat-link:hover {
-    color: #2563eb;
-  }
-  .cat-link-mobile {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #94a3b8;
-    white-space: nowrap;
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
-  }
-</style>
-
-<section id="hero" class="relative overflow-hidden bg-white">
-  <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-    
-    <div id="hero-text" class="relative z-10 flex flex-col justify-center" data-aos="fade-right" data-aos-delay="300" data-aos-duration="1200">
-      
-      <div class="overflow-hidden mb-6">
-        <h1
-          id="hero-title"
-          class="text-6xl font-medium leading-tight transform translate-y-0 opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]"
-        >
-          Nurturing<br />
-          Young <span class="text-blue-600">Minds</span>
-        </h1>
-      </div>
-
-      <div class="overflow-hidden mb-8">
-        <p
-          id="hero-desc"
-          class="text-gray-600 max-w-md transform translate-y-0 opacity-100 transition-all duration-1000 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
-        >
-          Specialist behavioral and academic interventions to help your child thrive.
-        </p>
-      </div>
-
-      <div class="overflow-hidden">
-        <a
-          id="hero-btn"
-          href="#"
-          class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 transform translate-y-0 opacity-100 transition-all duration-1000 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1"
-        >
-         Book Now ↗
-        </a>
-      </div>
-    </div>
-
-    <div class="flex gap-6 flex-col lg:flex-row items-center lg:items-start" data-aos="fade-left" data-aos-delay="400" data-aos-duration="1200">
-      <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
-        <img
-          id="img1-el"
-          src="images/hero_1.png"
-          class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]"
-        />
-      </div>
-
-      <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
-        <img
-          id="img2-el"
-          src="images/hero_2.png"
-          class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] delay-200 ease-[cubic-bezier(0.25,1,0.5,1)]"
-        />
-      </div>
-    </div>
-
-  </div>
-</section>
-      <!-- after hero  -->
-<section class="w-full py-16 md:py-24 px-6 flex justify-center items-center overflow-hidden">
-  <div class="max-w-[1200px] mx-auto text-center text-slate-800"
-       style=" font-size: clamp(1.3rem, 2.8vw, 1.95rem); font-weight: 600; line-height: 1.9;">
-
-    <p data-aos="fade-up" data-aos-duration="800" style="margin: 0 0 0.15em;">
-      Specialists in Clinical Psychology,
-      <span class="blue-pill"><img src="images/after hero_1.png" alt=""></span>
-      Behavior Management,
-    </p>
-
-    <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" style="margin: 0 0 0.15em;">
-      Family &amp;
-      <span class="blue-pill"><img src="images/after hero_2.png" alt=""></span>
-      Individual Wellness,
-      <span class="blue-pill"><img src="images/after hero_3.png" alt=""></span>
-      Learning &amp; Development
-    </p>
-
-    <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" style="margin: 0;">
-      at <span class="text-blue-700 font-bold">Tera Clinic</span>
-    </p>
-
-  </div>
-</section>
-
-  
-    
-
-      <!-- welcome  -->
-<section class="welcome-section">
-  <div class="welcome-container">
-    
-    <div class="welcome-left">
-      <div class="welcome-tag" data-aos="fade-up">
-        <span class="tag-line"></span>
-        <span class="tag-text">WELCOME TO TERA</span>
-      </div>
-
-      <h2 class="welcome-title" data-aos="fade-up" data-aos-delay="100">
-        Holistic  <br />
-        Mental Healthcare <br />
-        <span style="color: #2563eb;">for All. </span>
-      </h2>
-    </div>
-
-    <div class="welcome-right">
-      
-      <div class="customers" data-aos="fade-up" data-aos-delay="200">
-        <div class="avatars group"> <img src="images/peple_circle1.png" alt="" />
-          <img src="images/peple_circle2.png" alt="" />
-          <img src="images/peple_circle3.png" alt="" />
-          <span class="avatar-plus">+</span>
-        </div>
-
-        <p class="customers-text">
-          <strong>We have 200+</strong> customers<br />
-          in the Middle East
-        </p>
-      </div>
-
-      <div class="welcome-content">
-        <p data-aos="fade-up" data-aos-delay="300">
-         Tera Wellbeing is a committed mental health service platform dedicated to providing comprehensive support for individuals, families, organizations, and the wider community. Based in Taliparamba, Kerala, we bridge the gap between clinical expertise and compassionate care. 
-        </p>
-
-        <p data-aos="fade-up" data-aos-delay="400">
-          Our mission is to empower growth through evidence-based interventions, helping  children overcome behavioral challenges, supporting families thrive, assisting individual and team in enhancing wellbeing.
-        </p>
-      </div>
-
-      <div data-aos="fade-up" data-aos-delay="500">
-        <a href="#" class="read-more-btn">Read more ↗</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      <!-- servises  -->
-<section class="max-w-[1440px] mx-auto px-5 lg:px-20 py-[120px] overflow-hidden">
-  
-  <div class="flex items-center justify-between mb-[64px] max-md:flex-col max-md:gap-6 max-md:items-start">
-    <h2 class="text-[48px] font-medium text-black max-md:text-[36px]" data-aos="fade-up">
-      Our Services
-    </h2>
-
-    <div class="flex gap-3" data-aos="fade-up" data-aos-delay="100">
-      <button id="prevBtn" class="w-12 h-12 rounded-full border border-blue-500 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50">
-        ←
-      </button>
-      <button id="nextBtn" class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300">
-        →
-      </button>
-    </div>
-  </div>
-
-  <div class="overflow-hidden -m-4 p-4">
-    <div id="servicesTrack" class="flex transition-transform duration-700 ease-in-out">
-      
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/heart-pulse.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+          <div class="overflow-hidden mb-6">
+            <h1 id="hero-title"
+              class="text-6xl font-medium leading-tight transform translate-y-0 opacity-100 transition-all duration-1000 ease-[cubic-bezier(0.25,1,0.5,1)]">
+              Nurturing<br />
+              Young <span class="text-blue-600">Minds</span>
+            </h1>
           </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Child Wellbeing</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Anger Management for Kids</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Teaching children how to identify triggers and express frustrations through healthy, age-appropriate coping mechanisms.
-          </p>
-        </div>
-      </div>
 
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/brain-circuit.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Child Wellbeing</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Emotional Regulation Training</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Helping young minds understand and manage complex feelings, building the resilience needed to handle life’s ups and downs.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/users.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Family Therapy</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Deepening Mutual Understanding</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Facilitating sessions that help family members see perspectives beyond their own, fostering empathy and reducing conflict.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/message-circle.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Family Therapy</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Open Communication Coaching</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Breaking down barriers to honesty and teaching practical tools for healthy, transparent, and non-judgmental dialogue.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/user.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Individual Psychotherapy</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            One-on-one sessions tailored to manage anxiety, depression, trauma, and other clinical conditions.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/activity.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical Services</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Behavioral Therapy</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Targeted strategies to modify maladaptive habits and replace them with constructive behaviors.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/clipboard-list.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Psychological Assessments</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Utilizing standardized tools to evaluate cognitive abilities, personality traits, and emotional health.
-          </p>
-        </div>
-      </div>
-
-      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
-          <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0"></div>
-          <div class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
-            <img src="https://unpkg.com/lucide-static/icons/graduation-cap.svg" class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
-          </div>
-          <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
-          <h3 class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">Academic & Career Screenings</h3>
-          <p class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
-            Specialized testing to identify learning needs and career aptitudes, providing a clear roadmap.
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const viewport = document.querySelector('.overflow-hidden'); // your wrapper div
-  const track    = document.getElementById('servicesTrack');
-  const prevBtn  = document.getElementById('prevBtn');
-  const nextBtn  = document.getElementById('nextBtn');
-
-  // Clone all cards for seamless infinite loop
-  const originals = Array.from(track.children);
-  const total     = originals.length; // 8
-
-  // Append clones at end (for looping forward)
-  originals.forEach(card => {
-    const clone = card.cloneNode(true);
-    track.appendChild(clone);
-  });
-  // Prepend clones at start (for looping backward)
-  [...originals].reverse().forEach(card => {
-    const clone = card.cloneNode(true);
-    track.prepend(clone);
-  });
-
-  let index  = total;   // start at first real card
-  let busy   = false;
-  let paused = false;
-  let autoTimer = null;
-
-  function cardWidth() {
-    return track.children[0].offsetWidth;
-  }
-
-  function applyTranslate(animate) {
-    track.style.transition = animate
-      ? 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)'
-      : 'none';
-    track.style.transform = `translateX(-${index * cardWidth()}px)`;
-  }
-
-  applyTranslate(false); // silent jump to real start on load
-
-  track.addEventListener('transitionend', () => {
-    if (index >= total * 2) { index = total;          applyTranslate(false); }
-    if (index < total)       { index = total * 2 - 1; applyTranslate(false); }
-    busy = false;
-  });
-
-  function move(dir) {
-    if (busy) return;
-    busy = true;
-    index += dir;
-    applyTranslate(true);
-  }
-
-  function startAuto() {
-    autoTimer = setInterval(() => { if (!paused) move(1); }, 2500);
-  }
-
-  viewport.addEventListener('mouseenter', () => paused = true);
-  viewport.addEventListener('mouseleave', () => paused = false);
-
-  nextBtn.addEventListener('click', () => { move(1);  clearInterval(autoTimer); startAuto(); });
-  prevBtn.addEventListener('click', () => { move(-1); clearInterval(autoTimer); startAuto(); });
-
-  window.addEventListener('resize', () => applyTranslate(false));
-
-  startAuto();
-});
-</script>
-      <!-- care section  -->
-<section class="w-full overflow-hidden border-t border-gray-100">
-  <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[620px]">
-    
-    <div class="relative h-[400px] lg:h-auto" data-aos="fade-right">
-      <img
-        src="images/care.png"
-        alt="Care"
-        class="absolute inset-0 w-full h-full object-cover"
-      />
-
-      <div class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/40 to-transparent flex px-8 lg:px-20 items-center lg:items-end lg:pb-20">
-        <h2 class="text-white text-4xl lg:text-[56px] leading-tight font-medium" data-aos="fade-up" data-aos-delay="200">
-          Care That<br />
-          Brings<br />
-          Back Smiles
-        </h2>
-      </div>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:border-l border-gray-100">
-      
-      <div class="group p-10 lg:p-16 border-b border-gray-100 sm:border-r hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
-           data-aos="fade-up" data-aos-delay="100">
-        <div class="mb-6">
-          <svg class="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
-          Individual Psychotherapy<br class="hidden sm:block" />
-          & Counseling
-        </h3>
-      </div>
-
-      <div class="group p-10 lg:p-16 border-b border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
-           data-aos="fade-up" data-aos-delay="200">
-        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-          <circle cx="9" cy="7" r="4"/>
-          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
-          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-        </svg>
-        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
-          Couple<br class="hidden sm:block" />
-          Therapy
-        </h3>
-      </div>
-
-      <div class="group p-10 lg:p-16 border-b sm:border-b-0 sm:border-r border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
-           data-aos="fade-up" data-aos-delay="300">
-        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-          <polyline points="9 22 9 12 15 12 15 22"/>
-        </svg>
-        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
-          Family<br class="hidden sm:block" />
-          Therapy
-        </h3>
-      </div>
-
-      <div class="group p-10 lg:p-16 hover:bg-gray-50 transition-all duration-300 cursor-pointer" 
-           data-aos="fade-up" data-aos-delay="400">
-        <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10"/>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-          <line x1="9" y1="9" x2="9.01" y2="9"/>
-          <line x1="15" y1="9" x2="15.01" y2="9"/>
-        </svg>
-        <h3 class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
-          Child Behavior<br class="hidden sm:block" />
-          Therapy
-        </h3>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      <!-- diffrent  -->
-<section class="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 bg-white overflow-hidden">
-
-  <div class="text-center mb-16" data-aos="fade-up">
-    <h2 class="text-3xl lg:text-4xl font-semibold text-blue-600">The Tera Wellbeing Difference</h2>
-    <p class="mt-3 text-gray-500 text-sm">Our Promise of Care</p>
-  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr_280px] gap-8 lg:gap-6 items-start">
-
-    <div class="flex flex-col gap-16 lg:pt-8">
-      <div data-aos="fade-right" data-aos-delay="200">
-        <div class="text-blue-600 mb-3">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M4 6a2 2 0 012-2h12v16H6a2 2 0 01-2-2z"/>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">Evidence-Based Care</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Proven methods backed by scientific research.</p>
-      </div>
-
-      <div data-aos="fade-right" data-aos-delay="300" style="transform: translate(0px, 50px)">
-        <div class="text-blue-600 mb-3">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7"/>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">Personalized<br> Approach</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Tailored care designed around you.</p>
-      </div>
-    </div>
-
-    <div data-aos="zoom-in" data-aos-duration="1000">
-      <div class="relative">
-        <span class="absolute -top-5 -left-5 w-10 h-10 bg-blue-900 z-10 block"></span>
-        <span class="absolute -top-2 -left-2 w-10 h-10 bg-blue-500 z-10 block"></span>
-        <span class="absolute -bottom-5 -right-5 w-10 h-10 bg-blue-900 z-10 block"></span>
-        <span class="absolute -bottom-2 -right-2 w-10 h-10 bg-blue-500 z-10 block"></span>
-        <img src="images/diffrence.png" alt="Care" class="w-full h-auto relative z-0 block"/>
-      </div>
-
-      <div class="mt-14 relative z-20" data-aos="fade-up" data-aos-delay="400" style="margin-top: -150px;">
-        <div class="text-blue-600 mb-3 flex justify-start">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M5.5 21a6.5 6.5 0 0113 0"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">Lasting Impact</h4>
-        <p class="text-gray-500 text-sm leading-relaxed max-w-[260px]">Practical solutions for <br>long-term wellbeing.</p>
-      </div>
-    </div>
-
-    <div class="flex flex-col gap-16 lg:pt-8" data-aos="fade-left" data-aos-delay="200">
-      <div>
-        <div class="text-blue-600 mb-3">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z"/>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">Accessible & Supportive</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Easy access with a collaborative care team.</p>
-      </div>
-
-      <div data-aos="fade-left" data-aos-delay="300" style="transform: translate(0px, 50px)">
-        <div class="text-blue-600 mb-3">
-          <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
-            <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3"/>
-          </svg>
-        </div>
-        <h4 class="font-semibold text-lg mb-2 text-gray-900">Safe & Confidential</h4>
-        <p class="text-gray-500 text-sm leading-relaxed">Ethical, private, and judgment-free care.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-      <!-- collabration  -->
-<section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24 lg:py-32 my-24 overflow-hidden">
-  <div class="grid grid-cols-1 lg:grid-cols-[360px_1fr] items-center gap-12 lg:gap-20">
-    
-    <div class="text-center lg:text-left" data-aos="fade-right">
-      <h2 class="text-4xl lg:text-[48px] font-medium leading-tight text-[#1f6fb8]">
-        Institutional<br class="hidden lg:block" />
-        Collaborations
-      </h2>
-      <a href="#" class="inline-block mt-8 text-base font-semibold text-black underline underline-offset-8 transition-opacity hover:opacity-70">
-        See All Partners →
-      </a>
-    </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-16 lg:gap-y-14 place-items-center opacity-80">
-      
-      <img
-        src="images/sky-removebg-preview 2.png"
-        alt="Skyborn Modern"
-        class="sky   w-full max-w-[160px] lg:max-w-[220px] scale-110 object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-      />
-
-      <img
-        src="images/tera logo.png"
-        alt="Tera Wellbeing"
-        class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="300"
-      />
-
-      <img
-        src="images/Untitled-2 2.png"
-        alt="Istore Digital"
-        class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="400"
-      />
-
-      <img
-        src="images/wcd_logo.jpg"
-        alt="WCD Logo"
-        class="h-20 lg:h-20 w-full max-w-[160px] lg:max-w-[220px] scale-110 object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="500"
-      />
-
-      <img
-        src="images/gov_logo.jpg"
-        alt="Gov Logo"
-        class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="600"
-      />
-
-      <img
-        src="images/orc_logo.png"
-        alt="ORC Logo"
-        class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
-        data-aos="zoom-in"
-        data-aos-delay="700"
-      />
-
-    </div>
-  </div>
-</section>
-
-      <!-- consoltation  -->
-<section class="w-full overflow-hidden">
-  <div class="grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
-    
-    <div class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-gradient-to-b from-[#0b1730] to-[#0a1324]">
-      
-      <div class="relative z-10">
-        <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up" data-aos-delay="0">
-          Online<br />consultation
-        </h3>
-
-        <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-slate-300" data-aos="fade-up" data-aos-delay="100">
-          Never delay your child’s health care. Our telemedicine
-          consultation allows you to connect with experienced doctors from
-          home and receive timely, reliable medical advice whenever needed.
-        </p>
-
-        <div data-aos="fade-up" data-aos-delay="200">
-          <a
-            href="#"
-            class="inline-block rounded-md bg-blue-600 px-8 py-3.5 text-sm font-semibold hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-900/50"
-          >
-            Book a Teleconsultation
-          </a>
-        </div>
-      </div>
-
-      <img 
-        src="images/tele_icon.png" 
-        alt="" 
-        class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
-        data-aos="zoom-in"
-        data-aos-delay="300"
-        data-aos-duration="1500"
-      />
-    </div>
-
-    <div class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-[#1f4e8c]">
-      
-      <div class="relative z-10">
-        <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up" data-aos-delay="100">
-          Full time family<br />counsellor
-        </h3>
-
-        <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-blue-100" data-aos="fade-up" data-aos-delay="200">
-          We provide professional home healthcare services focused on
-          comfort, safety, and personalized care. Our trained medical team
-          delivers quality treatment at your doorstep.
-        </p>
-
-        <div data-aos="fade-up" data-aos-delay="300">
-          <a
-            href="#"
-            class="inline-block rounded-md bg-blue-500 px-8 py-3.5 text-sm font-semibold hover:bg-blue-400 transition-all duration-300 shadow-lg shadow-blue-900/20"
-          >
-            Know More
-          </a>
-        </div>
-      </div>
-
-      <img 
-        src="images/home_icon.png" 
-        alt="" 
-        class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
-        data-aos="zoom-in"
-        data-aos-delay="400"
-        data-aos-duration="1500"
-      />
-    </div>
-  </div>
-</section>
-
-      <!-- expert care  -->
-<section
-  class="bg-gradient-to-br from-[#bcdcff] to-[#e9f4ff] px-6 lg:px-20 py-[80px] lg:py-[120px] overflow-hidden"
->
-  <div
-    class="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px]"
-  >
-    <div>
-      <h1 
-        class="text-[40px] lg:text-[64px] leading-[1.05] mb-10"
-        data-aos="fade-right"
-        data-aos-delay="0"
-      >
-        <span class="font-bold text-black">Expert care</span><br />
-        <span class="font-normal text-gray-600">for your</span><br />
-        <span class="font-bold text-black">children</span>
-      </h1>
-
-      <div
-        class="relative w-[260px] rounded-xl overflow-hidden group cursor-pointer shadow-lg shadow-blue-900/10"
-        data-aos="zoom-in"
-        data-aos-delay="200"
-        data-aos-duration="1000"
-      >
-        <img
-          src="images/expert.png"
-          alt="Clinic"
-          class="w-full grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-        />
-
-        <span
-          class="absolute bottom-4 left-4 text-white text-[13px] leading-tight font-medium drop-shadow-md"
-        >
-          Watch more about<br />our clinic
-        </span>
-
-        <span
-          class="absolute bottom-4 right-4 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black/70 text-white text-sm transition-transform duration-300 group-hover:scale-110 backdrop-blur-sm"
-        >
-          ▶
-        </span>
-      </div>
-    </div>
-
-    <div class="flex flex-col divide-y divide-black/10">
-      
-      <details name="care-services" class="group py-6" open data-aos="fade-up" data-aos-delay="100">
-        <summary
-          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
-        >
-          Attention & Concentration Building 
-          <span
-            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
-          >
-            ↘
-          </span>
-        </summary>
-        <p
-          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
-        >
-          Is your child struggling to stay on task or follow instructions? Our evidence-based strategies help children improve their cognitive focus, reduce impulsivity, and develop the organizational skills necessary for academic success and daily routines.
-        </p>
-      </details>
-
-      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="200">
-        <summary
-          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
-        >
-          Anger & Emotional Management 
-          <span
-            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
-          >
-            ↘
-          </span>
-        </summary>
-        <p
-          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
-        >
-          <strong>Turning big emotions into big breakthroughs.</strong> We teach children how to identify "early warning signs" of frustration. Through playful yet scientific techniques, kids learn to express their feelings constructively and develop self-regulation skills that last a lifetime.
-        </p>
-      </details>
-
-      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="300">
-        <summary
-          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
-        >
-          Social & Behavioral Skills 
-          <span
-            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
-          >
-            ↘
-          </span>
-        </summary>
-        <p
-          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
-        >
-          <strong>Building confidence in every interaction.</strong> From navigating peer relationships to following social cues, our behavioral therapy helps children develop the social intelligence needed to feel comfortable and capable in any setting.
-        </p>
-      </details>
-
-      <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="400">
-        <summary
-          class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors"
-        >
-          Academic & Learning Support 
-          <span
-            class="transition-transform duration-300 group-open:rotate-45 text-blue-600"
-          >
-            ↘
-          </span>
-        </summary>
-        <p
-          class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600"
-        >
-          <strong>Bridging the gap between potential and performance.</strong> Through detailed academic interventions, we identify specific learning barriers and provide targeted support to boost your child’s confidence in the classroom.
-        </p>
-      </details>
-
-    </div>
-  </div>
-</section>
-      <!-- care process  -->
-<section class="bg-[#1f6fb8] text-white py-[120px] overflow-hidden">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
-    
-    <div class="text-center mb-[96px]" data-aos="fade-down" data-aos-duration="1000">
-      <div class="flex items-center justify-center gap-3 mb-4 opacity-80">
-        <span class="w-8 h-[1px] bg-white"></span>
-        <span class="uppercase tracking-widest text-[12px] font-bold">Our Workflow</span>
-        <span class="w-8 h-[1px] bg-white"></span>
-      </div>
-      <h2 class="text-[40px] md:text-[48px] font-medium tracking-tight leading-tight">
-        Our Care Process
-      </h2>
-      <p class="mt-4 text-[18px] opacity-90 font-light">
-        Thoughtful Care, From Start to Finish
-      </p>
-    </div>
-
-    <div class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-20 md:gap-x-12">
-      
-      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="100">
-        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 19h16M4 5h16M8 5v14M16 5v14" />
-          </svg>
-        </div>
-
-        <h4 class="text-[20px] font-bold mb-4">Child Behaviour therapy</h4>
-
-        <p class="text-[15px] leading-relaxed opacity-80 px-4">
-          We begin by carefully understanding your child’s health
-          concerns, detailed medical history, and specific individual
-          needs to ensure we have a comprehensive foundation for care.
-        </p>
-
-        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
-          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
-          </svg>
-        </div>
-      </div>
-
-      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="300">
-        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-            <polyline points="10 9 9 9 8 9"></polyline>
-          </svg>
-        </div>
-
-        <h4 class="text-[20px] font-bold mb-4">Counselling & Psychotherapy </h4>
-
-        <p class="text-[15px] leading-relaxed opacity-80 px-4">
-          Our specialized doctors conduct a rigorous assessment of all
-          physical symptoms and psychological patterns to establish an
-          accurate, evidence-based diagnosis for your child.
-        </p>
-
-        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
-          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,10 Q25,20 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
-          </svg>
-        </div>
-      </div>
-
-      <div class="relative text-center group" data-aos="fade-up" data-aos-delay="500">
-        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-        </div>
-
-        <h4 class="text-[20px] font-bold mb-4">Family wellbeing & Therapy</h4>
-
-        <p class="text-[15px] leading-relaxed opacity-80 px-4">
-          Once the assessment is complete, we design a bespoke treatment
-          plan that incorporates therapy and clinical support specifically
-          tailored to your child's unique developmental needs.
-        </p>
-
-        <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
-          <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
-            <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6" fill="none" />
-          </svg>
-        </div>
-      </div>
-
-      <div class="text-center group" data-aos="fade-up" data-aos-delay="700">
-        <div class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-        </div>
-
-        <h4 class="text-[20px] font-bold mb-4">Community wellbeing </h4>
-
-        <p class="text-[15px] leading-relaxed opacity-80 px-4">
-          Our commitment doesn't end after treatment; we provide ongoing
-          monitoring and emotional support to ensure long-term wellbeing
-          and sustained recovery for your family.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-      <!-- doctors  -->
-<section id="ourteam" class="bg-[#1f6fb8] py-24 overflow-hidden">
-  <div class="max-w-[1440px] mx-auto px-8">
-    
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
-      
-      <div data-aos="fade-right">
-        <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
-          <svg width="34" height="10" viewBox="0 0 34 10" fill="none">
-            <path d="M1 5C5 1 9 9 13 5C17 1 21 9 25 5C29 1 33 9 33 5" stroke="white" stroke-width="1.5" stroke-linecap="round" />
-          </svg>
-          Our Experts
-        </div>
-        <h2 class="text-white text-3xl md:text-[36px] font-medium leading-tight">
-          Meet Our Trusted Psychologists
-        </h2>
-      </div>
-
-      <div class="flex gap-3" data-aos="fade-left" data-aos-delay="200">
-        <button
-          onclick="scrollGrid(-1)"
-          class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95"
-        >
-          ‹
-        </button>
-        <button
-          onclick="scrollGrid(1)"
-          class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95"
-        >
-          ›
-        </button>
-      </div>
-    </div>
-
-    <div
-      id="expertGrid"
-      class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 transition-transform duration-500"
-      style="-ms-overflow-style: none; scrollbar-width: none"
-    >
-      
-      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="200">
-        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
-          <img src="images/doc1.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
-          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
-          <div class="absolute bottom-0 w-full px-6 pb-6">
-            <div class="flex justify-between items-end">
-              <div>
-                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Jamie Oliver</h4>
-                <p class="text-gray-600 text-sm mt-1">Therapy Expert</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
-                ↗
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="300">
-        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
-          <img src="images/doc2.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
-          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
-          <div class="absolute bottom-0 w-full px-6 pb-6">
-            <div class="flex justify-between items-end">
-              <div>
-                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Sarah Smith</h4>
-                <p class="text-gray-600 text-sm mt-1">Clinical Expert</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
-                ↗
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="400">
-        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
-          <img src="images/doc3.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
-          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
-          <div class="absolute bottom-0 w-full px-6 pb-6">
-            <div class="flex justify-between items-end">
-              <div>
-                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Mark Wilson</h4>
-                <p class="text-gray-600 text-sm mt-1">Child Specialist</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
-                ↗
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="500">
-        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
-          <img src="images/doc4.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
-          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
-          <div class="absolute bottom-0 w-full px-6 pb-6">
-            <div class="flex justify-between items-end">
-              <div>
-                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Emily Blunt</h4>
-                <p class="text-gray-600 text-sm mt-1">Behavior Expert</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
-                ↗
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="600">
-        <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
-          <img src="images/doc1.jpg" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
-          <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent"></div>
-          <div class="absolute bottom-0 w-full px-6 pb-6">
-            <div class="flex justify-between items-end">
-              <div>
-                <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Alan Rick</h4>
-                <p class="text-gray-600 text-sm mt-1">Consultant</p>
-              </div>
-              <div class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
-                ↗
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8" data-aos="fade-up" data-aos-delay="400">
-      
-      <div class="flex gap-2">
-        <span class="dot w-8 h-[2px] bg-white transition-all duration-300"></span>
-        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
-        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
-        <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
-      </div>
-
-      <a href="#" class="text-white text-sm hover:underline flex items-center gap-2">
-        See All Doctors ↗
-      </a>
-    </div>
-  </div>
-</section>
-
-
-      <style>
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      </style>
-
-      <!-- appoiment  -->
- <section class="bg-[#1f6fb8] text-white px-6 py-20 lg:px-20 overflow-hidden">
-  <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-    
-    <div class="order-2 lg:order-1 text-center lg:text-left" data-aos="fade-right" data-aos-delay="0">
-      <h3 class="text-4xl lg:text-[56px] font-medium leading-[1.1] mb-8">
-        Book An<br class="hidden lg:block" />
-        Appointment
-      </h3>
-
-      <a
-        href="#"
-        class="appointment-link group inline-flex items-center gap-2 text-base font-medium pb-1 border-b-2 border-white/30 hover:border-white transition-all duration-300"
-        data-aos="fade-up" 
-        data-aos-delay="200"
-      >
-        Book An Appointment
-        <span class="transition-transform duration-300 arrow-icon group-hover:translate-x-1 group-hover:-translate-y-1">
-          ↗
-        </span>
-      </a>
-    </div>
-
-    <div class="order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
-      <div class="relative group cursor-pointer">
-        <div class="absolute -inset-1 bg-white/20 rounded-[32px] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000"></div>
-
-        <img
-          src="images/appoment.jpg"
-          alt="Book an appointment"
-          class="relative rounded-[24px] w-full h-[300px] lg:h-[450px] object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]"
-        />
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-      <style>
-        /* Hover animation for the arrow */
-        .appointment-link:hover .arrow-icon {
-          transform: translate(4px, -4px);
-        }
-      </style>
-
-      <!-- testimonial  -->
-
-  <section class="py-12 lg:py-28 px-6 lg:px-20 overflow-hidden bg-white">
-  <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-20 items-center">
-    
-    <div class="z-30">
-      <span class="text-blue-600 text-sm block mb-4 font-semibold italic">〰 Testimonials</span>
-      <h2 class="text-4xl lg:text-5xl font-medium text-blue-600 leading-tight mb-6">
-        What Parents Say<br />About Us
-      </h2>
-      <p class="text-gray-700 leading-relaxed max-w-sm">
-        Caring doctors who listen.<br />
-        Supportive staff who understand.<br />
-        Families who feel safe with us.
-      </p>
-    </div>
-
-    <div class="relative">
-      
-     <div class="absolute -top-12 lg:-top-16 right-0 flex gap-3 z-50">
-  <button id="testimPrev" class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
-    ‹
-  </button>
-  <button id="testimNext" class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
-    ›
-  </button>
-</div>
-
-      <div class="relative h-[400px] lg:h-[380px] w-full" id="sliderStage">
-        
-        <div id="cardBig" class="absolute left-0 top-0 w-full lg:w-[520px] h-[360px] rounded-2xl overflow-hidden z-20 shadow-xl bg-gray-100">
-          <img class="w-full h-full object-cover" src="images/testimonial1.png" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 lg:p-8 flex flex-col justify-end text-white">
-            <div class="text-lg font-bold name">Michael Ross</div>
-            <div class="text-yellow-400 text-sm mb-2">★★★★★</div>
-            <p class="text-sm leading-relaxed text">
-              I was anxious about starting therapy, but the team guided me with such patience.
+          <div class="overflow-hidden mb-8">
+            <p id="hero-desc"
+              class="text-gray-600 max-w-md transform translate-y-0 opacity-100 transition-all duration-1000 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]">
+              Specialist behavioral and academic interventions to help your child thrive.
             </p>
           </div>
+
+          <div class="overflow-hidden">
+            <a id="hero-btn" href="#"
+              class="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 transform translate-y-0 opacity-100 transition-all duration-1000 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)] hover:bg-blue-700 hover:shadow-lg hover:-translate-y-1">
+              Book Now ↗
+            </a>
+          </div>
         </div>
 
-        <div id="cardSmall" class="hidden lg:block absolute right-0 top-20 w-[260px] h-[200px] rounded-xl overflow-hidden opacity-90 z-10 shadow-lg cursor-pointer bg-gray-100">
-          <img class="w-full h-full object-cover" src="images/testimonial2.png" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
-            <div class="text-xs font-medium name">Sarah Jenkins</div>
-            <div class="text-yellow-400 text-xs">★★★★★</div>
+        <div class="flex gap-6 flex-col lg:flex-row items-center lg:items-start" data-aos="fade-left"
+          data-aos-delay="400" data-aos-duration="1200">
+          <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
+            <img id="img1-el" src="images/hero_1.png"
+              class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] ease-[cubic-bezier(0.25,1,0.5,1)]" />
+          </div>
+
+          <div class="w-full max-w-[320px] h-[420px] overflow-hidden relative">
+            <img id="img2-el" src="images/hero_2.png"
+              class="w-full h-full object-cover transform translate-y-0 opacity-100 transition-all duration-[1200ms] delay-200 ease-[cubic-bezier(0.25,1,0.5,1)]" />
           </div>
         </div>
 
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+    <!-- after hero  -->
+    <section class="w-full py-16 md:py-24 px-6 flex justify-center items-center overflow-hidden">
+      <div class="max-w-[1200px] mx-auto text-center text-slate-800"
+        style=" font-size: clamp(1.3rem, 2.8vw, 1.95rem); font-weight: 600; line-height: 1.9;">
+
+        <p data-aos="fade-up" data-aos-duration="800" style="margin: 0 0 0.15em;">
+          Specialists in Clinical Psychology,
+          <span class="blue-pill"><img src="images/after hero_1.png" alt=""></span>
+          Behavior Management,
+        </p>
+
+        <p data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" style="margin: 0 0 0.15em;">
+          Family &amp;
+          <span class="blue-pill"><img src="images/after hero_2.png" alt=""></span>
+          Individual Wellness,
+          <span class="blue-pill"><img src="images/after hero_3.png" alt=""></span>
+          Learning &amp; Development
+        </p>
+
+        <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" style="margin: 0;">
+          at <span class="text-blue-700 font-bold">Tera Clinic</span>
+        </p>
+
+      </div>
+    </section>
 
 
 
 
-      <style>
-        /* Prevents accidental text selection while swiping */
-        #sliderStage {
-          touch-action: pan-y;
-          user-select: none;
+    <!-- welcome  -->
+    <section class="welcome-section">
+      <div class="welcome-container">
+
+        <div class="welcome-left">
+          <div class="welcome-tag" data-aos="fade-up">
+            <span class="tag-line"></span>
+            <span class="tag-text">WELCOME TO TERA</span>
+          </div>
+
+          <h2 class="welcome-title" data-aos="fade-up" data-aos-delay="100">
+            Holistic <br />
+            Mental Healthcare <br />
+            <span style="color: #2563eb;">for All. </span>
+          </h2>
+        </div>
+
+        <div class="welcome-right">
+
+          <div class="customers" data-aos="fade-up" data-aos-delay="200">
+            <div class="avatars group"> <img src="images/peple_circle1.png" alt="" />
+              <img src="images/peple_circle2.png" alt="" />
+              <img src="images/peple_circle3.png" alt="" />
+              <span class="avatar-plus">+</span>
+            </div>
+
+            <p class="customers-text">
+              <strong>We have 200+</strong> customers<br />
+              in the Middle East
+            </p>
+          </div>
+
+          <div class="welcome-content">
+            <p data-aos="fade-up" data-aos-delay="300">
+              Tera Wellbeing is a committed mental health service platform dedicated to providing comprehensive support
+              for individuals, families, organizations, and the wider community. Based in Taliparamba, Kerala, we bridge
+              the gap between clinical expertise and compassionate care.
+            </p>
+
+            <p data-aos="fade-up" data-aos-delay="400">
+              Our mission is to empower growth through evidence-based interventions, helping children overcome
+              behavioral challenges, supporting families thrive, assisting individual and team in enhancing wellbeing.
+            </p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="500">
+            <a href="#" class="read-more-btn">Read more ↗</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- servises  -->
+    <section class="max-w-[1440px] mx-auto px-5 lg:px-20 py-[120px] overflow-hidden">
+
+      <div class="flex items-center justify-between mb-[64px] max-md:flex-col max-md:gap-6 max-md:items-start">
+        <h2 class="text-[48px] font-medium text-black max-md:text-[36px]" data-aos="fade-up">
+          Our Services
+        </h2>
+
+        <div class="flex gap-3" data-aos="fade-up" data-aos-delay="100">
+          <button id="prevBtn"
+            class="w-12 h-12 rounded-full border border-blue-500 text-blue-500 flex items-center justify-center hover:bg-blue-500 hover:text-white transition-all duration-300 disabled:opacity-50">
+            ←
+          </button>
+          <button id="nextBtn"
+            class="w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-700 transition-all duration-300">
+            →
+          </button>
+        </div>
+      </div>
+
+      <div class="overflow-hidden -m-4 p-4">
+        <div id="servicesTrack" class="flex transition-transform duration-700 ease-in-out">
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/heart-pulse.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Child
+                Wellbeing</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Anger Management for Kids</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Teaching children how to identify triggers and express frustrations through healthy, age-appropriate
+                coping mechanisms.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/brain-circuit.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Child
+                Wellbeing</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Emotional Regulation Training</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Helping young minds understand and manage complex feelings, building the resilience needed to handle
+                life’s ups and downs.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/users.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Family
+                Therapy</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Deepening Mutual Understanding</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Facilitating sessions that help family members see perspectives beyond their own, fostering empathy and
+                reducing conflict.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/message-circle.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Family
+                Therapy</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Open Communication Coaching</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Breaking down barriers to honesty and teaching practical tools for healthy, transparent, and
+                non-judgmental dialogue.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/user.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span
+                class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical
+                Services</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Individual Psychotherapy</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                One-on-one sessions tailored to manage anxiety, depression, trauma, and other clinical conditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="400">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/activity.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span
+                class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Clinical
+                Services</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Behavioral Therapy</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Targeted strategies to modify maladaptive habits and replace them with constructive behaviors.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="200">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/clipboard-list.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span
+                class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Psychological Assessments</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Utilizing standardized tools to evaluate cognitive abilities, personality traits, and emotional health.
+              </p>
+            </div>
+          </div>
+
+          <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] px-4" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="h-full bg-white border border-neutral-300 p-10 flex flex-col group relative overflow-hidden transition-all duration-500 hover:border-blue-500 hover:shadow-2xl hover:-translate-y-2 cursor-pointer">
+              <div
+                class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 scale-0 group-hover:scale-100 origin-top-right z-0">
+              </div>
+              <div
+                class="relative z-10 w-12 h-12 flex items-center justify-center mb-6 rounded-lg transition-all duration-500 group-hover:bg-blue-600 group-hover:w-14 group-hover:h-14">
+                <img src="https://unpkg.com/lucide-static/icons/graduation-cap.svg"
+                  class="w-8 h-8 transition-all duration-500 group-hover:brightness-0 group-hover:invert" alt="Icon" />
+              </div>
+              <span
+                class="relative z-10 text-[11px] font-bold text-blue-500 uppercase tracking-wider mb-2 block">Assessments</span>
+              <h3
+                class="relative z-10 text-[22px] font-medium mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                Academic & Career Screenings</h3>
+              <p
+                class="relative z-10 text-[16px] text-neutral-600 leading-[1.6] mb-auto transition-colors duration-300 group-hover:text-slate-600">
+                Specialized testing to identify learning needs and career aptitudes, providing a clear roadmap.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const viewport = document.querySelector('.overflow-hidden'); // your wrapper div
+        const track = document.getElementById('servicesTrack');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Clone all cards for seamless infinite loop
+        const originals = Array.from(track.children);
+        const total = originals.length; // 8
+
+        // Append clones at end (for looping forward)
+        originals.forEach(card => {
+          const clone = card.cloneNode(true);
+          track.appendChild(clone);
+        });
+        // Prepend clones at start (for looping backward)
+        [...originals].reverse().forEach(card => {
+          const clone = card.cloneNode(true);
+          track.prepend(clone);
+        });
+
+        let index = total;   // start at first real card
+        let busy = false;
+        let paused = false;
+        let autoTimer = null;
+
+        function cardWidth() {
+          return track.children[0].offsetWidth;
         }
-      </style>
 
-      <!-- call out  -->
-<!-- <section class="cta" data-aos="fade-up" data-aos-duration="1000">
+        function applyTranslate(animate) {
+          track.style.transition = animate
+            ? 'transform 0.55s cubic-bezier(0.25, 1, 0.5, 1)'
+            : 'none';
+          track.style.transform = `translateX(-${index * cardWidth()}px)`;
+        }
+
+        applyTranslate(false); // silent jump to real start on load
+
+        track.addEventListener('transitionend', () => {
+          if (index >= total * 2) { index = total; applyTranslate(false); }
+          if (index < total) { index = total * 2 - 1; applyTranslate(false); }
+          busy = false;
+        });
+
+        function move(dir) {
+          if (busy) return;
+          busy = true;
+          index += dir;
+          applyTranslate(true);
+        }
+
+        function startAuto() {
+          autoTimer = setInterval(() => { if (!paused) move(1); }, 2500);
+        }
+
+        viewport.addEventListener('mouseenter', () => paused = true);
+        viewport.addEventListener('mouseleave', () => paused = false);
+
+        nextBtn.addEventListener('click', () => { move(1); clearInterval(autoTimer); startAuto(); });
+        prevBtn.addEventListener('click', () => { move(-1); clearInterval(autoTimer); startAuto(); });
+
+        window.addEventListener('resize', () => applyTranslate(false));
+
+        startAuto();
+      });
+    </script>
+    <!-- care section  -->
+    <section class="w-full overflow-hidden border-t border-gray-100">
+      <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[500px] lg:min-h-[620px]">
+
+        <div class="relative h-[400px] lg:h-auto" data-aos="fade-right">
+          <img src="images/care.png" alt="Care" class="absolute inset-0 w-full h-full object-cover" />
+
+          <div
+            class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-black/80 via-black/40 to-transparent flex px-8 lg:px-20 items-center lg:items-end lg:pb-20">
+            <h2 class="text-white text-4xl lg:text-[56px] leading-tight font-medium" data-aos="fade-up"
+              data-aos-delay="200">
+              Care That<br />
+              Brings<br />
+              Back Smiles
+            </h2>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:border-l border-gray-100">
+
+          <div
+            class="group p-10 lg:p-16 border-b border-gray-100 sm:border-r hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+            data-aos="fade-up" data-aos-delay="100">
+            <div class="mb-6">
+              <svg class="w-8 h-8 text-blue-600 group-hover:scale-110 transition-transform duration-300" fill="none"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+                viewBox="0 0 24 24">
+                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h3
+              class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+              Individual Psychotherapy<br class="hidden sm:block" />
+              & Counseling
+            </h3>
+          </div>
+
+          <div
+            class="group p-10 lg:p-16 border-b border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+            data-aos="fade-up" data-aos-delay="200">
+            <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            <h3
+              class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+              Couple<br class="hidden sm:block" />
+              Therapy
+            </h3>
+          </div>
+
+          <div
+            class="group p-10 lg:p-16 border-b sm:border-b-0 sm:border-r border-gray-100 hover:bg-gray-50 transition-all duration-300 cursor-pointer"
+            data-aos="fade-up" data-aos-delay="300">
+            <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            <h3
+              class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+              Family<br class="hidden sm:block" />
+              Therapy
+            </h3>
+          </div>
+
+          <div class="group p-10 lg:p-16 hover:bg-gray-50 transition-all duration-300 cursor-pointer" data-aos="fade-up"
+            data-aos-delay="400">
+            <svg class="w-8 h-8 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300" fill="none"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
+              <line x1="9" y1="9" x2="9.01" y2="9" />
+              <line x1="15" y1="9" x2="15.01" y2="9" />
+            </svg>
+            <h3
+              class="text-xl font-medium text-gray-900 group-hover:text-blue-600 transition-colors duration-300 leading-snug">
+              Child Behavior<br class="hidden sm:block" />
+              Therapy
+            </h3>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- diffrent  -->
+    <section class="max-w-[1200px] mx-auto px-6 lg:px-10 py-20 lg:py-28 bg-white overflow-hidden">
+
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-3xl lg:text-4xl font-semibold text-blue-600">The Tera Wellbeing Difference</h2>
+        <p class="mt-3 text-gray-500 text-sm">Our Promise of Care</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[280px_1fr_280px] gap-8 lg:gap-6 items-start">
+
+        <div class="flex flex-col gap-16 lg:pt-8">
+          <div data-aos="fade-right" data-aos-delay="200">
+            <div class="text-blue-600 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M4 6a2 2 0 012-2h12v16H6a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-lg mb-2 text-gray-900">Evidence-Based Care</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Proven methods backed by scientific research.</p>
+          </div>
+
+          <div data-aos="fade-right" data-aos-delay="300" style="transform: translate(0px, 50px)">
+            <div class="text-blue-600 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-lg mb-2 text-gray-900">Personalized<br> Approach</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Tailored care designed around you.</p>
+          </div>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-duration="1000">
+          <div class="relative">
+            <span class="absolute -top-5 -left-5 w-10 h-10 bg-blue-900 z-10 block"></span>
+            <span class="absolute -top-2 -left-2 w-10 h-10 bg-blue-500 z-10 block"></span>
+            <span class="absolute -bottom-5 -right-5 w-10 h-10 bg-blue-900 z-10 block"></span>
+            <span class="absolute -bottom-2 -right-2 w-10 h-10 bg-blue-500 z-10 block"></span>
+            <img src="images/diffrence.png" alt="Care" class="w-full h-auto relative z-0 block" />
+          </div>
+
+          <div class="mt-14 relative z-20" data-aos="fade-up" data-aos-delay="400" style="margin-top: -150px;">
+            <div class="text-blue-600 mb-3 flex justify-start">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M5.5 21a6.5 6.5 0 0113 0" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-lg mb-2 text-gray-900">Lasting Impact</h4>
+            <p class="text-gray-500 text-sm leading-relaxed max-w-[260px]">Practical solutions for <br>long-term
+              wellbeing.</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-16 lg:pt-8" data-aos="fade-left" data-aos-delay="200">
+          <div>
+            <div class="text-blue-600 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M12 2l8 4v6c0 5-3.5 9-8 10-4.5-1-8-5-8-10V6z" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-lg mb-2 text-gray-900">Accessible & Supportive</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Easy access with a collaborative care team.</p>
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="300" style="transform: translate(0px, 50px)">
+            <div class="text-blue-600 mb-3">
+              <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3" />
+              </svg>
+            </div>
+            <h4 class="font-semibold text-lg mb-2 text-gray-900">Safe & Confidential</h4>
+            <p class="text-gray-500 text-sm leading-relaxed">Ethical, private, and judgment-free care.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- collabration  -->
+    <section class="max-w-[1440px] mx-auto px-6 lg:px-20 py-24 lg:py-32 my-24 overflow-hidden">
+      <div class="grid grid-cols-1 lg:grid-cols-[360px_1fr] items-center gap-12 lg:gap-20">
+
+        <div class="text-center lg:text-left" data-aos="fade-right">
+          <h2 class="text-4xl lg:text-[48px] font-medium leading-tight text-[#1f6fb8]">
+            Institutional<br class="hidden lg:block" />
+            Collaborations
+          </h2>
+          <a href="#"
+            class="inline-block mt-8 text-base font-semibold text-black underline underline-offset-8 transition-opacity hover:opacity-70">
+            See All Partners →
+          </a>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-16 lg:gap-y-14 place-items-center opacity-80">
+
+          <img src="images/sky-removebg-preview 2.png" alt="Skyborn Modern"
+            class="sky   w-full max-w-[160px] lg:max-w-[220px] scale-110 object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="200" />
+
+          <img src="images/tera logo.png" alt="Tera Wellbeing"
+            class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="300" />
+
+          <img src="images/Untitled-2 2.png" alt="Istore Digital"
+            class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="400" />
+
+          <img src="images/wcd_logo.jpg" alt="WCD Logo"
+            class="h-20 lg:h-20 w-full max-w-[160px] lg:max-w-[220px] scale-110 object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="500" />
+
+          <img src="images/gov_logo.jpg" alt="Gov Logo"
+            class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="600" />
+
+          <img src="images/orc_logo.png" alt="ORC Logo"
+            class="h-16 lg:h-20 w-full max-w-[140px] lg:max-w-[180px] object-contain grayscale hover:grayscale-0 transition-all duration-500"
+            data-aos="zoom-in" data-aos-delay="700" />
+
+        </div>
+      </div>
+    </section>
+
+    <!-- consoltation  -->
+    <section class="w-full overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 min-h-[520px]">
+
+        <div
+          class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-gradient-to-b from-[#0b1730] to-[#0a1324]">
+
+          <div class="relative z-10">
+            <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up" data-aos-delay="0">
+              Online<br />consultation
+            </h3>
+
+            <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-slate-300" data-aos="fade-up"
+              data-aos-delay="100">
+              Never delay your child’s health care. Our telemedicine
+              consultation allows you to connect with experienced doctors from
+              home and receive timely, reliable medical advice whenever needed.
+            </p>
+
+            <div data-aos="fade-up" data-aos-delay="200">
+              <a href="#"
+                class="inline-block rounded-md bg-blue-600 px-8 py-3.5 text-sm font-semibold hover:bg-blue-500 transition-all duration-300 shadow-lg shadow-blue-900/50">
+                Book a Teleconsultation
+              </a>
+            </div>
+          </div>
+
+          <img src="images/tele_icon.png" alt=""
+            class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
+            data-aos="zoom-in" data-aos-delay="300" data-aos-duration="1500" />
+        </div>
+
+        <div class="relative overflow-hidden px-8 py-16 md:px-20 md:py-20 text-white bg-[#1f4e8c]">
+
+          <div class="relative z-10">
+            <h3 class="text-[32px] md:text-[36px] font-medium leading-tight mb-6" data-aos="fade-up"
+              data-aos-delay="100">
+              Full time family<br />counsellor
+            </h3>
+
+            <p class="max-w-[480px] text-[16px] leading-[1.7] opacity-90 mb-10 text-blue-100" data-aos="fade-up"
+              data-aos-delay="200">
+              We provide professional home healthcare services focused on
+              comfort, safety, and personalized care. Our trained medical team
+              delivers quality treatment at your doorstep.
+            </p>
+
+            <div data-aos="fade-up" data-aos-delay="300">
+              <a href="#"
+                class="inline-block rounded-md bg-blue-500 px-8 py-3.5 text-sm font-semibold hover:bg-blue-400 transition-all duration-300 shadow-lg shadow-blue-900/20">
+                Know More
+              </a>
+            </div>
+          </div>
+
+          <img src="images/home_icon.png" alt=""
+            class="absolute bottom-8 right-8 w-[180px] md:w-[240px] opacity-20 pointer-events-none select-none object-contain"
+            data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1500" />
+        </div>
+      </div>
+    </section>
+
+    <!-- expert care  -->
+    <section
+      class="bg-gradient-to-br from-[#bcdcff] to-[#e9f4ff] px-6 lg:px-20 py-[80px] lg:py-[120px] overflow-hidden">
+      <div class="mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-2 gap-[60px] lg:gap-[100px]">
+        <div>
+          <h1 class="text-[40px] lg:text-[64px] leading-[1.05] mb-10" data-aos="fade-right" data-aos-delay="0">
+            <span class="font-bold text-black">Expert care</span><br />
+            <span class="font-normal text-gray-600">for your</span><br />
+            <span class="font-bold text-black">children</span>
+          </h1>
+
+          <div class="relative w-[260px] rounded-xl overflow-hidden group cursor-pointer shadow-lg shadow-blue-900/10"
+            data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
+            <img src="images/expert.png" alt="Clinic"
+              class="w-full grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" />
+
+            <span class="absolute bottom-4 left-4 text-white text-[13px] leading-tight font-medium drop-shadow-md">
+              Watch more about<br />our clinic
+            </span>
+
+            <span
+              class="absolute bottom-4 right-4 flex h-[42px] w-[42px] items-center justify-center rounded-full bg-black/70 text-white text-sm transition-transform duration-300 group-hover:scale-110 backdrop-blur-sm">
+              ▶
+            </span>
+          </div>
+        </div>
+
+        <div class="flex flex-col divide-y divide-black/10">
+
+          <details name="care-services" class="group py-6" open data-aos="fade-up" data-aos-delay="100">
+            <summary
+              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors">
+              Attention & Concentration Building
+              <span class="transition-transform duration-300 group-open:rotate-45 text-blue-600">
+                ↘
+              </span>
+            </summary>
+            <p class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600">
+              Is your child struggling to stay on task or follow instructions? Our evidence-based strategies help
+              children improve their cognitive focus, reduce impulsivity, and develop the organizational skills
+              necessary for academic success and daily routines.
+            </p>
+          </details>
+
+          <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="200">
+            <summary
+              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors">
+              Anger & Emotional Management
+              <span class="transition-transform duration-300 group-open:rotate-45 text-blue-600">
+                ↘
+              </span>
+            </summary>
+            <p class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600">
+              <strong>Turning big emotions into big breakthroughs.</strong> We teach children how to identify "early
+              warning signs" of frustration. Through playful yet scientific techniques, kids learn to express their
+              feelings constructively and develop self-regulation skills that last a lifetime.
+            </p>
+          </details>
+
+          <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="300">
+            <summary
+              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors">
+              Social & Behavioral Skills
+              <span class="transition-transform duration-300 group-open:rotate-45 text-blue-600">
+                ↘
+              </span>
+            </summary>
+            <p class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600">
+              <strong>Building confidence in every interaction.</strong> From navigating peer relationships to following
+              social cues, our behavioral therapy helps children develop the social intelligence needed to feel
+              comfortable and capable in any setting.
+            </p>
+          </details>
+
+          <details name="care-services" class="group py-6" data-aos="fade-up" data-aos-delay="400">
+            <summary
+              class="flex cursor-pointer list-none items-center justify-between text-[18px] font-medium text-slate-900 hover:text-blue-600 transition-colors">
+              Academic & Learning Support
+              <span class="transition-transform duration-300 group-open:rotate-45 text-blue-600">
+                ↘
+              </span>
+            </summary>
+            <p class="mt-4 max-w-[520px] text-[15px] leading-[1.7] text-gray-600">
+              <strong>Bridging the gap between potential and performance.</strong> Through detailed academic
+              interventions, we identify specific learning barriers and provide targeted support to boost your child’s
+              confidence in the classroom.
+            </p>
+          </details>
+
+        </div>
+      </div>
+    </section>
+    <!-- care process  -->
+    <section class="bg-[#1f6fb8] text-white py-[120px] overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-6 lg:px-20">
+
+        <div class="text-center mb-[96px]" data-aos="fade-down" data-aos-duration="1000">
+          <div class="flex items-center justify-center gap-3 mb-4 opacity-80">
+            <span class="w-8 h-[1px] bg-white"></span>
+            <span class="uppercase tracking-widest text-[12px] font-bold">Our Workflow</span>
+            <span class="w-8 h-[1px] bg-white"></span>
+          </div>
+          <h2 class="text-[40px] md:text-[48px] font-medium tracking-tight leading-tight">
+            Our Care Process
+          </h2>
+          <p class="mt-4 text-[18px] opacity-90 font-light">
+            Thoughtful Care, From Start to Finish
+          </p>
+        </div>
+
+        <div class="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-20 md:gap-x-12">
+
+          <div class="relative text-center group" data-aos="fade-up" data-aos-delay="100">
+            <div
+              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19h16M4 5h16M8 5v14M16 5v14" />
+              </svg>
+            </div>
+
+            <h4 class="text-[20px] font-bold mb-4">Child Behaviour therapy</h4>
+
+            <p class="text-[15px] leading-relaxed opacity-80 px-4">
+              We begin by carefully understanding your child’s health
+              concerns, detailed medical history, and specific individual
+              needs to ensure we have a comprehensive foundation for care.
+            </p>
+
+            <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+              <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6"
+                  fill="none" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="relative text-center group" data-aos="fade-up" data-aos-delay="300">
+            <div
+              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+
+            <h4 class="text-[20px] font-bold mb-4">Counselling & Psychotherapy </h4>
+
+            <p class="text-[15px] leading-relaxed opacity-80 px-4">
+              Our specialized doctors conduct a rigorous assessment of all
+              physical symptoms and psychological patterns to establish an
+              accurate, evidence-based diagnosis for your child.
+            </p>
+
+            <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+              <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,10 Q25,20 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6"
+                  fill="none" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="relative text-center group" data-aos="fade-up" data-aos-delay="500">
+            <div
+              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+              </svg>
+            </div>
+
+            <h4 class="text-[20px] font-bold mb-4">Family wellbeing & Therapy</h4>
+
+            <p class="text-[15px] leading-relaxed opacity-80 px-4">
+              Once the assessment is complete, we design a bespoke treatment
+              plan that incorporates therapy and clinical support specifically
+              tailored to your child's unique developmental needs.
+            </p>
+
+            <div class="hidden md:block absolute top-[32px] -right-[25%] w-[50%] h-[2px] opacity-30">
+              <svg width="100%" height="20" viewBox="0 0 100 20" preserveAspectRatio="none">
+                <path d="M0,10 Q25,0 50,10 T100,10" stroke="white" stroke-width="2" stroke-dasharray="4 6"
+                  fill="none" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="text-center group" data-aos="fade-up" data-aos-delay="700">
+            <div
+              class="mx-auto mb-8 w-[64px] h-[64px] rounded-2xl bg-white flex items-center justify-center transition-all duration-500 group-hover:rotate-[10deg] group-hover:shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1f6fb8" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+
+            <h4 class="text-[20px] font-bold mb-4">Community wellbeing </h4>
+
+            <p class="text-[15px] leading-relaxed opacity-80 px-4">
+              Our commitment doesn't end after treatment; we provide ongoing
+              monitoring and emotional support to ensure long-term wellbeing
+              and sustained recovery for your family.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- doctors  -->
+    <section id="ourteam" class="bg-[#1f6fb8] py-24 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-8">
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6">
+
+          <div data-aos="fade-right">
+            <div class="flex items-center gap-3 text-white/80 text-sm mb-3">
+              <svg width="34" height="10" viewBox="0 0 34 10" fill="none">
+                <path d="M1 5C5 1 9 9 13 5C17 1 21 9 25 5C29 1 33 9 33 5" stroke="white" stroke-width="1.5"
+                  stroke-linecap="round" />
+              </svg>
+              Our Experts
+            </div>
+            <h2 class="text-white text-3xl md:text-[36px] font-medium leading-tight">
+              Meet Our Trusted Psychologists
+            </h2>
+          </div>
+
+          <div class="flex gap-3" data-aos="fade-left" data-aos-delay="200">
+            <button onclick="scrollGrid(-1)"
+              class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95">
+              ‹
+            </button>
+            <button onclick="scrollGrid(1)"
+              class="w-11 h-11 rounded-full border border-white/50 flex items-center justify-center text-white hover:bg-white hover:text-[#1f6fb8] transition-all cursor-pointer active:scale-95">
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div id="expertGrid"
+          class="flex gap-6 overflow-x-auto snap-x snap-mandatory scrollbar-hide pb-4 transition-transform duration-500"
+          style="-ms-overflow-style: none; scrollbar-width: none">
+
+          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="200">
+            <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+              <img src="images/doc1.jpg"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent">
+              </div>
+              <div class="absolute bottom-0 w-full px-6 pb-6">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Jamie Oliver</h4>
+                    <p class="text-gray-600 text-sm mt-1">Therapy Expert</p>
+                  </div>
+                  <div
+                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                    ↗
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="300">
+            <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+              <img src="images/doc2.jpg"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent">
+              </div>
+              <div class="absolute bottom-0 w-full px-6 pb-6">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Sarah Smith</h4>
+                    <p class="text-gray-600 text-sm mt-1">Clinical Expert</p>
+                  </div>
+                  <div
+                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                    ↗
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="400">
+            <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+              <img src="images/doc3.jpg"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent">
+              </div>
+              <div class="absolute bottom-0 w-full px-6 pb-6">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Mark Wilson</h4>
+                    <p class="text-gray-600 text-sm mt-1">Child Specialist</p>
+                  </div>
+                  <div
+                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                    ↗
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="500">
+            <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+              <img src="images/doc4.jpg"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent">
+              </div>
+              <div class="absolute bottom-0 w-full px-6 pb-6">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Emily Blunt</h4>
+                    <p class="text-gray-600 text-sm mt-1">Behavior Expert</p>
+                  </div>
+                  <div
+                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                    ↗
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="snap-start w-[280px] md:w-[320px] shrink-0 group" data-aos="fade-up" data-aos-delay="600">
+            <div class="relative h-[460px] rounded-[24px] overflow-hidden bg-white shadow-xl shadow-blue-900/20">
+              <img src="images/doc1.jpg"
+                class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110" />
+              <div class="absolute bottom-0 w-full h-[170px] bg-gradient-to-t from-white via-white/95 to-transparent">
+              </div>
+              <div class="absolute bottom-0 w-full px-6 pb-6">
+                <div class="flex justify-between items-end">
+                  <div>
+                    <h4 class="text-[#1f6fb8] text-[20px] font-semibold">Dr. Alan Rick</h4>
+                    <p class="text-gray-600 text-sm mt-1">Consultant</p>
+                  </div>
+                  <div
+                    class="w-11 h-11 rounded-full bg-[#1f6fb8] flex items-center justify-center text-white transition-transform duration-300 group-hover:rotate-45 shadow-lg">
+                    ↗
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-between items-center mt-12 gap-8" data-aos="fade-up"
+          data-aos-delay="400">
+
+          <div class="flex gap-2">
+            <span class="dot w-8 h-[2px] bg-white transition-all duration-300"></span>
+            <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+            <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+            <span class="dot w-8 h-[2px] bg-white/30 hover:bg-white cursor-pointer transition-all duration-300"></span>
+          </div>
+
+          <a href="#" class="text-white text-sm hover:underline flex items-center gap-2">
+            See All Doctors ↗
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+    <style>
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+
+    <!-- appoiment  -->
+    <section class="bg-[#1f6fb8] text-white px-6 py-20 lg:px-20 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+
+        <div class="order-2 lg:order-1 text-center lg:text-left" data-aos="fade-right" data-aos-delay="0">
+          <h3 class="text-4xl lg:text-[56px] font-medium leading-[1.1] mb-8">
+            Book An<br class="hidden lg:block" />
+            Appointment
+          </h3>
+
+          <a href="#"
+            class="appointment-link group inline-flex items-center gap-2 text-base font-medium pb-1 border-b-2 border-white/30 hover:border-white transition-all duration-300"
+            data-aos="fade-up" data-aos-delay="200">
+            Book An Appointment
+            <span
+              class="transition-transform duration-300 arrow-icon group-hover:translate-x-1 group-hover:-translate-y-1">
+              ↗
+            </span>
+          </a>
+        </div>
+
+        <div class="order-1 lg:order-2" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="1000">
+          <div class="relative group cursor-pointer">
+            <div
+              class="absolute -inset-1 bg-white/20 rounded-[32px] blur-xl opacity-0 group-hover:opacity-100 transition duration-1000">
+            </div>
+
+            <img src="images/appoment.jpg" alt="Book an appointment"
+              class="relative rounded-[24px] w-full h-[300px] lg:h-[450px] object-cover shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <style>
+      /* Hover animation for the arrow */
+      .appointment-link:hover .arrow-icon {
+        transform: translate(4px, -4px);
+      }
+    </style>
+
+    <!-- testimonial  -->
+
+    <section class="py-12 lg:py-28 px-6 lg:px-20 overflow-hidden bg-white">
+      <div class="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-20 items-center">
+
+        <div class="z-30">
+          <span class="text-blue-600 text-sm block mb-4 font-semibold italic">〰 Testimonials</span>
+          <h2 class="text-4xl lg:text-5xl font-medium text-blue-600 leading-tight mb-6">
+            What Parents Say<br />About Us
+          </h2>
+          <p class="text-gray-700 leading-relaxed max-w-sm">
+            Caring doctors who listen.<br />
+            Supportive staff who understand.<br />
+            Families who feel safe with us.
+          </p>
+        </div>
+
+        <div class="relative">
+
+          <div class="absolute -top-12 lg:-top-16 right-0 flex gap-3 z-50">
+            <button id="testimPrev"
+              class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
+              ‹
+            </button>
+            <button id="testimNext"
+              class="w-10 h-10 lg:w-9 lg:h-9 rounded-full border border-blue-600 text-blue-600 grid place-items-center hover:bg-blue-600 hover:text-white transition-colors cursor-pointer">
+              ›
+            </button>
+          </div>
+
+          <div class="relative h-[400px] lg:h-[380px] w-full" id="sliderStage">
+
+            <div id="cardBig"
+              class="absolute left-0 top-0 w-full lg:w-[520px] h-[360px] rounded-2xl overflow-hidden z-20 shadow-xl bg-gray-100">
+              <img class="w-full h-full object-cover" src="images/testimonial1.png" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-6 lg:p-8 flex flex-col justify-end text-white">
+                <div class="text-lg font-bold name">Michael Ross</div>
+                <div class="text-yellow-400 text-sm mb-2">★★★★★</div>
+                <p class="text-sm leading-relaxed text">
+                  I was anxious about starting therapy, but the team guided me with such patience.
+                </p>
+              </div>
+            </div>
+
+            <div id="cardSmall"
+              class="hidden lg:block absolute right-0 top-20 w-[260px] h-[200px] rounded-xl overflow-hidden opacity-90 z-10 shadow-lg cursor-pointer bg-gray-100">
+              <img class="w-full h-full object-cover" src="images/testimonial2.png" />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-4 flex flex-col justify-end text-white">
+                <div class="text-xs font-medium name">Sarah Jenkins</div>
+                <div class="text-yellow-400 text-xs">★★★★★</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <style>
+      /* Prevents accidental text selection while swiping */
+      #sliderStage {
+        touch-action: pan-y;
+        user-select: none;
+      }
+    </style>
+
+    <!-- call out  -->
+    <!-- <section class="cta" data-aos="fade-up" data-aos-duration="1000">
   <div class="cta-inner">
     <div class="cta-content">
       
@@ -1495,377 +1552,378 @@ document.addEventListener('DOMContentLoaded', () => {
   </div>
 </section> -->
 
-      <!-- ================= FOOTER ================= -->
+    <!-- ================= FOOTER ================= -->
 
-<footer class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden">
-  <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 py-16 sm:py-20">
-    
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
-      
-      <div class="space-y-5" data-aos="fade-up" data-aos-delay="0">
-        <div class="flex items-center">
-          <img
-            src="images/tera logo.png"
-            alt="Tera Wellbeing"
-            class="h-10 w-auto object-contain " 
-            loading="lazy"
-          />
+    <footer
+      class="bg-[radial-gradient(circle_at_top_left,#101c34_0%,#0b152a_60%,#081123_100%)] text-white overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-20 py-16 sm:py-20">
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
+
+          <div class="space-y-5" data-aos="fade-up" data-aos-delay="0">
+            <div class="flex items-center">
+              <img src="images/tera logo.png" alt="Tera Wellbeing" class="h-10 w-auto object-contain " loading="lazy" />
+            </div>
+            <p class="text-sm text-white/70 leading-relaxed max-w-[260px]">
+              Our clinicians provide gold-standard, evidence-based treatment
+              tailored to your unique journey.
+            </p>
           </div>
-        <p class="text-sm text-white/70 leading-relaxed max-w-[260px]">
-          Our clinicians provide gold-standard, evidence-based treatment
-          tailored to your unique journey.
-        </p>
-      </div>
 
-      <div data-aos="fade-up" data-aos-delay="100">
-        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-          <span class="text-blue-400">✦</span> Navigation
-        </h4>
-        <ul class="space-y-3 text-sm text-white/70">
-          <li><a href="index.html" class="footer-link hover:text-blue-400 transition-colors">Home</a></li>
-          <li><a href="about.html" class="footer-link hover:text-blue-400 transition-colors">About</a></li>
-          <li><a href="services.html" class="footer-link hover:text-blue-400 transition-colors">Services</a></li>
-          <li><a href="contact.html" class="footer-link hover:text-blue-400 transition-colors">Contact</a></li>
-        </ul>
-      </div>
+          <div data-aos="fade-up" data-aos-delay="100">
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Navigation
+            </h4>
+            <ul class="space-y-3 text-sm text-white/70">
+              <li><a href="index.html" class="footer-link hover:text-blue-400 transition-colors">Home</a></li>
+              <li><a href="about.html" class="footer-link hover:text-blue-400 transition-colors">About</a></li>
+              <li><a href="services.html" class="footer-link hover:text-blue-400 transition-colors">Services</a></li>
+              <li><a href="contact.html" class="footer-link hover:text-blue-400 transition-colors">Contact</a></li>
+            </ul>
+          </div>
 
-      <div data-aos="fade-up" data-aos-delay="200">
-        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-          <span class="text-blue-400">✦</span> Working Hours
-        </h4>
-<div class="space-y-3 text-sm text-white/70">
-  <div class="flex justify-between border-b border-white/10 pb-2">
-    <span>Mon – Sat:</span>
-    <span class="text-white font-medium">10:00 AM – 5:30 PM</span>
-  </div>
+          <div data-aos="fade-up" data-aos-delay="200">
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Working Hours
+            </h4>
+            <div class="space-y-3 text-sm text-white/70">
+              <div class="flex justify-between border-b border-white/10 pb-2">
+                <span>Mon – Sat:</span>
+                <span class="text-white font-medium">10:00 AM – 5:30 PM</span>
+              </div>
 
-  <div class="flex justify-between border-b border-white/10 pb-2">
-    <span>Sunday:</span>
-    <span class="text-white font-medium">Closed</span>
-  </div>
-</div>
+              <div class="flex justify-between border-b border-white/10 pb-2">
+                <span>Sunday:</span>
+                <span class="text-white font-medium">Closed</span>
+              </div>
+            </div>
 
-      </div>
+          </div>
 
-      <div data-aos="fade-up" data-aos-delay="300">
-        <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
-          <span class="text-blue-400">✦</span> Get in Touch
-        </h4>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <h4 class="font-semibold text-lg mb-5 flex items-center gap-2">
+              <span class="text-blue-400">✦</span> Get in Touch
+            </h4>
 
-        <ul class="space-y-3 text-sm text-white/70 mb-6">
-          <li class="flex items-start gap-3">
-            <i class="fa-solid fa-location-dot text-blue-400 text-lg mt-0.5 w-5 text-center"></i>
-            <span>2nd Floor, Manatti Tower <br>
+            <ul class="space-y-3 text-sm text-white/70 mb-6">
+              <li class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot text-blue-400 text-lg mt-0.5 w-5 text-center"></i>
+                <span>2nd Floor, Manatti Tower <br>
                   Manna Junction, Taliparamba<br>
                   Kannur, Kerala</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center"></i>
-            <a href="mailto:terawellbeing@gmail.com" class="hover:text-white transition-colors">terawellbeing@gmail.com</a>
-          </li>
-        </ul>
+              </li>
+              <li class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-blue-400 text-lg w-5 text-center"></i>
+                <a href="mailto:terawellbeing@gmail.com"
+                  class="hover:text-white transition-colors">terawellbeing@gmail.com</a>
+              </li>
+            </ul>
 
-        <div class="flex gap-3">
-          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="Facebook">
-            <i class="fa-brands fa-facebook-f text-lg"></i>
-          </a>
-          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#E4405F] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="Instagram">
-            <i class="fa-brands fa-instagram text-lg"></i>
-          </a>
-          <a href="#" class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300 text-white" aria-label="YouTube">
-            <i class="fa-brands fa-youtube text-lg"></i>
-          </a>
+            <div class="flex gap-3">
+              <a href="#"
+                class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300 text-white"
+                aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f text-lg"></i>
+              </a>
+              <a href="#"
+                class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#E4405F] hover:-translate-y-1 transition-all duration-300 text-white"
+                aria-label="Instagram">
+                <i class="fa-brands fa-instagram text-lg"></i>
+              </a>
+              <a href="#"
+                class="social-btn flex items-center justify-center w-10 h-10 !rounded-full bg-white/5 hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300 text-white"
+                aria-label="YouTube">
+                <i class="fa-brands fa-youtube text-lg"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <div
+          class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4">
+          <p>© 2025 Tera Clinic — All rights reserved</p>
+          <div class="flex items-center gap-2">
+            <span>Designed by</span>
+            <a href="https://binocularads.com" target="_blank" rel="noopener noreferrer"
+              class="text-white hover:text-red-500 font-medium transition-colors">
+              Binocular Ads
+            </a>
+          </div>
         </div>
       </div>
-
-    </div>
-
-    <div class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4">
-      <p>© 2025 Tera Clinic — All rights reserved</p>
- <div class="flex items-center gap-2">
-  <span>Designed by</span>
-  <a 
-    href="https://binocularads.com" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    class="text-white hover:text-red-500 font-medium transition-colors"
-  >
-    Binocular Ads
-  </a>
-</div>
-    </div>
+    </footer>
   </div>
-</footer>
-    </div>
-    <!-- aos  -->
-     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    // 1. DURATION: 1 second (1000ms) makes it feel "heavy" and expensive.
-    duration: 1000, 
-    
-    // 2. EASING: 'ease-out-quart' starts fast and brakes hard at the end.
-    // This is the secret to that "Apple/Agency" smooth stop.
-    easing: 'ease-out-quart', 
-    
-    // 3. ONCE: Prevents animations from re-playing when scrolling up.
-    once: true, 
-    
-    // 4. OFFSET: Triggers the animation 50px before the element is visible.
-    offset: 50,      
-  });
-</script>
-    <!-- hero section animation  -->
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const slides = [
-           {
-    title: "Nurturing<br>Young <span class='text-blue-600'>Minds</span>",
-    desc: "Specialist behavioral and academic interventions to help your child thrive.",
-      img1: "images/hero_1.png",
-      img2: "images/hero_2.png",
-  },
-  {
-    title: "Building  <br> Healthier <span class='text-blue-600'>Relationships</span>",
-    desc: "Professional guidance to foster understanding, resolve conflict, and strengthen family bonds.",
-    img1: "images/hero_3.jpg",
-    img2: "images/hero_4.jpg",
-  }, 
-  {
-    title: "Your  <br> Path to  <span class='text-blue-600'>Inner Balance</span>",
-    desc: "Evidence-based psychotherapy and counseling for a more resilient you.",
-    img1: "images/hero_5.jpg",
-    img2: "images/hero_6.jpg",
-  },
-        ];
+  <!-- aos  -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      // 1. DURATION: 1 second (1000ms) makes it feel "heavy" and expensive.
+      duration: 1000,
 
-        let index = 0;
+      // 2. EASING: 'ease-out-quart' starts fast and brakes hard at the end.
+      // This is the secret to that "Apple/Agency" smooth stop.
+      easing: 'ease-out-quart',
 
-        // Select the elements to animate
-        const elements = {
-          title: document.getElementById("hero-title"),
-          desc: document.getElementById("hero-desc"),
-          btn: document.getElementById("hero-btn"),
-          img1: document.getElementById("img1-el"),
-          img2: document.getElementById("img2-el"),
-        };
+      // 3. ONCE: Prevents animations from re-playing when scrolling up.
+      once: true,
 
-        function nextSlide() {
-          // 1. EXIT PHASE: Slide everything UP and OUT
-          // We add these classes to move elements out of view
-          Object.values(elements).forEach((el) => {
-            el.classList.remove("translate-y-0", "opacity-100");
-            el.classList.add("-translate-y-full", "opacity-0");
-          });
-
-          // 2. RESET PHASE: Wait for exit animation to finish (1000ms)
-          setTimeout(() => {
-            index = (index + 1) % slides.length;
-            const s = slides[index];
-
-            // Swap Data
-            elements.title.innerHTML = s.title;
-            elements.desc.textContent = s.desc;
-            elements.img1.src = s.img1;
-            elements.img2.src = s.img2;
-
-            // INSTANT RESET (Disable transition to jump to bottom)
-            Object.values(elements).forEach((el) => {
-              // Disable transition temporarily
-              el.classList.add("duration-0", "transition-none");
-
-              // Jump to bottom position
-              el.classList.remove("-translate-y-full");
-              el.classList.add("translate-y-full");
-
-              // FORCE REFLOW (Critical Step: tells browser to apply the change NOW)
-              void el.offsetWidth;
-
-              // Re-enable transition
-              el.classList.remove("duration-0", "transition-none");
-            });
-
-            // 3. ENTER PHASE: Slide In from Bottom
-            // We use a tiny timeout to ensure the transition is back on
-            requestAnimationFrame(() => {
-              Object.values(elements).forEach((el) => {
-                el.classList.remove("translate-y-full", "opacity-0");
-                el.classList.add("translate-y-0", "opacity-100");
-              });
-            });
-          }, 1000); // Waits 1s for the exit animation to complete
-        }
-
-        // Run the animation every 5 seconds
-        setInterval(nextSlide, 5000);
-      });
-    </script>
-    <!-- servise section fuction  -->
-    <script>
-      const track = document.getElementById("servicesTrack");
-      const prev = document.getElementById("prevBtn");
-      const next = document.getElementById("nextBtn");
+      // 4. OFFSET: Triggers the animation 50px before the element is visible.
+      offset: 50,
+    });
+  </script>
+  <!-- hero section animation  -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const slides = [
+        {
+          title: "Nurturing<br>Young <span class='text-blue-600'>Minds</span>",
+          desc: "Specialist behavioral and academic interventions to help your child thrive.",
+          img1: "images/hero_1.png",
+          img2: "images/hero_2.png",
+        },
+        {
+          title: "Building  <br> Healthier <span class='text-blue-600'>Relationships</span>",
+          desc: "Professional guidance to foster understanding, resolve conflict, and strengthen family bonds.",
+          img1: "images/hero_3.jpg",
+          img2: "images/hero_4.jpg",
+        },
+        {
+          title: "Your  <br> Path to  <span class='text-blue-600'>Inner Balance</span>",
+          desc: "Evidence-based psychotherapy and counseling for a more resilient you.",
+          img1: "images/hero_5.jpg",
+          img2: "images/hero_6.jpg",
+        },
+      ];
 
       let index = 0;
-      const total = 3;
 
-      function updateSlide() {
-        track.style.transform = `translateX(-${index * 100}%)`;
+      // Select the elements to animate
+      const elements = {
+        title: document.getElementById("hero-title"),
+        desc: document.getElementById("hero-desc"),
+        btn: document.getElementById("hero-btn"),
+        img1: document.getElementById("img1-el"),
+        img2: document.getElementById("img2-el"),
+      };
+
+      function nextSlide() {
+        // 1. EXIT PHASE: Slide everything UP and OUT
+        // We add these classes to move elements out of view
+        Object.values(elements).forEach((el) => {
+          el.classList.remove("translate-y-0", "opacity-100");
+          el.classList.add("-translate-y-full", "opacity-0");
+        });
+
+        // 2. RESET PHASE: Wait for exit animation to finish (1000ms)
+        setTimeout(() => {
+          index = (index + 1) % slides.length;
+          const s = slides[index];
+
+          // Swap Data
+          elements.title.innerHTML = s.title;
+          elements.desc.textContent = s.desc;
+          elements.img1.src = s.img1;
+          elements.img2.src = s.img2;
+
+          // INSTANT RESET (Disable transition to jump to bottom)
+          Object.values(elements).forEach((el) => {
+            // Disable transition temporarily
+            el.classList.add("duration-0", "transition-none");
+
+            // Jump to bottom position
+            el.classList.remove("-translate-y-full");
+            el.classList.add("translate-y-full");
+
+            // FORCE REFLOW (Critical Step: tells browser to apply the change NOW)
+            void el.offsetWidth;
+
+            // Re-enable transition
+            el.classList.remove("duration-0", "transition-none");
+          });
+
+          // 3. ENTER PHASE: Slide In from Bottom
+          // We use a tiny timeout to ensure the transition is back on
+          requestAnimationFrame(() => {
+            Object.values(elements).forEach((el) => {
+              el.classList.remove("translate-y-full", "opacity-0");
+              el.classList.add("translate-y-0", "opacity-100");
+            });
+          });
+        }, 1000); // Waits 1s for the exit animation to complete
       }
 
-      next.addEventListener("click", () => {
-        index = (index + 1) % total;
-        updateSlide();
-      });
+      // Run the animation every 5 seconds
+      setInterval(nextSlide, 5000);
+    });
+  </script>
+  <!-- servise section fuction  -->
+  <script>
+    const track = document.getElementById("servicesTrack");
+    const prev = document.getElementById("prevBtn");
+    const next = document.getElementById("nextBtn");
 
-      prev.addEventListener("click", () => {
-        index = (index - 1 + total) % total;
-        updateSlide();
-      });
-    </script>
-    <!-- for testimonial  -->
+    let index = 0;
+    const total = 3;
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    
-    // ... (Keep your testimonials array data here) ...
-    const testimonials = [
-       // ... keep your existing data ...
-       { name: "Michael Ross", text: "I was anxious...", img: "images/testimonial1.png" },
-       { name: "Sarah Jenkins", text: "The doctors here...", img: "images/testimonial2.png" },
-       { name: "Emily Chen", text: "Evidence-based...", img: "images/doc1.jpg" },
-       { name: "David Miller", text: "Professional...", img: "images/doc2.jpg" },
-    ];
-
-    let currentIndex = 0;
-    let isAnimating = false;
-
-    const cardBig = document.querySelector("#cardBig");
-    const cardSmall = document.querySelector("#cardSmall");
-    const sliderStage = document.querySelector("#sliderStage");
-    
-    // UPDATED SELECTORS
-    const nextBtn = document.querySelector("#testimNext");
-    const prevBtn = document.querySelector("#testimPrev");
-
-    function updateContent(card, data) {
-      if(!card) return;
-      const img = card.querySelector("img");
-      const name = card.querySelector(".name");
-      const p = card.querySelector("p"); // Only big card has p
-
-      if (img) img.src = data.img;
-      if (name) name.innerText = data.name;
-      if (p) p.innerText = data.text;
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 100}%)`;
     }
 
-    function moveNext() {
-      if (isAnimating) return;
-      isAnimating = true;
+    next.addEventListener("click", () => {
+      index = (index + 1) % total;
+      updateSlide();
+    });
 
-      const nextIndex = (currentIndex + 1) % testimonials.length;
-      const previewIndex = (currentIndex + 2) % testimonials.length;
-      const isMobile = window.innerWidth < 1024;
+    prev.addEventListener("click", () => {
+      index = (index - 1 + total) % total;
+      updateSlide();
+    });
+  </script>
+  <!-- for testimonial  -->
 
-      if (isMobile) {
-        gsap.to(cardBig, {
-          opacity: 0,
-          duration: 0.3,
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      // ... (Keep your testimonials array data here) ...
+      const testimonials = [
+        // ... keep your existing data ...
+        { name: "Michael Ross", text: "I was anxious...", img: "images/testimonial1.png" },
+        { name: "Sarah Jenkins", text: "The doctors here...", img: "images/testimonial2.png" },
+        { name: "Emily Chen", text: "Evidence-based...", img: "images/doc1.jpg" },
+        { name: "David Miller", text: "Professional...", img: "images/doc2.jpg" },
+      ];
+
+      let currentIndex = 0;
+      let isAnimating = false;
+
+      const cardBig = document.querySelector("#cardBig");
+      const cardSmall = document.querySelector("#cardSmall");
+      const sliderStage = document.querySelector("#sliderStage");
+
+      // UPDATED SELECTORS
+      const nextBtn = document.querySelector("#testimNext");
+      const prevBtn = document.querySelector("#testimPrev");
+
+      function updateContent(card, data) {
+        if (!card) return;
+        const img = card.querySelector("img");
+        const name = card.querySelector(".name");
+        const p = card.querySelector("p"); // Only big card has p
+
+        if (img) img.src = data.img;
+        if (name) name.innerText = data.name;
+        if (p) p.innerText = data.text;
+      }
+
+      function moveNext() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const nextIndex = (currentIndex + 1) % testimonials.length;
+        const previewIndex = (currentIndex + 2) % testimonials.length;
+        const isMobile = window.innerWidth < 1024;
+
+        if (isMobile) {
+          gsap.to(cardBig, {
+            opacity: 0,
+            duration: 0.3,
+            onComplete: () => {
+              currentIndex = nextIndex;
+              updateContent(cardBig, testimonials[currentIndex]);
+              gsap.to(cardBig, { opacity: 1, duration: 0.3 });
+              isAnimating = false;
+            }
+          });
+          return;
+        }
+
+        // Desktop Animation
+        const ghost = cardSmall.cloneNode(true);
+        sliderStage.appendChild(ghost);
+        gsap.set(ghost, { x: 50, opacity: 0, zIndex: 5 });
+        updateContent(ghost, testimonials[previewIndex]);
+
+        const tl = gsap.timeline({
           onComplete: () => {
             currentIndex = nextIndex;
             updateContent(cardBig, testimonials[currentIndex]);
-            gsap.to(cardBig, { opacity: 1, duration: 0.3 });
+            updateContent(cardSmall, testimonials[previewIndex]);
+            gsap.set(cardBig, { clearProps: "all" });
+            gsap.set(cardSmall, { clearProps: "all" });
+            ghost.remove();
             isAnimating = false;
           }
         });
-        return;
+
+        tl.to(cardBig, { duration: 0.6, x: -50, opacity: 0, ease: "power2.inOut" }, 0);
+        tl.to(cardSmall, { duration: 0.6, top: 0, left: 0, width: "520px", height: "360px", opacity: 1, zIndex: 20, ease: "power2.inOut" }, 0);
+        tl.to(ghost, { duration: 0.6, x: 0, opacity: 0.9, ease: "power2.inOut" }, 0);
       }
 
-      // Desktop Animation
-      const ghost = cardSmall.cloneNode(true);
-      sliderStage.appendChild(ghost);
-      gsap.set(ghost, { x: 50, opacity: 0, zIndex: 5 });
-      updateContent(ghost, testimonials[previewIndex]);
+      function movePrev() {
+        if (isAnimating) return;
+        isAnimating = true;
+        const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        const nextSmallIndex = currentIndex;
 
-      const tl = gsap.timeline({
-        onComplete: () => {
-          currentIndex = nextIndex;
-          updateContent(cardBig, testimonials[currentIndex]);
-          updateContent(cardSmall, testimonials[previewIndex]);
-          gsap.set(cardBig, { clearProps: "all" });
-          gsap.set(cardSmall, { clearProps: "all" });
-          ghost.remove();
-          isAnimating = false;
-        }
-      });
+        gsap.to([cardBig, cardSmall], {
+          duration: 0.3,
+          opacity: 0,
+          onComplete: () => {
+            currentIndex = prevIndex;
+            updateContent(cardBig, testimonials[currentIndex]);
+            updateContent(cardSmall, testimonials[nextSmallIndex]);
+            gsap.to([cardBig, cardSmall], { duration: 0.3, opacity: 1 });
+            isAnimating = false;
+          }
+        });
+      }
 
-      tl.to(cardBig, { duration: 0.6, x: -50, opacity: 0, ease: "power2.inOut" }, 0);
-      tl.to(cardSmall, { duration: 0.6, top: 0, left: 0, width: "520px", height: "360px", opacity: 1, zIndex: 20, ease: "power2.inOut" }, 0);
-      tl.to(ghost, { duration: 0.6, x: 0, opacity: 0.9, ease: "power2.inOut" }, 0);
-    }
+      if (nextBtn) nextBtn.addEventListener("click", moveNext);
+      if (prevBtn) prevBtn.addEventListener("click", movePrev);
+      if (cardSmall) cardSmall.addEventListener("click", moveNext);
 
-    function movePrev() {
-      if (isAnimating) return;
-      isAnimating = true;
-      const prevIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
-      const nextSmallIndex = currentIndex; 
+      updateContent(cardBig, testimonials[0]);
+      updateContent(cardSmall, testimonials[1]);
+    });
+  </script>
+  <!-- doctors  -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById("expertGrid");
+      const dots = document.querySelectorAll(".dot");
 
-      gsap.to([cardBig, cardSmall], {
-        duration: 0.3,
-        opacity: 0,
-        onComplete: () => {
-          currentIndex = prevIndex;
-          updateContent(cardBig, testimonials[currentIndex]);
-          updateContent(cardSmall, testimonials[nextSmallIndex]);
-          gsap.to([cardBig, cardSmall], { duration: 0.3, opacity: 1 });
-          isAnimating = false;
-        }
-      });
-    }
+      // Make functions globally available for buttons
+      window.scrollGrid = function (direction) {
+        const cardWidth = grid.querySelector("div").offsetWidth + 24; // Width + gap
+        grid.scrollBy({
+          left: direction * cardWidth,
+          behavior: "smooth",
+        });
+      };
 
-    if(nextBtn) nextBtn.addEventListener("click", moveNext);
-    if(prevBtn) prevBtn.addEventListener("click", movePrev);
-    if(cardSmall) cardSmall.addEventListener("click", moveNext);
+      // Update dots based on scroll position
+      grid.addEventListener("scroll", () => {
+        const totalScrollWidth = grid.scrollWidth - grid.clientWidth;
+        const currentScroll = grid.scrollLeft;
+        const activeDot = Math.min(
+          Math.floor((currentScroll / totalScrollWidth) * dots.length),
+          dots.length - 1,
+        );
 
-    updateContent(cardBig, testimonials[0]);
-    updateContent(cardSmall, testimonials[1]);
-  });
-</script>
-    <!-- doctors  -->
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById("expertGrid");
-    const dots = document.querySelectorAll(".dot");
-
-    // Make functions globally available for buttons
-    window.scrollGrid = function(direction) {
-      const cardWidth = grid.querySelector("div").offsetWidth + 24; // Width + gap
-      grid.scrollBy({
-        left: direction * cardWidth,
-        behavior: "smooth",
-      });
-    };
-
-    // Update dots based on scroll position
-    grid.addEventListener("scroll", () => {
-      const totalScrollWidth = grid.scrollWidth - grid.clientWidth;
-      const currentScroll = grid.scrollLeft;
-      const activeDot = Math.min(
-        Math.floor((currentScroll / totalScrollWidth) * dots.length),
-        dots.length - 1,
-      );
-
-      dots.forEach((dot, index) => {
-        dot.style.backgroundColor =
-          index === activeDot
-            ? "rgba(255,255,255,1)"
-            : "rgba(255,255,255,0.3)";
+        dots.forEach((dot, index) => {
+          dot.style.backgroundColor =
+            index === activeDot
+              ? "rgba(255,255,255,1)"
+              : "rgba(255,255,255,0.3)";
+        });
       });
     });
-  });
-</script>
+  </script>
 
-    <script src="style/js/nav.js"></script>
-    <script src="style/js/transition.js"></script>
-  </body>
+  <script src="style/js/nav.js"></script>
+  <script src="style/js/transition.js"></script>
+</body>
+
 </html>
