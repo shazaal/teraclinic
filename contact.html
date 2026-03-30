@@ -382,7 +382,7 @@
             </h1>
           </div>
 
-          <form action="https://api.web3forms.com/submit" method="POST" style="display:flex; flex-direction:column; gap:20px;">
+          <form id="contactForm" method="POST" style="display:flex; flex-direction:column; gap:20px;">
             
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="db750d4c-a241-4b89-b6af-1006dd5d10d8">
@@ -417,8 +417,8 @@
               <textarea name="message" rows="5" placeholder="Enter Your Message" class="form-input" style="resize:none;" required></textarea>
             </div>
 
-            <!-- Optional: Web3Forms redirects here on success -->
-            <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <!-- Result Notification Area -->
+            <div id="result" style="display:none; text-align:center; padding: 12px; border-radius: 8px; font-weight: 500; font-family: 'Sora', sans-serif;"></div>
 
             <div style="padding-top:4px;">
               <button type="submit" class="submit-btn">Submit Message</button>
@@ -588,6 +588,58 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 900, easing: 'ease-out-quart', once: true, offset: 50 });
+
+    // Web3Forms AJAX Submit
+    const form = document.getElementById('contactForm');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      // Show loading state
+      result.style.display = 'block';
+      result.style.color = '#1f6fb8'; 
+      result.style.backgroundColor = '#dde9f7';
+      result.innerHTML = 'Sending message...';
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = "Success! Your message has been sent.";
+          result.style.color = '#15803d'; // Green
+          result.style.backgroundColor = '#dcfce7'; 
+          form.reset();
+        } else {
+          console.log(response);
+          result.innerHTML = json.message || "Something went wrong!";
+          result.style.color = '#b91c1c'; // Red
+          result.style.backgroundColor = '#fee2e2';
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong! Please try again later.";
+        result.style.color = '#b91c1c';
+        result.style.backgroundColor = '#fee2e2';
+      })
+      .then(function() {
+        setTimeout(() => {
+          result.style.display = 'none';
+        }, 5000); // Hide the message after 5 seconds
+      });
+    });
   </script>
 </body>
 
