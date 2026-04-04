@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | Tera Wellbeing</title>
-  
+
   <!-- SEO & Social Graph Tags -->
   <meta name="description" content="Tera Clinic is India's leading psychological center for child development & mental health. Offering evidence-based therapy and assessments." />
   <meta name="keywords" content="Child psychology, behavioral therapy, family counseling, Tera Clinic, mental health, Kannur" />
@@ -27,7 +27,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
 
-  <!-- aos -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 
@@ -115,10 +114,10 @@
               <i class="bi bi-list"></i>
             </button>
           </div>
-      
+
         </div>
       </div>
-      <!-- MOBILE MENU -->
+
       <div id="mobile-menu" class="fixed inset-0 z-40 invisible opacity-0 transition-all duration-300">
         <div class="absolute inset-0 bg-white/95 backdrop-blur-xl"></div>
         <button id="mobile-close" class="absolute top-6 right-6 z-50 text-4xl text-slate-900" aria-label="Close menu"><i class="bi bi-x"></i></button>
@@ -132,13 +131,12 @@
       </div>
     </div>
 
-
     <!-- MAIN SPECIFIC LAYOUT: SEHA CLONE -->
     <main class="max-w-[1440px] mx-auto px-6 lg:px-16 py-12 font-sans" style="min-height: 70vh;">
-      
+
       <!-- Top Layout: 2 Columns like SEHA -->
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-16 lg:gap-24 mb-20" data-aos="fade-in">
-        
+
         <!-- Left Side: Title & Search -->
         <div>
           <p class="text-[#005c8a] font-semibold text-sm mb-3">Our Specialities</p>
@@ -173,7 +171,7 @@
         <!-- Right Side: Alphabet Filter -->
         <div class="pt-2">
           <h4 class="text-[#005c8a] font-medium text-base mb-6">Find All Search By Alphabet</h4>
-          
+
           <div class="flex flex-wrap gap-x-2.5 gap-y-3.5 max-w-[500px]" id="alphabetContainer">
             <a href="#" class="alpha-btn">A</a>
             <a href="#" class="alpha-btn">B</a>
@@ -205,7 +203,6 @@
         </div>
 
       </div>
-
 
       <!-- Services List: 4 Column Grid simulating SEHA cards -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="servicesGrid" data-aos="fade-up" data-aos-delay="100">
@@ -407,7 +404,7 @@
         </div>
 
         <div class="mt-14 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center text-xs tracking-wide text-white/50 gap-4">
-          <p>© 2025 Tera Clinic — All rights reserved</p>
+          <p>© 2025 Tera Clinic — All rights reserved | <a href="privacy-policy.html" class="hover:text-white transition-colors underline decoration-white/30 underline-offset-4">Privacy Policy</a></p>
           <div class="flex items-center gap-2">
             <span>Designed by</span>
             <a href="https://binocularads.com" target="_blank" rel="noopener noreferrer" class="text-white hover:text-red-500 font-medium transition-colors">
@@ -418,7 +415,7 @@
       </div>
     </footer>
   </div>
-  
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     document.addEventListener("DOMContentLoaded", () => {
@@ -464,7 +461,7 @@
         btn.addEventListener("click", (e) => {
           e.preventDefault();
           const letter = e.target.textContent.trim().toLowerCase();
-          
+
           // Clear search input when using alphabet
           if(searchInput) searchInput.value = "";
 
@@ -488,12 +485,12 @@
           });
         });
       });
-      
+
       // Default: clear active classes from all bubbles initially
       resetAlphaBtns();
     });
   </script>
-  
+
   <script src="style/js/nav.js"></script>
   <script src="style/js/transition.js"></script>
 </body>
