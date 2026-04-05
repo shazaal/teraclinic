@@ -2532,7 +2532,7 @@
                             value="Video Call"
                             class="hidden"
                             checked
-                          /><span>Video Call</span></label
+                          /><span>Clinic</span></label
                         >
                         <label class="chip-input"
                           ><input
@@ -2540,16 +2540,9 @@
                             name="mode"
                             value="Audio Call"
                             class="hidden"
-                          /><span>Audio Call</span></label
+                          /><span>Online</span></label
                         >
-                        <label class="chip-input"
-                          ><input
-                            type="radio"
-                            name="mode"
-                            value="Chat"
-                            class="hidden"
-                          /><span>Chat</span></label
-                        >
+                      
                       </div>
                     </div>
                     <div>
@@ -2624,22 +2617,12 @@
                   </div>
 
                   <div class="mt-6">
-                    <label class="block text-xs font-bold text-blue-600 uppercase tracking-widest mb-3">Select Time (IST)</label>
-                    <div class="relative group mt-2">
-                      <div class="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none z-20">
-                        <i class="bi bi-clock text-slate-400 group-hover:text-blue-600 transition-colors text-xl"></i>
-                      </div>
-                      <input
-                        type="time"
-                        name="selected_time"
-                        min="10:00"
-                        max="17:00"
-                        value="10:00"
-                        class="w-full pl-14 pr-6 py-5 bg-slate-50 border-2 border-slate-100 rounded-[20px] text-slate-800 font-bold text-lg focus:border-blue-500 focus:bg-white focus:ring-4 focus:ring-blue-100/50 outline-none transition-all cursor-pointer shadow-sm relative z-10 hover:border-slate-200"
-                        style="color-scheme: light;"
-                      />
+                    <label class="block text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">Select Time Slot (IST)</label>
+                    <div class="grid grid-cols-1 gap-3">
+                      <label class="chip-input flex"><input type="radio" name="selected_time" value="10:00 AM - 11:00 AM" class="hidden" checked/><span class="w-full text-center block">10:00 AM — 11:00 AM</span></label>
+                      <label class="chip-input flex"><input type="radio" name="selected_time" value="11:00 AM - 12:00 PM" class="hidden"/><span class="w-full text-center block">11:00 AM — 12:00 PM</span></label>
+                      <label class="chip-input flex"><input type="radio" name="selected_time" value="12:00 PM - 01:00 PM" class="hidden"/><span class="w-full text-center block">12:00 PM — 01:00 PM</span></label>
                     </div>
-                    <p class="text-[10px] uppercase font-bold text-slate-400 mt-4 ml-2">Available Hours: 10:00 AM — 5:00 PM</p>
                   </div>
                 </div>
 
@@ -2671,6 +2654,15 @@
                       required
                       class="w-full p-4 border-2 border-slate-100 rounded-2xl outline-none focus:border-blue-500"
                     />
+                    <div class="md:col-span-2">
+                      <input
+                        type="text"
+                        name="place"
+                        placeholder="Place / City"
+                        required
+                        class="w-full p-4 border-2 border-slate-100 rounded-2xl outline-none focus:border-blue-500"
+                      />
+                    </div>
                     <div class="md:col-span-2">
                       <p
                         class="text-xs font-bold text-slate-400 uppercase mb-3 ml-1"
