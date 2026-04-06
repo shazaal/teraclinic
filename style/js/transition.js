@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// 3. BACK BUTTON FIX (Safari/Mobile/Chrome)
-// This ensures the page fades back in if the user hits "Back"
+// 3. BACK BUTTON FIX 
+
 window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         const wrapper = document.querySelector('.page-transition-wrapper');

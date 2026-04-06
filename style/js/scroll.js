@@ -1,9 +1,9 @@
 
   const lenis = new Lenis({
-    duration: 1.1,          // scroll speed (lower = faster)
+    duration: 1.1,         
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smoothWheel: true,      // 👈 mouse wheel
-    smoothTouch: false      // keep mobile native (recommended)
+    smoothWheel: true,     
+    smoothTouch: false      
   });
 
   function raf(time) {
