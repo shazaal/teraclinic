@@ -415,3 +415,18 @@
         transform: scale(0.95);
       }
     }
+    /* pop up form  */
+      @keyframes modalIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .animate-modal-in { animation: modalIn 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+  .service-card-option input:checked + div { border-color: #2563eb; background: #f0f7ff; }
+  .chip-input span { padding: 12px 20px; border: 2px solid #f1f5f9; border-radius: 16px; display: inline-block; font-size: 14px; font-weight: 600; color: #64748b; transition: all 0.2s; }
+  .chip-input input:checked + span { background: #2563eb; border-color: #2563eb; color: white; }
+  .calendar-day { padding: 10px; font-size: 13px; font-weight: 500; border-radius: 12px; cursor: pointer; transition: all 0.2s; }
+  .calendar-day:hover:not(.empty) { background: #f1f5f9; }
+  .calendar-day.selected { background: #2563eb !important; color: white !important; font-weight: bold; }
+  .calendar-day.today { border: 1px solid #2563eb; color: #2563eb; }
+  .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
